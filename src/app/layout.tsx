@@ -1,6 +1,7 @@
 import "../globals.css";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import Head from "next/head";
+
 
 
 export default function RootLayout({ children }: { children: ReactNode }) {
