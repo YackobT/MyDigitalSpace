@@ -1,5 +1,7 @@
 import "../globals.css";
-import { ReactNode } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
