@@ -1,9 +1,8 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
+
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Head from "next/head";
 
