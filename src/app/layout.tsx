@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { Inter } from 'next/font/google';
 import '../globals.css';
 
@@ -12,13 +13,15 @@ export const metadata = {
   description: 'Your app description',
 };
 
-export default function RootLayout({ children }) {
+type RootLayoutProps = {
+  children: ReactNode;
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={inter.className}>
-      <head>
-      </head>
-      <body suppressHydrationWarning={true}>{children}</body>
-
+      <head />
+      <body>{children}</body>
     </html>
   );
 }
