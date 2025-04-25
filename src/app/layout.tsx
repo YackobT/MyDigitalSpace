@@ -1,21 +1,23 @@
-import { ReactNode } from "react";
-import "../globals.css";
-export default function RootLayout({ children }: { children: ReactNode }) {
+import { Inter } from 'next/font/google';
+import './globals.css';
+
+const inter = Inter({
+  weight: ['400', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+export const metadata = {
+  title: 'MyDigitalSpace',
+  description: 'Your app description',
+};
+
+export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-          rel="stylesheet"
-        />
-        <title>Yackob Tamire – Business Analyst Portfolio</title>
       </head>
-      <body className="bg-white text-black font-sans px-6 md:px-20 py-12">
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
-
