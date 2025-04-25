@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'MyDigitalSpace',
-  description: 'Your app description',
+  title: 'Yackob Tamire – Business Analyst Portfolio',
+  description: 'Business Analyst & Scrum Master blending creativity and clarity.',
 };
 
 type RootLayoutProps = {
@@ -21,7 +21,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={inter.className}>
       <head />
-      <body>{children}</body>
+      <body className="bg-white text-black font-sans px-6 md:px-20 py-12">
+        {children}
+      </body>
     </html>
   );
 }
