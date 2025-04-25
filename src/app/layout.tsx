@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import { Inter } from 'next/font/google';
 import '../globals.css';
 
@@ -9,21 +8,15 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'Yackob Tamire – Business Analyst Portfolio',
-  description: 'Business Analyst & Scrum Master blending creativity and clarity.',
+  title: 'MyDigitalSpace',
+  description: 'Your app description',
 };
 
-type RootLayoutProps = {
-  children: ReactNode;
-};
-
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.className}>
       <head />
-      <body className="bg-white text-black font-sans px-6 md:px-20 py-12">
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
