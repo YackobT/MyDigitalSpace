@@ -8,14 +8,13 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'MyDigitalSpace',
-  description: 'Your app description',
+  title: 'Yackob Tamire – Business Analyst Portfolio',
+  description: 'Certified Scrum Master and Business Analyst Portfolio',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.className}>
-      <head />
       <body>{children}</body>
     </html>
   );

@@ -1,116 +1,75 @@
 "use client";
 
 import Button from "@/components/button";
-import { motion } from "framer-motion";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import Head from "next/head";
+import Image from "next/image";
 
-export default function Portfolio() {
+export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Yackob Tamire – Business Analyst Portfolio</title>
-        <meta name="description" content="Certified Business Analyst and Scrum Master – Portfolio of Yackob Tamire showcasing professional experience, projects, and skills." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Yackob Tamire – Business Analyst Portfolio" />
-        <meta property="og:description" content="Explore Yackob Tamire's portfolio showcasing business analyst experience, key projects, and professional highlights." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://my-digital-space.vercel.app" />
-        <meta property="og:image" content="https://source.unsplash.com/featured/?business,portfolio" />
-      </Head>
+    <main className="min-h-screen bg-white text-black px-6 md:px-20 py-16 font-sans">
+      {/* Hero */}
+      <section className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Yackob Tamire</h1>
+        <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
+          Certified Scrum Master and Business Analyst with 5+ years of experience driving operational improvements, optimizing workflows, and ensuring technical success across industries including FinTech and SaaS.
+        </p>
+        <div className="mt-6 flex justify-center gap-4">
+          <a href="/YT.pdf" download>
+            <Button>Download Resume</Button>
+          </a>
+          <a href="https://www.linkedin.com/in/yackob-tamire/" target="_blank" rel="noopener noreferrer">
+            <Button>LinkedIn</Button>
+          </a>
+        </div>
+      </section>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="min-h-screen bg-white text-black px-4 md:px-20 py-16 font-sans"
-      >
-        <SpeedInsights />
-
-        {/* Hero Section */}
-        <section className="mb-24 text-center">
-          <h1 className="text-5xl font-extrabold mb-4 tracking-tight">Yackob Tamire</h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-700">
-            Certified Scrum Master and Business Analyst with 5+ years of experience driving operational improvements, optimizing workflows, and ensuring technical success across industries including FinTech and SaaS.
-          </p>
-          <div className="mt-6 flex justify-center gap-4">
-            <a href="/YT.pdf" download>
-              <Button>Download Resume</Button>
-            </a>
-            <a href="https://www.linkedin.com/in/yackob-tamire/" target="_blank" rel="noopener noreferrer">
-              <Button>LinkedIn</Button>
-            </a>
+      {/* Case Studies */}
+      <section className="mb-24">
+        <h2 className="text-3xl font-bold text-center mb-12">Case Studies</h2>
+        <div className="grid md:grid-cols-2 gap-10">
+          <div className="border p-6 rounded shadow">
+            <Image src="/images/risk-dashboard.jpg" alt="Risk Dashboard" width={600} height={300} className="mb-4 rounded"/>
+            <h3 className="text-xl font-semibold mb-2">Enterprise Risk Dashboard – Freddie Mac</h3>
+            <p>Built and launched a risk alert monitoring system across critical models to increase compliance and reduce oversight delays.</p>
           </div>
-        </section>
-
-        {/* Case Studies Section */}
-        <section className="mb-24">
-          <h2 className="text-3xl font-bold mb-12 text-center">Case Studies</h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white p-6 rounded-xl shadow border">
-              <img src="/images/risk-dashboard.jpg" alt="Risk Dashboard" className="w-full h-48 object-cover rounded mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Enterprise Risk Dashboard</h3>
-              <p className="text-sm text-gray-600">
-                Launched an enterprise tool at Freddie Mac to monitor risk, alerts, and model compliance across business-critical models.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow border">
-              <img src="/images/ses-launch.jpg" alt="SES Launch" className="w-full h-48 object-cover rounded mb-4" />
-              <h3 className="text-xl font-semibold mb-2">SES Product Launch</h3>
-              <p className="text-sm text-gray-600">
-                Spearheaded the rollout of enterprise-grade internet services across Europe and Asia with SES.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow border">
-              <img src="/images/tableau-report.jpg" alt="Tableau Reporting" className="w-full h-48 object-cover rounded mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Tableau Reporting</h3>
-              <p className="text-sm text-gray-600">
-                Developed analytical dashboards improving model oversight at Freddie Mac.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow border">
-              <img src="/images/compliance-automation.jpg" alt="Compliance Automation" className="w-full h-48 object-cover rounded mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Compliance Automation</h3>
-              <p className="text-sm text-gray-600">
-                Automated compliance tasks and reduced turnaround time by 30% using Agile methods.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow border">
-              <img src="/images/roadmap-strategy.jpg" alt="Roadmap Strategy" className="w-full h-48 object-cover rounded mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Roadmap Strategy</h3>
-              <p className="text-sm text-gray-600">
-                Led multi-team collaboration sessions to align product goals with business objectives at SES Satellites.
-              </p>
-            </div>
+          <div className="border p-6 rounded shadow">
+            <Image src="/images/ses.jpg" alt="SES Launch" width={600} height={300} className="mb-4 rounded"/>
+            <h3 className="text-xl font-semibold mb-2">SES Global Internet Rollout</h3>
+            <p>Led product deployment of enterprise internet services across Europe & Asia, enhancing delivery with partner coordination.</p>
           </div>
-        </section>
-
-        {/* Testimonials */}
-        <section className="py-24">
-          <h2 className="text-3xl font-bold mb-12 text-center">Testimonials</h2>
-          <div className="max-w-3xl mx-auto space-y-8">
-            <blockquote className="border-l-4 border-gray-300 pl-6 text-gray-700 italic">
-              “Yackob consistently delivered insights that shaped strategic decision-making for model risk management.”
-              <footer className="mt-2 text-sm font-medium text-gray-500">– Manager, Freddie Mac</footer>
-            </blockquote>
-
-            <blockquote className="border-l-4 border-gray-300 pl-6 text-gray-700 italic">
-              “An exceptional partner bridging technical teams and business units seamlessly.”
-              <footer className="mt-2 text-sm font-medium text-gray-500">– Director, SES Satellites</footer>
-            </blockquote>
+          <div className="border p-6 rounded shadow">
+            <h3 className="text-xl font-semibold mb-2">Model Risk Governance Tool</h3>
+            <p>Oversaw the creation of a model oversight platform to track FHFA feedback and internal threshold breaches.</p>
           </div>
-        </section>
+          <div className="border p-6 rounded shadow">
+            <h3 className="text-xl font-semibold mb-2">Onboarding Automation</h3>
+            <p>Designed and managed automated workflow for onboarding analysts, reducing ramp-up time by 40%.</p>
+          </div>
+          <div className="border p-6 rounded shadow">
+            <h3 className="text-xl font-semibold mb-2">Data Pipeline Revamp – FinTech</h3>
+            <p>Improved data ingestion reliability and dashboard accuracy by optimizing backend processes and QA validation.</p>
+          </div>
+        </div>
+      </section>
 
-        {/* Footer */}
-        <footer className="text-center py-12 text-sm text-gray-500">
-          © 2025 Yackob Tamire. All rights reserved.
-        </footer>
-      </motion.div>
-    </>
+      {/* Testimonials */}
+      <section className="py-24">
+        <h2 className="text-3xl font-bold text-center mb-12">Testimonials</h2>
+        <div className="max-w-3xl mx-auto space-y-10 text-gray-700">
+          <blockquote className="border-l-4 border-blue-600 pl-6 italic">
+            “Yackob brings a rare combination of strategy, heart, and execution. A true partner to stakeholders.”
+            <footer className="mt-2 text-sm text-gray-500">– PM, Freddie Mac</footer>
+          </blockquote>
+          <blockquote className="border-l-4 border-blue-600 pl-6 italic">
+            “He handled product strategy and international deployment like a seasoned consultant.”
+            <footer className="mt-2 text-sm text-gray-500">– Director, SES Satellites</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center text-sm text-gray-500 py-12 border-t">
+        © 2025 Yackob Tamire. All rights reserved.
+      </footer>
+    </main>
   );
 }
