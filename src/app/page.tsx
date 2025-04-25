@@ -76,8 +76,13 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-white p-6 rounded-xl shadow border">
               <img
-                src="https://source.unsplash.com/featured/?dashboard,analytics"
+                <img
+                src="/images/risk-dashboard.jpg"
                 alt="Risk Dashboard"
+                <img
+                src="/images/ses-launch.jpg"
+                alt="SES Launch"
+              
                 className="w-full h-48 object-cover rounded mb-4"
               />
               <h3 className="text-xl font-semibold mb-2">Enterprise Risk Dashboard</h3>
