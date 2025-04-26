@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'Yackob Tamire – Business Analyst Portfolio',
-  description: 'Certified Scrum Master and Business Analyst Portfolio',
+  title: 'MyDigitalSpace',
+  description: 'Business Analyst Portfolio of Yackob Tamire',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
