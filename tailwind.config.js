@@ -1,5 +1,5 @@
 cat > tailwind.config.js << 'EOL'
-/** @type {import('tailwindcss').Config */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
