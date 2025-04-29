@@ -1,3 +1,4 @@
+cat > tailwind.config.js << 'EOL'
 /** @type {import('tailwindcss').Config */
 module.exports = {
   content: [
@@ -18,3 +19,4 @@ module.exports = {
   },
   plugins: [],
 }
+EOL
