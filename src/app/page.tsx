@@ -1,6 +1,5 @@
-"use client";
-
 import Button from "@/components/button";
+import HydrateFallback from "@/components/HydrateFallback";
 
 export default function Home() {
   return (
@@ -19,6 +18,7 @@ export default function Home() {
             href="https://www.linkedin.com/in/yackob-tamire/"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-block"
           >
             <Button>LinkedIn</Button>
           </a>
@@ -29,7 +29,7 @@ export default function Home() {
       <section className="py-16">
         <h2 className="text-3xl font-bold mb-8 text-center">Case Studies</h2>
         <div className="grid md:grid-cols-2 gap-10">
-          {/* Insert your case study cards here if you want */}
+          {/* Insert case study cards here */}
         </div>
       </section>
 

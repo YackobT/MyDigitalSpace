@@ -1,22 +1,20 @@
-import '../globals.css';
-import { Inter } from 'next/font/google';
-import { ReactNode } from 'react';
+// src/app/layout.tsx
+import './globals.css';
+import type { Metadata } from 'next';
 
-const inter = Inter({
-  weight: ['400', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-});
-
-export const metadata = {
-  title: 'MyDigitalSpace',
-  description: 'Certified Business Analyst and Scrum Master Portfolio',
+export const metadata: Metadata = {
+  title: 'My Digital Space',
+  description: 'A personal portfolio website',
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={inter.className}>
-      <body>{children}</body>
+    <html lang="en">
+      <body className="isolate">{children}</body>
     </html>
   );
 }

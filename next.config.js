@@ -1,8 +1,7 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
+  reactStrictMode: false, // Optional to reduce hydration warnings
 };
 
 module.exports = nextConfig;
