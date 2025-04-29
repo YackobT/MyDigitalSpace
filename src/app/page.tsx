@@ -1,5 +1,5 @@
 import Button from "@/components/button";
-import HydrateFallback from "@/components/HydrateFallback";
+import HydratedContent from "@/components/HydratedContent";
 
 export default function Home() {
   return (
@@ -22,6 +22,11 @@ export default function Home() {
           >
             <Button>LinkedIn</Button>
           </a>
+        </div>
+
+        {/* Hydration status */}
+        <div className="mt-4 text-gray-500 text-sm">
+          <HydratedContent />
         </div>
       </section>
 
