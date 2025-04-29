@@ -1,8 +1,7 @@
-cat > postcss.config.js << 'EOL'
+// postcss.config.js
 module.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {}
   }
-}
-EOL
+};
