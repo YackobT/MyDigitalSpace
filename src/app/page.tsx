@@ -29,38 +29,53 @@ export default function Home() {
       </section>
 
       {/* Case Studies */}
-      <section className="py-16 bg-white rounded-lg shadow-lg max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12">Case Studies</h2>
-        <div className="grid md:grid-cols-2 gap-12">
-          {[
-            {
-              title: "EHR System Integration – DS Technologies",
-              desc: "Led full integration of EHR systems, collaborated with SMEs to map workflows, supported UAT, and created training manuals that boosted adoption by 40%."
-            },
-            {
-              title: "Agile Workflow Optimization – CACI",
-              desc: "Reduced sprint rework by 30% and improved Agile velocity by 15% via better sprint planning and continuous stakeholder alignment."
-            },
-            {
-              title: "Financial Workflow Automation – Spectrum Financial",
-              desc: "Automated financial workflows, improving efficiency by 25% and achieving a 98% QA pass rate through strong documentation and testing."
-            },
-            {
-              title: "Property Reporting Enhancements – CIM Group",
-              desc: "Built custom reports like rent rolls and occupancy summaries, improving leasing decisions for a 500+ unit property."
-            },
-            {
-              title: "Leasing Operations Revamp – Bell Partners",
-              desc: "Boosted occupancy by 10% and optimized the leasing process while ensuring full Fair Housing compliance."
-            }
-          ].map(({ title, desc }) => (
-            <div key={title} className="bg-gray-50 p-6 rounded shadow-md hover:shadow-lg transition">
-              <h3 className="font-semibold text-xl mb-2 text-primary">{title}</h3>
-              <p className="text-gray-700 leading-relaxed">{desc}</p>
-            </div>
-          ))}
+      {/* Case Studies Section */}
+<section className="py-16">
+  <h2 className="text-3xl font-bold mb-8 text-center">Case Studies</h2>
+  <div className="grid md:grid-cols-2 gap-10">
+    {[
+      {
+        title: "EHR System Integration",
+        description: "Integrated Electronic Health Record systems with validation scripts and user training.",
+        img: "/images/ehr-system.jpg",
+      },
+      {
+        title: "Agile Workflow Optimization",
+        description: "Improved sprint velocity and reduced rework across Agile teams.",
+        img: "/images/agile-workflow.jpg",
+      },
+      {
+        title: "Workflow Automation",
+        description: "Automated financial operations to increase QA pass rates and efficiency.",
+        img: "/images/workflow-automation.jpg",
+      },
+      {
+        title: "Property Reporting Enhancements",
+        description: "Developed custom reports like rent rolls and occupancy tools.",
+        img: "/images/property-reporting.jpg",
+      },
+      {
+        title: "Leasing Operations Strategy",
+        description: "Boosted occupancy via marketing, training, and compliance.",
+        img: "/images/leasing-operations.jpg",
+      },
+    ].map((caseStudy, index) => (
+      <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+        <img
+          src={caseStudy.img}
+          alt={caseStudy.title}
+          className="w-full h-48 object-cover"
+        />
+        <div className="p-6">
+          <h3 className="text-xl font-semibold mb-2">{caseStudy.title}</h3>
+          <p className="text-gray-600">{caseStudy.description}</p>
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
+
+
 
       {/* Testimonials */}
       <section className="py-20 bg-secondary text-center">
