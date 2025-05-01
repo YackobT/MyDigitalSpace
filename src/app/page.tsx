@@ -1,127 +1,71 @@
-
 import Button from "@/components/button";
 import HydratedContent from "@/components/HydratedContent";
 
 export default function Home() {
   return (
-    <main className="bg-light text-dark font-sans px-6 md:px-24 py-16">
-
+    <main className="bg-light text-dark font-sans px-6 md:px-32 py-24 space-y-36">
+      
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center">
-        <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-6">Yackob Tamire</h1>
-        <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mb-10 leading-relaxed">
-          Certified Scrum Master and Business Analyst with 5+ years experience across FinTech, Healthcare, and Real Estate.
+      <section className="flex flex-col items-center text-center space-y-6">
+        <h1 className="text-6xl font-bold tracking-tight">Yackob Tamire</h1>
+        <p className="text-lg max-w-xl text-gray-700">
+          Certified Scrum Master and Business Analyst with 5+ years of experience optimizing workflows across FinTech, Healthcare, and Real Estate.
         </p>
-        <div className="flex gap-4 mb-6">
+        <div className="flex gap-6 mt-4">
           <a href="/YT.pdf" download><Button>Resume</Button></a>
           <a href="https://www.linkedin.com/in/yackob-tamire/" target="_blank" rel="noopener noreferrer"><Button>LinkedIn</Button></a>
         </div>
-        <span className="text-sm text-gray-500"><HydratedContent /></span>
+        <HydratedContent />
       </section>
 
-      {/* Experience Timeline */}
-      <section className="py-28">
-        <h2 className="text-3xl font-bold text-center mb-16">Experience</h2>
-        <div className="max-w-4xl mx-auto border-l border-primary pl-6 relative">
-          {[
-            {
-              company: "DS Technologies Inc",
-              role: "Integration Business Analyst",
-              desc: "Led EHR system integrations and created user manuals improving training efficiency by 40%."
-            },
-            {
-              company: "CACI",
-              role: "Business Analyst",
-              desc: "Enhanced Agile workflows and reduced sprint rework by 30%."
-            },
-            {
-              company: "Spectrum Financial",
-              role: "Business Systems Analyst",
-              desc: "Automated workflows and boosted efficiency by 25%."
-            },
-            {
-              company: "CIM Group",
-              role: "Business Systems Support Analyst",
-              desc: "Created reporting tools and supported lease operations for 500+ units."
-            },
-            {
-              company: "Bell Partners",
-              role: "Senior Leasing Manager",
-              desc: "Boosted occupancy by 10% and optimized team performance."
-            }
-          ].map((item, idx) => (
-            <div key={idx} className="mb-10 ml-4">
-              <div className="absolute w-4 h-4 bg-primary rounded-full -left-2.5 top-1.5"></div>
-              <h3 className="text-xl font-semibold">{item.company}</h3>
-              <span className="text-sm text-gray-500">{item.role}</span>
-              <p className="mt-2 text-gray-600">{item.desc}</p>
-            </div>
-          ))}
-        </div>
+      {/* Experience Section */}
+      <section className="space-y-12 max-w-4xl mx-auto">
+        <h2 className="text-2xl font-semibold text-center">Experience</h2>
+        {[
+          { role: "Integration Business Analyst", company: "DS Technologies", desc: "Led EHR integrations, streamlined validation, and created manuals boosting training by 40%." },
+          { role: "Business Analyst", company: "CACI", desc: "Improved Agile workflows and reduced sprint rework by 30%." },
+          { role: "Business Systems Analyst", company: "Spectrum Financial", desc: "Automated processes and lifted QA pass rates to 98%." },
+          { role: "Business Systems Support Analyst", company: "CIM Group", desc: "Generated reports and supported 500+ units' lease ops." },
+          { role: "Senior Leasing Manager", company: "Bell Partners", desc: "Increased occupancy by 10% and led compliance initiatives." }
+        ].map((item, i) => (
+          <div key={i} className="space-y-1">
+            <h3 className="text-lg font-medium">{item.role} <span className="text-gray-500">@ {item.company}</span></h3>
+            <p className="text-sm text-gray-600">{item.desc}</p>
+          </div>
+        ))}
       </section>
 
-      {/* Case Studies */}
-      <section className="py-24">
-        <h2 className="text-3xl font-bold text-center mb-16">Case Studies</h2>
-        <div className="grid md:grid-cols-2 gap-10">
+      {/* Case Studies Section */}
+      <section className="space-y-12">
+        <h2 className="text-2xl font-semibold text-center">Case Studies</h2>
+        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
           {[
-            {
-              title: "EHR System Integration",
-              description: "Integrated Electronic Health Record systems with validation scripts and user training.",
-              img: "/images/ehr-system.jpg",
-            },
-            {
-              title: "Agile Workflow Optimization",
-              description: "Improved sprint velocity and reduced rework across Agile teams.",
-              img: "/images/agile-workflow.jpg",
-            },
-            {
-              title: "Workflow Automation",
-              description: "Automated financial operations to increase QA pass rates and efficiency.",
-              img: "/images/workflow-automation.jpg",
-            },
-            {
-              title: "Property Reporting Enhancements",
-              description: "Developed custom reports like rent rolls and occupancy tools.",
-              img: "/images/property-reporting.jpg",
-            },
-            {
-              title: "Leasing Operations Strategy",
-              description: "Boosted occupancy via marketing, training, and compliance.",
-              img: "/images/leasing-operations.jpg",
-            },
-          ].map((study, i) => (
-            <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-              <img src={study.img} alt={study.title} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{study.title}</h3>
-                <p className="text-gray-600">{study.description}</p>
-              </div>
+            { title: "EHR Integration", img: "/images/ehr-system.jpg", desc: "Built validation workflows and trained clinical teams." },
+            { title: "Agile Optimization", img: "/images/agile-workflow.jpg", desc: "Improved sprint velocity and sprint planning." },
+            { title: "Workflow Automation", img: "/images/workflow-automation.jpg", desc: "Reduced manual ops through financial automations." },
+            { title: "Property Reporting", img: "/images/property-reporting.jpg", desc: "Custom rent roll and portfolio occupancy tools." }
+          ].map((item, i) => (
+            <div key={i} className="space-y-3">
+              <img src={item.img} alt={item.title} className="w-full h-48 object-cover rounded" />
+              <h3 className="text-lg font-medium">{item.title}</h3>
+              <p className="text-sm text-gray-600">{item.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-secondary text-center">
-        <h2 className="text-3xl font-bold mb-12">Testimonials</h2>
-        <div className="max-w-3xl mx-auto space-y-10 text-lg text-gray-800 italic">
-          <blockquote>
-            “Yackob streamlined complex EHR workflows with ease. Outstanding partnership.”
-            <br /><span className="block text-sm not-italic mt-2 text-gray-600">– Director, DS Technologies</span>
-          </blockquote>
-          <blockquote>
-            “Our sprint velocity improvements were directly tied to Yackob’s facilitation.”
-            <br /><span className="block text-sm not-italic mt-2 text-gray-600">– Scrum Master, CACI</span>
-          </blockquote>
-          <blockquote>
-            “Yackob’s workflow automations saved us significant manual effort.”
-            <br /><span className="block text-sm not-italic mt-2 text-gray-600">– Manager, Spectrum Financial</span>
-          </blockquote>
+      <section className="space-y-12 max-w-3xl mx-auto text-center">
+        <h2 className="text-2xl font-semibold">Testimonials</h2>
+        <div className="space-y-10 text-gray-700 italic text-sm">
+          <blockquote>“Yackob streamlined complex EHR workflows with ease.” <br /><span className="not-italic text-gray-500">– Director, DS Technologies</span></blockquote>
+          <blockquote>“Sprint velocity improved directly from his leadership.” <br /><span className="not-italic text-gray-500">– Scrum Master, CACI</span></blockquote>
+          <blockquote>“Workflow automation saved us countless hours.” <br /><span className="not-italic text-gray-500">– Manager, Spectrum Financial</span></blockquote>
         </div>
       </section>
 
-      <footer className="text-center text-gray-400 text-sm mt-20">
+      {/* Footer */}
+      <footer className="text-center text-gray-400 text-xs pt-24">
         © 2025 Yackob Tamire. All rights reserved.
       </footer>
     </main>

@@ -2,9 +2,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-    "./src/app/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
@@ -13,8 +11,11 @@ module.exports = {
         secondary: '#F9F9F9',
         tertiary: '#023E8A',
         dark: '#03045E',
-        light: '#F8FAFC',
+        light: '#F8FAFC' // updated
       },
+      fontFamily: {
+        sans: ['ui-sans-serif', 'system-ui']
+      }
     },
   },
   plugins: [],
