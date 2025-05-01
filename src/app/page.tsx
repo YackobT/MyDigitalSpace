@@ -1,3 +1,4 @@
+
 import Button from "@/components/button";
 import HydratedContent from "@/components/HydratedContent";
 
@@ -120,7 +121,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="text-center text-gray-400 text-sm mt-20">
         © 2025 Yackob Tamire. All rights reserved.
       </footer>

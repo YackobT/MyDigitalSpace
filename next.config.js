@@ -1,7 +1,7 @@
-// next.config.js
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false, // Optional to reduce hydration warnings
-};
+  reactStrictMode: false,
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
