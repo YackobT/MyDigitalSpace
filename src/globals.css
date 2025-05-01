@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom base styles */
 body {
   @apply bg-light text-dark font-sans;
+}
+
+h1, h2, h3 {
+  @apply font-bold;
+}
+
+a {
+  @apply text-primary hover:underline;
 }
