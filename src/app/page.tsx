@@ -22,10 +22,14 @@ export default function Home() {
             <Button>LinkedIn</Button>
           </a>
         </div>
+<br/>
 
+
+<br/>
+<br/>
         {/* Centered Name & Intro */}
         <h1 className="text-5xl md:text-6xl font-extrabold text-dark mb-4 tracking-tight">Yackob Tamire</h1>
-        <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+        <br/> <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
           Certified Scrum Master and Business Analyst with 5+ years of experience driving operational improvements, optimizing workflows, and ensuring technical success across FinTech, Healthcare, and Real Estate.
         </p>
 
