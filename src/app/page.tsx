@@ -1,71 +1,145 @@
-'use client';
-import { motion } from 'framer-motion'; // 👈 Add this
+"use client";
+
+import { motion } from "framer-motion";
 import Button from "@/components/button";
 import HydratedContent from "@/components/HydratedContent";
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
-  }),
-};
-
 export default function Home() {
+  const sectionFade = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 },
+    viewport: { once: true },
+  };
+
   return (
-    <main className="bg-light text-dark font-sans px-6 md:px-24 py-16">
+    <main className="bg-light text-dark dark:bg-dark dark:text-white font-sans px-6 md:px-24 py-16">
+      {/* Hero Section */}
       <motion.section
-        custom={0}
-        variants={fadeIn}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        {...sectionFade}
         className="min-h-screen flex flex-col justify-center items-center text-center"
       >
-        {/* ...Hero Content... */}
-      </motion.section>
-      <button
-  onClick={() => {
-    document.documentElement.classList.toggle('dark');
-  }}
-  className="absolute top-6 right-6 text-sm border px-3 py-1 rounded-md bg-dark text-light dark:bg-light dark:text-dark transition"
->
-  Toggle Theme
-</button>
-
-      <motion.section
-        custom={1}
-        variants={fadeIn}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="py-28"
-      >
-        {/* ...Experience Content... */}
+        <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-6">
+          Yackob Tamire
+        </h1>
+        <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mb-10 leading-relaxed">
+          Certified Scrum Master and Business Analyst with 5+ years experience across FinTech, Healthcare, and Real Estate.
+        </p>
+        <div className="flex gap-4 mb-6">
+          <a href="/YT.pdf" download><Button>Resume</Button></a>
+          <a href="https://www.linkedin.com/in/yackob-tamire/" target="_blank" rel="noopener noreferrer"><Button>LinkedIn</Button></a>
+        </div>
+        <span className="text-sm text-gray-500 dark:text-gray-400">
+          <HydratedContent />
+        </span>
       </motion.section>
 
-      <motion.section
-        custom={2}
-        variants={fadeIn}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="py-24"
-      >
-        {/* ...Case Studies Content... */}
+      {/* Experience Timeline */}
+      <motion.section {...sectionFade} className="py-28">
+        <h2 className="text-3xl font-bold text-center mb-16">Experience</h2>
+        <div className="max-w-4xl mx-auto border-l border-primary pl-6 relative">
+          {[
+            {
+              company: "DS Technologies Inc",
+              role: "Integration Business Analyst",
+              desc: "Led EHR system integrations and created user manuals improving training efficiency by 40%."
+            },
+            {
+              company: "CACI",
+              role: "Business Analyst",
+              desc: "Enhanced Agile workflows and reduced sprint rework by 30%."
+            },
+            {
+              company: "Spectrum Financial",
+              role: "Business Systems Analyst",
+              desc: "Automated workflows and boosted efficiency by 25%."
+            },
+            {
+              company: "CIM Group",
+              role: "Business Systems Support Analyst",
+              desc: "Created reporting tools and supported lease operations for 500+ units."
+            },
+            {
+              company: "Bell Partners",
+              role: "Senior Leasing Manager",
+              desc: "Boosted occupancy by 10% and optimized team performance."
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="mb-10 ml-4">
+              <div className="absolute w-4 h-4 bg-primary rounded-full -left-2.5 top-1.5"></div>
+              <h3 className="text-xl font-semibold">{item.company}</h3>
+              <span className="text-sm text-gray-500 dark:text-gray-400">{item.role}</span>
+              <p className="mt-2 text-gray-600 dark:text-gray-300">{item.desc}</p>
+            </div>
+          ))}
+        </div>
       </motion.section>
 
-      <motion.section
-        custom={3}
-        variants={fadeIn}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="py-24 bg-secondary text-center"
-      >
-        {/* ...Testimonials... */}
+      {/* Case Studies */}
+      <motion.section {...sectionFade} className="py-24">
+        <h2 className="text-3xl font-bold text-center mb-16">Case Studies</h2>
+        <div className="grid md:grid-cols-2 gap-10">
+          {[
+            {
+              title: "EHR System Integration",
+              description: "Integrated Electronic Health Record systems with validation scripts and user training.",
+              img: "/images/ehr-system.jpg",
+            },
+            {
+              title: "Agile Workflow Optimization",
+              description: "Improved sprint velocity and reduced rework across Agile teams.",
+              img: "/images/agile-workflow.jpg",
+            },
+            {
+              title: "Workflow Automation",
+              description: "Automated financial operations to increase QA pass rates and efficiency.",
+              img: "/images/workflow-automation.jpg",
+            },
+            {
+              title: "Property Reporting Enhancements",
+              description: "Developed custom reports like rent rolls and occupancy tools.",
+              img: "/images/property-reporting.jpg",
+            },
+            {
+              title: "Leasing Operations Strategy",
+              description: "Boosted occupancy via marketing, training, and compliance.",
+              img: "/images/leasing-operations.jpg",
+            },
+          ].map((study, i) => (
+            <div key={i} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+              <img src={study.img} alt={study.title} className="w-full h-48 object-cover" />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">{study.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{study.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </motion.section>
+
+      {/* Testimonials */}
+      <motion.section {...sectionFade} className="py-24 bg-secondary dark:bg-[#111] text-center">
+        <h2 className="text-3xl font-bold mb-12">Testimonials</h2>
+        <div className="max-w-3xl mx-auto space-y-10 text-lg text-gray-800 dark:text-gray-300 italic">
+          <blockquote>
+            “Yackob streamlined complex EHR workflows with ease. Outstanding partnership.”
+            <br /><span className="block text-sm not-italic mt-2 text-gray-600 dark:text-gray-400">– Director, DS Technologies</span>
+          </blockquote>
+          <blockquote>
+            “Our sprint velocity improvements were directly tied to Yackob’s facilitation.”
+            <br /><span className="block text-sm not-italic mt-2 text-gray-600 dark:text-gray-400">– Scrum Master, CACI</span>
+          </blockquote>
+          <blockquote>
+            “Yackob’s workflow automations saved us significant manual effort.”
+            <br /><span className="block text-sm not-italic mt-2 text-gray-600 dark:text-gray-400">– Manager, Spectrum Financial</span>
+          </blockquote>
+        </div>
+      </motion.section>
+
+      {/* Footer */}
+      <footer className="text-center text-gray-400 dark:text-gray-500 text-sm mt-20">
+        © 2025 Yackob Tamire. All rights reserved.
+      </footer>
     </main>
   );
 }
