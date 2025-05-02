@@ -1,28 +1,31 @@
 'use client';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Button from '@/components/button';
 import HydratedContent from '@/components/HydratedContent';
 
 export default function Home() {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
   return (
-    <main className="bg-light text-dark font-sans px-6 md:px-24 py-16 space-y-32">
+    <main className="bg-light text-dark font-sans px-6 md:px-24 pt-8 pb-16 space-y-32">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="min-h-screen flex flex-col justify-center items-center text-center"
+        className="min-h-screen flex flex-col justify-center items-center text-center mt-[-4rem]"
       >
-        <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-6">Yackob Tamire</h1>
-        <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mb-10 leading-relaxed">
+        <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-4">Yackob Tamire</h1>
+        <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mb-6 leading-relaxed">
           Certified Scrum Master and Business Analyst with 5+ years experience across FinTech, Healthcare, and Real Estate.
         </p>
-        <div className="flex gap-4 mb-6">
+        <div className="flex gap-4 mb-2">
           <a href="/YT.pdf" download><Button>Resume</Button></a>
           <a href="https://www.linkedin.com/in/yackob-tamire/" target="_blank" rel="noopener noreferrer"><Button>LinkedIn</Button></a>
         </div>
-        <span className="text-sm text-gray-500"><HydratedContent /></span>
+        <span className="text-sm text-gray-500 mt-2"><HydratedContent /></span>
       </motion.section>
 
       {/* Experience Section */}
@@ -31,7 +34,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="py-28"
+        className="pt-10"
       >
         <h2 className="text-3xl font-bold text-center mb-16">Experience</h2>
         <div className="max-w-4xl mx-auto border-l border-primary pl-6 relative">
@@ -44,22 +47,22 @@ export default function Home() {
             {
               company: "CACI",
               role: "Business Analyst",
-              desc: "Enhanced Agile workflows and reduced sprint rework by 30%. Facilitated backlog grooming, sprint planning, and sprint reviews with cross-functional teams. Worked closely with developers and testers to clarify business requirements."
+              desc: "Enhanced Agile workflows and reduced sprint rework by 30%. Facilitated backlog grooming, sprint planning, and sprint reviews. Coordinated with product owners to refine requirements."
             },
             {
               company: "Spectrum Financial",
               role: "Business Systems Analyst",
-              desc: "Automated workflows and boosted efficiency by 25%. Maintained 98% QA pass rate across financial tools. Collaborated with engineers to implement efficient data structures for portfolio insights."
+              desc: "Automated workflows and boosted efficiency by 25%. Maintained 98% QA pass rate. Developed internal dashboards for reporting."
             },
             {
               company: "CIM Group",
               role: "Business Systems Support Analyst",
-              desc: "Created reporting tools and supported lease operations for 500+ units. Improved renewal reporting and lease compliance tracking. Worked on vendor systems integration for streamlined operations."
+              desc: "Created reporting tools and supported lease operations for 500+ units. Improved vendor system integrations and boosted lease compliance visibility."
             },
             {
               company: "Bell Partners",
               role: "Senior Leasing Manager",
-              desc: "Boosted occupancy by 10% and optimized team performance. Trained junior leasing staff and ensured Fair Housing Act compliance. Led regional marketing strategy for underperforming assets."
+              desc: "Boosted occupancy by 10% and optimized team performance. Managed training and regional marketing for underperforming units."
             }
           ].map((item, idx) => (
             <div key={idx} className="mb-10 ml-4">
@@ -72,7 +75,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Case Studies */}
+      {/* Case Studies w/ Expandable Details */}
       <motion.section
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -85,37 +88,38 @@ export default function Home() {
           {[
             {
               title: "EHR System Integration",
-              description: "Integrated Electronic Health Record systems with validation scripts and user training.",
-              img: "/images/ehr-system.jpg",
+              short: "Integrated Electronic Health Record systems and trained staff.",
+              details: "Created validation scripts, supported clinical onboarding, and ensured HIPAA compliance during system rollout."
             },
             {
               title: "Agile Workflow Optimization",
-              description: "Improved sprint velocity and reduced rework across Agile teams.",
-              img: "/images/agile-workflow.jpg",
+              short: "Improved sprint velocity and reduced Agile process rework.",
+              details: "Conducted retrospectives and cross-team feedback loops. Led sessions on Jira hygiene and process enhancements."
             },
             {
               title: "Workflow Automation",
-              description: "Automated financial operations to increase QA pass rates and efficiency.",
-              img: "/images/workflow-automation.jpg",
+              short: "Streamlined financial processes to reduce manual effort.",
+              details: "Built automation for portfolio management, reducing processing time by 40% while increasing QA pass rate to 98%."
             },
             {
               title: "Property Reporting Enhancements",
-              description: "Developed custom reports like rent rolls and occupancy tools.",
-              img: "/images/property-reporting.jpg",
+              short: "Developed dynamic reports and improved compliance tracking.",
+              details: "Created dashboards for occupancy, rent rolls, and renewals. Integrated external vendor feeds into BI reports."
             }
-          ].map((study, i) => (
-            <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-              <Image
-                src={study.img}
-                alt={study.title}
-                width={600}
-                height={300}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{study.title}</h3>
-                <p className="text-gray-600">{study.description}</p>
-              </div>
+          ].map((cs, i) => (
+            <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden transition hover:scale-[1.02]">
+              <button
+                className="w-full text-left p-6 focus:outline-none"
+                onClick={() => setExpanded(expanded === i ? null : i)}
+              >
+                <h3 className="text-xl font-semibold mb-2">{cs.title}</h3>
+                <p className="text-gray-600">{cs.short}</p>
+              </button>
+              {expanded === i && (
+                <div className="px-6 pb-6 text-gray-700 text-sm border-t border-gray-200">
+                  {cs.details}
+                </div>
+              )}
             </div>
           ))}
         </div>
