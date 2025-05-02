@@ -1,42 +1,38 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Button from "@/components/button";
-import HydratedContent from "@/components/HydratedContent";
+'use client';
+import { motion } from 'framer-motion';
+import Button from '@/components/button';
+import HydratedContent from '@/components/HydratedContent';
 
 export default function Home() {
-  const sectionFade = {
-    initial: { opacity: 0, y: 30 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 },
-    viewport: { once: true },
-  };
-
   return (
-    <main className="bg-light text-dark dark:bg-dark dark:text-white font-sans px-6 md:px-24 py-16">
+    <main className="bg-light text-dark font-sans px-4 md:px-20 py-16 space-y-32">
       {/* Hero Section */}
       <motion.section
-        {...sectionFade}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
         className="min-h-screen flex flex-col justify-center items-center text-center"
       >
-        <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-6">
-          Yackob Tamire
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mb-10 leading-relaxed">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">Yackob Tamire</h1>
+        <p className="text-lg md:text-2xl text-gray-700 max-w-2xl mb-10 leading-relaxed">
           Certified Scrum Master and Business Analyst with 5+ years experience across FinTech, Healthcare, and Real Estate.
         </p>
-        <div className="flex gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row gap-4 mb-6">
           <a href="/YT.pdf" download><Button>Resume</Button></a>
           <a href="https://www.linkedin.com/in/yackob-tamire/" target="_blank" rel="noopener noreferrer"><Button>LinkedIn</Button></a>
         </div>
-        <span className="text-sm text-gray-500 dark:text-gray-400">
-          <HydratedContent />
-        </span>
+        <span className="text-sm text-gray-500"><HydratedContent /></span>
       </motion.section>
 
-      {/* Experience Timeline */}
-      <motion.section {...sectionFade} className="py-28">
-        <h2 className="text-3xl font-bold text-center mb-16">Experience</h2>
+      {/* Experience Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="py-20"
+      >
+        <h2 className="text-3xl font-bold text-center mb-12">Experience</h2>
         <div className="max-w-4xl mx-auto border-l border-primary pl-6 relative">
           {[
             {
@@ -68,16 +64,22 @@ export default function Home() {
             <div key={idx} className="mb-10 ml-4">
               <div className="absolute w-4 h-4 bg-primary rounded-full -left-2.5 top-1.5"></div>
               <h3 className="text-xl font-semibold">{item.company}</h3>
-              <span className="text-sm text-gray-500 dark:text-gray-400">{item.role}</span>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">{item.desc}</p>
+              <span className="text-sm text-gray-500">{item.role}</span>
+              <p className="mt-2 text-gray-600">{item.desc}</p>
             </div>
           ))}
         </div>
       </motion.section>
 
       {/* Case Studies */}
-      <motion.section {...sectionFade} className="py-24">
-        <h2 className="text-3xl font-bold text-center mb-16">Case Studies</h2>
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="py-20"
+      >
+        <h2 className="text-3xl font-bold text-center mb-12">Case Studies</h2>
         <div className="grid md:grid-cols-2 gap-10">
           {[
             {
@@ -106,38 +108,44 @@ export default function Home() {
               img: "/images/leasing-operations.jpg",
             },
           ].map((study, i) => (
-            <div key={i} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+            <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
               <img src={study.img} alt={study.title} className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{study.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{study.description}</p>
+                <p className="text-gray-600">{study.description}</p>
               </div>
             </div>
           ))}
         </div>
       </motion.section>
 
-      {/* Testimonials */}
-      <motion.section {...sectionFade} className="py-24 bg-secondary dark:bg-[#111] text-center">
+      {/* Testimonials as image cards */}
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="py-24 bg-secondary text-center"
+      >
         <h2 className="text-3xl font-bold mb-12">Testimonials</h2>
-        <div className="max-w-3xl mx-auto space-y-10 text-lg text-gray-800 dark:text-gray-300 italic">
-          <blockquote>
-            “Yackob streamlined complex EHR workflows with ease. Outstanding partnership.”
-            <br /><span className="block text-sm not-italic mt-2 text-gray-600 dark:text-gray-400">– Director, DS Technologies</span>
-          </blockquote>
-          <blockquote>
-            “Our sprint velocity improvements were directly tied to Yackob’s facilitation.”
-            <br /><span className="block text-sm not-italic mt-2 text-gray-600 dark:text-gray-400">– Scrum Master, CACI</span>
-          </blockquote>
-          <blockquote>
-            “Yackob’s workflow automations saved us significant manual effort.”
-            <br /><span className="block text-sm not-italic mt-2 text-gray-600 dark:text-gray-400">– Manager, Spectrum Financial</span>
-          </blockquote>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+          {[
+            "/images/testimonial-bg-1.jpg",
+            "/images/testimonial-bg-2.jpg",
+            "/images/testimonial-bg-3.jpg"
+          ].map((imgPath, i) => (
+            <div
+              key={i}
+              className="rounded-xl overflow-hidden shadow-lg"
+            >
+              <img src={imgPath} alt={`Testimonial ${i + 1}`} className="w-full h-80 object-cover" />
+            </div>
+          ))}
         </div>
       </motion.section>
 
       {/* Footer */}
-      <footer className="text-center text-gray-400 dark:text-gray-500 text-sm mt-20">
+      <footer className="text-center text-gray-400 text-sm mt-20">
         © 2025 Yackob Tamire. All rights reserved.
       </footer>
     </main>
