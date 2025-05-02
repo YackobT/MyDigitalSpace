@@ -1,17 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class', // 👈 Enable class-based dark mode
+  darkMode: 'class',
   content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/app/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
       colors: {
         primary: '#0077B6',
-        secondary: '#F9F9F9',
-        tertiary: '#023E8A',
+        secondary: '#F1F5F9',
         dark: '#03045E',
-        light: '#F8FAFC',
+        light: '#F8FAFC'
       },
     },
   },
