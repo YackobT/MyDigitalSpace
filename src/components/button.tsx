@@ -1,6 +1,14 @@
-export default function Button({ children }: { children: React.ReactNode }) {
+// src/components/button.tsx
+type ButtonProps = {
+  children: React.ReactNode;
+  className?: string;
+};
+
+export default function Button({ children, className = '' }: ButtonProps) {
   return (
-    <button className="px-6 py-2 rounded-full font-semibold bg-blue-600 text-white hover:bg-blue-700 transition">
+    <button
+      className={`bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-full font-medium transition hover:scale-105 ${className}`}
+    >
       {children}
     </button>
   );
