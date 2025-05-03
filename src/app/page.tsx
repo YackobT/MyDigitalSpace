@@ -7,18 +7,21 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="bg-white text-black dark:bg-black dark:text-white font-sans">
+    <main className="bg-white text-black dark:bg-black dark:text-white font-sans relative">
       {/* Sticky Nav Bar */}
-      <nav className="fixed top-0 left-0 w-full bg-white/80 dark:bg-black/80 backdrop-blur-md z-50 shadow px-6 py-4 flex justify-center gap-8 text-sm md:text-base">
-        <a href="#about" className="hover:underline">About</a>
-        <a href="#experience" className="hover:underline">Resume</a>
-        <a href="#projects" className="hover:underline">Projects</a>
-        <a href="#contact" className="hover:underline">Contact</a>
+      <nav className="fixed top-0 left-0 w-full bg-white/80 dark:bg-black/80 backdrop-blur-md z-50 shadow px-6 py-4 flex justify-between items-center text-sm md:text-base">
+        <Image src="/images/logo-yt.png" alt="YT Logo" width={50} height={50} className="ml-2" />
+        <div className="flex gap-6">
+          <a href="#about" className="hover:underline">About</a>
+          <a href="#experience" className="hover:underline">Resume</a>
+          <a href="#projects" className="hover:underline">Projects</a>
+          <a href="#testimonials" className="hover:underline">Testimonials</a>
+          <a href="#contact" className="hover:underline">Contact</a>
+        </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center pt-24" style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}>
-        <Image src="/images/logo-yt.png" alt="YT Logo" width={80} height={80} className="absolute top-6 left-6" />
+      <section className="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center pt-32" style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}>
         <h1 className="text-5xl md:text-7xl font-bold mb-4">Yackob Tamire</h1>
         <p className="text-xl md:text-2xl mb-6 max-w-xl">Certified Scrum Master & Business Analyst with cross-industry experience.</p>
         <div className="flex gap-4">
@@ -57,6 +60,22 @@ export default function Home() {
               <li>Created business requirements and worked closely with dev teams</li>
             </ul>
           </div>
+          <div>
+            <h3 className="text-xl font-bold">Spectrum Financial</h3>
+            <ul className="list-disc ml-6 mt-2">
+              <li>Automated finance workflows to improve QA pass rates by 25%</li>
+              <li>Maintained data integrity for loan origination tools</li>
+              <li>Provided insight dashboards for portfolio performance</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold">CIM Group</h3>
+            <ul className="list-disc ml-6 mt-2">
+              <li>Supported lease operations for 500+ multi-unit properties</li>
+              <li>Improved reporting tools like rent roll and renewal trackers</li>
+              <li>Handled third-party system integrations and vendor coordination</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -64,11 +83,30 @@ export default function Home() {
       <section id="projects" className="py-24 px-6 md:px-24 bg-gray-100 dark:bg-zinc-900">
         <h2 className="text-3xl font-semibold text-center mb-12">Case Studies</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {['workflow-automation.jpg', 'leasing-operations.jpg', 'ehr-system.jpg', 'property-reporting.jpg'].map((src, idx) => (
+          {['workflow-automation.jpg', 'leasing-operations.jpg', 'ehr-system.jpg', 'property-reporting.jpg', 'agile-workflow.jpg'].map((src, idx) => (
             <div key={idx} className="rounded-lg overflow-hidden shadow-md">
               <Image src={`/images/${src}`} alt="Project Image" width={600} height={400} className="w-full h-auto" />
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-24 px-6 md:px-24 text-center">
+        <h2 className="text-3xl font-semibold mb-12">What People Say</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-white dark:bg-zinc-800 rounded-xl p-6 shadow">
+            <p className="italic">“Yackob brought clarity and structure to our workflows in record time.”</p>
+            <p className="mt-4 font-semibold">— Project Manager, Healthcare Startup</p>
+          </div>
+          <div className="bg-white dark:bg-zinc-800 rounded-xl p-6 shadow">
+            <p className="italic">“His dashboards gave leadership real-time visibility we lacked before.”</p>
+            <p className="mt-4 font-semibold">— Director of Finance, Spectrum</p>
+          </div>
+          <div className="bg-white dark:bg-zinc-800 rounded-xl p-6 shadow">
+            <p className="italic">“He’s a go-to resource for anything involving models or requirements.”</p>
+            <p className="mt-4 font-semibold">— Product Owner, Freddie Mac</p>
+          </div>
         </div>
       </section>
 
