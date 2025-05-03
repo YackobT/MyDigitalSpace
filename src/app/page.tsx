@@ -52,13 +52,41 @@ export default function Home() {
       <section id="projects" className="py-24 px-6 md:px-24 bg-gray-50 dark:bg-zinc-800">
         <h2 className="text-4xl font-bold text-center mb-16">Case Studies</h2>
         <div className="grid md:grid-cols-2 gap-10">
-          <a href="/projects/property-reporting" className="block bg-white dark:bg-zinc-700 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition">
-            <Image src="/images/property-reporting.jpg" alt="Property Reporting" width={800} height={600} className="w-full object-cover h-48" />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">Property Management Reporting System</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">Automated reporting and dashboards for real estate operations.</p>
-            </div>
-          </a>
+          {[
+            {
+              title: 'Property Management Reporting System',
+              image: 'property-reporting.jpg',
+              desc: 'Automated reporting and dashboards for real estate operations.'
+            },
+            {
+              title: 'Workflow Automation Platform',
+              image: 'workflow-automation.jpg',
+              desc: 'Streamlined business processes through custom automation tools.'
+            },
+            {
+              title: 'Agile Workflow Deployment',
+              image: 'agile-workflow.jpg',
+              desc: 'Rolled out agile frameworks across distributed product teams.'
+            },
+            {
+              title: 'Electronic Health Record (EHR) Integration',
+              image: 'ehr-system.jpg',
+              desc: 'Integrated EHRs into legacy platforms improving clinic throughput.'
+            },
+            {
+              title: 'Leasing Operations Strategy',
+              image: 'leasing-operations.jpg',
+              desc: 'Optimized leasing processes using dashboards and reporting.'
+            }
+          ].map((project, i) => (
+            <a key={i} href={`#${project.title.replace(/\s+/g, '-').toLowerCase()}`} className="block bg-white dark:bg-zinc-700 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition">
+              <Image src={`/images/${project.image}`} alt={project.title} width={800} height={600} className="w-full object-cover h-48" />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{project.desc}</p>
+              </div>
+            </a>
+          ))}
         </div>
       </section>
 
