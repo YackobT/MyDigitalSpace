@@ -21,120 +21,66 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center text-center bg-cover bg-center pt-48 pb-20 px-4 transition-all duration-500 ease-in-out" style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}>
-        <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="bg-white/70 dark:bg-zinc-800/80 backdrop-blur-md rounded-[2rem] px-10 py-12 shadow-2xl max-w-4xl w-full border border-gray-300 dark:border-zinc-700">
-          <h1 className="text-6xl md:text-7xl font-extrabold tracking-tighter mb-6 text-black dark:text-white leading-[1.1]">Yackob Tamire</h1>
-          <p className="text-lg md:text-2xl mb-10 text-gray-700 dark:text-gray-300 leading-relaxed">
-            Certified Scrum Master & Business Analyst with 5+ years of experience in FinTech, Real Estate, and Healthcare. I help teams transform ideas into scalable, user-centered solutions.
-          </p>
-          <div className="flex flex-wrap justify-center gap-6">
-            <a href="/YT.pdf" download>
-              <Button className="text-base px-6 py-3 rounded-full shadow hover:scale-105 transition">Download CV</Button>
-            </a>
-            <a href="#contact">
-              <Button className="text-base px-6 py-3 rounded-full shadow hover:scale-105 transition">Let’s Connect</Button>
-            </a>
+      <section id="about" className="pt-40 pb-20 px-6 md:px-24 flex flex-col md:flex-row items-center justify-between bg-white dark:bg-zinc-900">
+        <div className="bg-zinc-100 dark:bg-zinc-800 p-6 rounded-lg shadow-lg text-center md:w-1/3">
+          <div className="rounded-full overflow-hidden w-40 h-40 mx-auto mb-4">
+            <Image src="/images/hero-bg.jpg" alt="Yackob Tamire" width={160} height={160} />
           </div>
-        </motion.div>
-        <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 2 }} className="absolute bottom-10 text-black dark:text-white opacity-60">↓</motion.div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-32 px-6 md:px-24 text-center">
-        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6">About Me</h2>
-          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-            I’m a data-driven Business Analyst and Certified Scrum Master who’s led cross-functional teams to deliver high-impact products in finance, healthcare, and real estate. Known for translating business needs into clean, actionable requirements and building workflows that scale.
+          <h1 className="text-2xl font-bold mb-2">Yackob Tamire</h1>
+          <hr className="border-primary w-8 mx-auto my-2" />
+          <p className="uppercase text-xs tracking-widest">Business Analyst</p>
+          <div className="mt-4 flex justify-center gap-4">
+            <a href="https://www.linkedin.com/in/yackob-tamire/" target="_blank"><i className="fab fa-linkedin"></i></a>
+            <a href="https://github.com/YackobT" target="_blank"><i className="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div className="md:w-2/3 mt-10 md:mt-0 md:pl-20">
+          <h2 className="text-5xl md:text-6xl font-bold mb-4">Hello</h2>
+          <p className="text-xl mb-6">Here's who I am & what I do</p>
+          <div className="flex gap-4 mb-8">
+            <a href="/YT.pdf" download><Button className="text-base px-6 py-3 rounded-full shadow hover:scale-105 transition">RESUME</Button></a>
+            <a href="#projects"><Button className="text-base px-6 py-3 rounded-full border border-black dark:border-white hover:scale-105 transition">PROJECTS</Button></a>
+          </div>
+          <p className="text-sm md:text-base text-gray-700 dark:text-gray-300">
+            I'm a Business Analyst with 5+ years of experience across FinTech, Healthcare, and Real Estate.
+            I enjoy creating intuitive digital solutions and aligning technical strategies with business goals.
           </p>
+        </div>
+      </section>
+
+      {/* Case Study Preview */}
+      <section id="projects" className="py-24 px-6 md:px-24 bg-gray-50 dark:bg-zinc-800">
+        <h2 className="text-4xl font-bold text-center mb-16">Case Studies</h2>
+        <div className="grid md:grid-cols-2 gap-10">
+          <a href="/projects/property-reporting" className="block bg-white dark:bg-zinc-700 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition">
+            <Image src="/images/property-reporting.jpg" alt="Property Reporting" width={800} height={600} className="w-full object-cover h-48" />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">Property Management Reporting System</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Automated reporting and dashboards for real estate operations.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-32 px-6 md:px-24 text-center bg-white dark:bg-zinc-800">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6">Let’s Work Together</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-10">
+            Want to collaborate on a project or explore how I can help your team succeed? I'm open to freelance, contract, or full-time opportunities.
+          </p>
+          <a href="mailto:yackobtamire@gmail.com">
+            <Button className="px-8 py-4 text-base rounded-full shadow-lg hover:scale-105 transition">
+              Email Me
+            </Button>
+          </a>
         </motion.div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-32 px-6 md:px-24 bg-gray-50 dark:bg-zinc-900">
-        <h2 className="text-4xl font-bold text-center mb-16">Professional Experience</h2>
-        <div className="grid gap-16 max-w-4xl mx-auto">
-          {[
-            {
-              company: 'DS Technologies Inc',
-              role: 'Integration Business Analyst',
-              bullets: [
-                'Led EHR system integrations for multi-site clinics.',
-                'Created user manuals that improved training efficiency by 40%.',
-                'Collaborated with clinical and compliance teams to ensure HIPAA alignment.'
-              ]
-            },
-            {
-              company: 'CACI',
-              role: 'Business Analyst',
-              bullets: [
-                'Reduced sprint rework by 30% by improving Agile backlog processes.',
-                'Facilitated refinement, planning, and review ceremonies.',
-                'Created business requirements and worked closely with dev teams.'
-              ]
-            },
-            {
-              company: 'Spectrum Financial',
-              role: 'Business Systems Analyst',
-              bullets: [
-                'Automated finance workflows to improve QA pass rates by 25%.',
-                'Maintained data integrity for loan origination tools.',
-                'Provided insight dashboards for portfolio performance.'
-              ]
-            },
-            {
-              company: 'CIM Group',
-              role: 'Business Systems Support Analyst',
-              bullets: [
-                'Supported lease operations for 500+ multi-unit properties.',
-                'Improved reporting tools like rent roll and renewal trackers.',
-                'Handled third-party system integrations and vendor coordination.'
-              ]
-            }
-          ].map((item, idx) => (
-            <motion.div key={idx} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: idx * 0.2 }} className="text-left">
-              <h3 className="text-2xl font-bold mb-2">{item.company}</h3>
-              <p className="text-md font-semibold text-gray-600 dark:text-gray-300 mb-3">{item.role}</p>
-              <ul className="list-disc ml-6 space-y-2 text-gray-700 dark:text-gray-300">
-                {item.bullets.map((b, i) => <li key={i}>{b}</li>)}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-32 px-6 md:px-24">
-        <h2 className="text-4xl font-bold text-center mb-16">Project Highlights</h2>
-        <div className="grid gap-12 md:grid-cols-2 max-w-6xl mx-auto">
-          {['workflow-automation.jpg', 'leasing-operations.jpg', 'ehr-system.jpg', 'property-reporting.jpg', 'agile-workflow.jpg'].map((img, i) => (
-            <motion.div key={i} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }} className="rounded-xl overflow-hidden shadow-lg bg-white dark:bg-zinc-800">
-              <Image src={`/images/${img}`} alt="Project" width={800} height={600} className="w-full h-auto object-cover" />
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-32 px-6 md:px-24 bg-gray-50 dark:bg-zinc-900 text-center">
-        <h2 className="text-4xl font-bold mb-16">What People Say</h2>
-        <div className="grid gap-8 md:grid-cols-3">
-          {[{
-            quote: "Yackob brought clarity and structure to our workflows in record time.",
-            name: "Project Manager, Healthcare Startup"
-          }, {
-            quote: "His dashboards gave leadership real-time visibility we lacked before.",
-            name: "Director of Finance, Spectrum"
-          }, {
-            quote: "He’s a go-to resource for anything involving models or requirements.",
-            name: "Product Owner, Freddie Mac"
-          }].map((t, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="bg-white dark:bg-zinc-800 rounded-2xl p-6 shadow-md">
-              <p className="italic text-gray-700 dark:text-gray-300">“{t.quote}”</p>
-              <p className="mt-4 font-semibold text-gray-800 dark:text-white">— {t.name}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      {/* Footer */}
+      <footer className="py-8 text-center text-sm text-gray-600 dark:text-gray-400">
+        © {new Date().getFullYear()} Yackob Tamire. Built with ❤️ using Next.js & Tailwind CSS.
+      </footer>
     </main>
   );
 }
