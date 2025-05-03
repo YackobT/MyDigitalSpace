@@ -44,13 +44,13 @@ export default function Home() {
         </div>
         <div className="md:w-2/3 mt-10 md:mt-0 md:pl-20">
           <h2 className="text-5xl font-bold mb-4">Hello</h2>
-          <p className="text-xl mb-6">Here's who I am & what I do</p>
+          <p className="text-xl mb-6">Here&#39;s who I am &amp; what I do</p>
           <div className="flex gap-4 mb-8">
             <a href="/YT.pdf" download><Button>RESUME</Button></a>
             <a href="#projects"><Button>PROJECTS</Button></a>
           </div>
           <p className="text-sm text-gray-700 dark:text-gray-300">
-            I'm a Business Analyst with 5+ years of experience across FinTech, Healthcare, and Real Estate.
+            I&#39;m a Business Analyst with 5+ years of experience across FinTech, Healthcare, and Real Estate.
           </p>
         </div>
       </section>
