@@ -36,13 +36,13 @@ export default function Home() {
         </div>
         <div className="md:w-2/3 mt-10 md:mt-0 md:pl-20">
           <h2 className="text-5xl md:text-6xl font-bold mb-4">Hello</h2>
-          <p className="text-xl mb-6">Here's who I am & what I do</p>
+          <p className="text-xl mb-6">Here&apos;s who I am &amp; what I do</p>
           <div className="flex gap-4 mb-8">
             <a href="/YT.pdf" download><Button className="text-base px-6 py-3 rounded-full shadow hover:scale-105 transition">RESUME</Button></a>
             <a href="#projects"><Button className="text-base px-6 py-3 rounded-full border border-black dark:border-white hover:scale-105 transition">PROJECTS</Button></a>
           </div>
           <p className="text-sm md:text-base text-gray-700 dark:text-gray-300">
-            I'm a Business Analyst with 5+ years of experience across FinTech, Healthcare, and Real Estate.
+            I&apos;m a Business Analyst with 5+ years of experience across FinTech, Healthcare, and Real Estate.
             I enjoy creating intuitive digital solutions and aligning technical strategies with business goals.
           </p>
         </div>
@@ -65,9 +65,9 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-32 px-6 md:px-24 text-center bg-white dark:bg-zinc-800">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6">Let’s Work Together</h2>
+          <h2 className="text-4xl font-bold mb-6">Let&apos;s Work Together</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-10">
-            Want to collaborate on a project or explore how I can help your team succeed? I'm open to freelance, contract, or full-time opportunities.
+            Want to collaborate on a project or explore how I can help your team succeed? I&apos;m open to freelance, contract, or full-time opportunities.
           </p>
           <a href="mailto:yackobtamire@gmail.com">
             <Button className="px-8 py-4 text-base rounded-full shadow-lg hover:scale-105 transition">
