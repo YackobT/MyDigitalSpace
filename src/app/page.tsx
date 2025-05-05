@@ -36,8 +36,8 @@ export default function Home() {
       )}
 
       <section id="hero" className="pt-36 text-center relative z-10">
-        <h1 className="text-4xl md:text-6xl font-bold text-[#FF00FF] animate-pulse glitch">&gt; Hi, I&apos;m Yackob</h1>
-        <p className="text-lg md:text-xl mt-4 text-gray-300">Certified Business Analyst &amp; Scrum Master driving digital transformation</p>
+        <h1 className="text-4xl md:text-6xl font-bold text-[#FF00FF] animate-pulse glitch">&gt; Hi, I'm Yackob</h1>
+        <p className="text-lg md:text-xl mt-4 text-gray-300">Certified Business Analyst & Scrum Master driving digital transformation</p>
         <div className="mt-6 flex justify-center gap-4">
           <a href="/YT.pdf" download><Button>View Resume</Button></a>
           <a href="#projects"><Button>Explore Projects</Button></a>
@@ -86,9 +86,15 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-center text-cyan-400">&gt; Projects</h2>
         <div className="mt-12 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[1, 2, 3, 4, 5].map((id) => (
-            <Link href={`/projects/${id}`} key={id} className="bg-[#252526] p-6 rounded-md border border-cyan-500 hover:scale-105 transition shadow-md">
-              <h3 className="text-xl font-semibold text-[#00FFFF]">Project {id}</h3>
-              <p className="text-gray-400 mt-2 text-sm">Click to view detailed case study</p>
+            <Link
+              href={`/projects/${id}`}
+              key={id}
+              className="bg-[#1E1E1E] border border-[#00FFFF] p-6 rounded-md shadow-md hover:scale-105 transition-transform duration-300"
+            >
+              <div className="text-[#00FF00] text-sm">Project {id}</div>
+              <h3 className="text-xl font-semibold text-white mt-1">Project Title {id}</h3>
+              <p className="text-gray-400 mt-2 text-sm">Brief description with Matrix-style terminal card.</p>
+              <span className="text-cyan-400 text-xs mt-2 block">Click to view details</span>
             </Link>
           ))}
         </div>
@@ -99,15 +105,15 @@ export default function Home() {
         <div className="mt-10 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="bg-[#252526] border border-green-500 p-4 rounded-md shadow-md">
-              <p className="italic text-gray-300">&quot;Yackob consistently delivers results and helps drive the team forward.&quot;</p>
-              <span className="block text-right mt-2 text-sm text-green-300">&mdash; Colleague {i + 1}</span>
+              <p className="italic text-gray-300">"Yackob consistently delivers results and helps drive the team forward."</p>
+              <span className="block text-right mt-2 text-sm text-green-300">— Colleague {i + 1}</span>
             </div>
           ))}
         </div>
       </section>
 
       <footer id="contact" className="py-10 text-center text-sm text-gray-500 relative z-10">
-        <p>&copy; {new Date().getFullYear()} Yackob Tamire. Built with Next.js &amp; Tailwind CSS.</p>
+        <p>&copy; {new Date().getFullYear()} Yackob Tamire. Built with Next.js & Tailwind CSS.</p>
         <p>Contact: <a href="mailto:yackob@example.com" className="text-cyan-400 hover:underline">yackob@example.com</a></p>
       </footer>
     </main>
