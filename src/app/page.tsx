@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Button from '../components/button';
+import Link from 'next/link';
 
-export default function TerminalPortfolio() {
+export default function Home() {
   const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
@@ -14,72 +14,63 @@ export default function TerminalPortfolio() {
   }, []);
 
   return (
-    <main className="bg-[#1E1E1E] text-white font-mono min-h-screen">
-      {/* Sticky Terminal Nav */}
-      <nav className="fixed top-0 left-0 w-full bg-[#2D2D2D] z-50 px-6 py-4 flex justify-between border-b border-zinc-700">
-        <span className="text-[#00FFFF]">~/portfolio</span>
-        <div className="space-x-6 text-sm">
-          <a href="#home" className="hover:underline">&gt; Home</a>
-          <a href="#projects" className="hover:underline">&gt; Projects</a>
-          <a href="#about" className="hover:underline">&gt; About</a>
-          <a href="#contact" className="hover:underline">&gt; Contact</a>
+    <main className="bg-[#1E1E1E] text-white font-mono min-h-screen px-6 md:px-24 py-16 relative">
+      <nav className="fixed top-0 left-0 w-full bg-[#2D2D2D] px-6 py-4 z-50 flex justify-between items-center border-b border-gray-700">
+        <span className="text-green-400">&gt; Yackob Tamire</span>
+        <div className="flex gap-6 text-sm md:text-base">
+          <a href="#hero" className="hover:text-cyan-400 transition">&gt; Home</a>
+          <a href="#projects" className="hover:text-purple-400 transition">&gt; Projects</a>
+          <a href="#contact" className="hover:text-green-400 transition">&gt; Contact</a>
         </div>
       </nav>
 
-      {/* Scroll to top */}
+      {/* Scroll to top button */}
       {showScroll && (
         <button
-          className="fixed bottom-6 right-6 bg-[#00FFFF] text-black rounded-full px-4 py-2 text-sm font-bold hover:scale-105 transition"
+          className="fixed bottom-6 right-6 bg-cyan-500 text-black rounded-full p-3 shadow-md hover:scale-105"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          ↑ Top
+          ↑
         </button>
       )}
 
-      {/* Hero Section */}
-      <section id="home" className="pt-32 text-center py-24 px-6">
-        <h1 className="text-5xl font-bold text-[#00FFFF] animate-pulse">Hi, I'm [Your Name]</h1>
-        <p className="mt-4 text-lg text-gray-300">Building sleek, modern web experiences</p>
-        <Link href="#projects" className="inline-block mt-8 px-6 py-2 border border-[#00FFFF] text-[#00FFFF] rounded hover:bg-[#00FFFF] hover:text-black transition">
-          View Projects
-        </Link>
+      {/* Hero */}
+      <section id="hero" className="pt-36 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold text-cyan-400 animate-pulse">Hi, I&apos;m Yackob</h1>
+        <p className="text-lg md:text-xl mt-4 text-gray-300">Building sleek, modern web experiences</p>
+        <div className="mt-6 flex justify-center gap-4">
+          <a href="/YT.pdf" download><Button>View Resume</Button></a>
+          <a href="#projects"><Button>View Projects</Button></a>
+        </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-24 px-6 max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl text-[#FF00FF] font-semibold mb-4">&gt; About</h2>
-        <p className="text-gray-400">
-          I'm a [Your Role] passionate about building accessible, fast, and modern digital products.
-          I specialize in stakeholder collaboration, workflow design, and Agile delivery.
-        </p>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-24 px-6 bg-[#2D2D2D]">
-        <h2 className="text-3xl text-[#00FF00] font-semibold text-center mb-12">&gt; Featured Projects</h2>
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="bg-[#1E1E1E] border border-zinc-700 p-6 rounded shadow-sm hover:shadow-lg transition">
-              <h3 className="text-xl font-bold text-[#00FF00] mb-2">Project Name</h3>
-              <p className="text-gray-300 text-sm mb-2">Brief project description (1-2 sentences)</p>
-              <p className="text-xs text-gray-500 mb-4">Tech Stack: React, Tailwind CSS, Node.js</p>
-              <div className="flex gap-4 text-sm">
-                <a href="#" className="underline hover:text-[#00FFFF]">Live Demo</a>
-                <a href="#" className="underline hover:text-[#00FFFF]">GitHub</a>
-              </div>
+      {/* Projects */}
+      <section id="projects" className="py-24">
+        <h2 className="text-3xl font-bold text-center text-purple-400 mb-12">Featured Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-[#2D2D2D] border border-gray-700 p-6 rounded-lg hover:shadow-lg">
+            <h3 className="text-xl text-cyan-400 mb-2">Project One</h3>
+            <p className="text-gray-300 mb-2">A short description about the first project.</p>
+            <p className="text-sm text-gray-500">Tech Stack: React, Tailwind CSS, Vercel</p>
+            <div className="mt-4 text-sm text-green-400">
+              <a href="/projects/1" className="hover:underline">More Details &gt;</a>
             </div>
-          ))}
+          </div>
+          <div className="bg-[#2D2D2D] border border-gray-700 p-6 rounded-lg hover:shadow-lg">
+            <h3 className="text-xl text-cyan-400 mb-2">Project Two</h3>
+            <p className="text-gray-300 mb-2">A short description about the second project.</p>
+            <p className="text-sm text-gray-500">Tech Stack: Next.js, MongoDB</p>
+            <div className="mt-4 text-sm text-green-400">
+              <a href="/projects/2" className="hover:underline">More Details &gt;</a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 text-center">
-        <h2 className="text-3xl text-[#FF00FF] font-semibold mb-6">&gt; Contact</h2>
-        <p className="text-gray-300 mb-4">Reach out via:</p>
-        <div className="text-sm text-gray-400 space-y-2">
-          <p>Email: <a href="mailto:your@email.com" className="text-[#00FFFF] hover:underline">your@email.com</a></p>
-          <p>GitHub: <a href="https://github.com/yourhandle" className="text-[#00FFFF] hover:underline">@yourhandle</a></p>
-          <p>LinkedIn: <a href="https://linkedin.com/in/yourhandle" className="text-[#00FFFF] hover:underline">yourhandle</a></p>
-        </div>
+      {/* Contact */}
+      <section id="contact" className="py-24 text-center">
+        <h2 className="text-3xl font-bold text-cyan-400 mb-4">Contact</h2>
+        <p className="text-gray-400 mb-2">Let&apos;s connect:</p>
+        <a href="mailto:yackob.tamire@gmail.com" className="text-purple-300 hover:underline">yackob.tamire@gmail.com</a>
       </section>
     </main>
   );
