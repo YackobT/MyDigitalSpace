@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import Button from '../components/button';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Home() {
   const [showScroll, setShowScroll] = useState(false);
@@ -37,8 +36,8 @@ export default function Home() {
       )}
 
       <section id="hero" className="pt-36 text-center relative z-10">
-        <h1 className="text-4xl md:text-6xl font-bold text-[#FF00FF] animate-pulse glitch">&gt; Hi, I'm Yackob</h1>
-        <p className="text-lg md:text-xl mt-4 text-gray-300">Certified Business Analyst & Scrum Master driving digital transformation</p>
+        <h1 className="text-4xl md:text-6xl font-bold text-[#FF00FF] animate-pulse glitch">&gt; Hi, I&apos;m Yackob</h1>
+        <p className="text-lg md:text-xl mt-4 text-gray-300">Certified Business Analyst &amp; Scrum Master driving digital transformation</p>
         <div className="mt-6 flex justify-center gap-4">
           <a href="/YT.pdf" download><Button>View Resume</Button></a>
           <a href="#projects"><Button>Explore Projects</Button></a>
@@ -100,15 +99,15 @@ export default function Home() {
         <div className="mt-10 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="bg-[#252526] border border-green-500 p-4 rounded-md shadow-md">
-              <p className="italic text-gray-300">"Yackob consistently delivers results and helps drive the team forward."</p>
-              <span className="block text-right mt-2 text-sm text-green-300">— Colleague {i + 1}</span>
+              <p className="italic text-gray-300">&quot;Yackob consistently delivers results and helps drive the team forward.&quot;</p>
+              <span className="block text-right mt-2 text-sm text-green-300">&mdash; Colleague {i + 1}</span>
             </div>
           ))}
         </div>
       </section>
 
       <footer id="contact" className="py-10 text-center text-sm text-gray-500 relative z-10">
-        <p>&copy; {new Date().getFullYear()} Yackob Tamire. Built with Next.js & Tailwind CSS.</p>
+        <p>&copy; {new Date().getFullYear()} Yackob Tamire. Built with Next.js &amp; Tailwind CSS.</p>
         <p>Contact: <a href="mailto:yackob@example.com" className="text-cyan-400 hover:underline">yackob@example.com</a></p>
       </footer>
     </main>
