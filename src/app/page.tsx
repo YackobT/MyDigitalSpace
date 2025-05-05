@@ -84,13 +84,20 @@ export default function Home() {
       <section id="projects" className="py-24">
         <h2 className="text-3xl font-bold text-center text-purple-400 mb-12">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {['Project One', 'Project Two', 'Project Three', 'Project Four', 'Project Five'].map((title, i) => (
-            <div key={i} className="bg-[#2D2D2D] border border-gray-700 p-6 rounded-lg hover:shadow-lg">
-              <h3 className="text-xl text-cyan-400 mb-2">{title}</h3>
-              <p className="text-gray-300 mb-2">Description of {title}.</p>
-              <p className="text-sm text-gray-500">Tech Stack: React, Tailwind CSS</p>
+          <Link href="/projects/project-1">
+            <div className="bg-[#2D2D2D] border border-gray-700 p-6 rounded-lg hover:shadow-lg cursor-pointer">
+              <h3 className="text-xl text-cyan-400 mb-2">Workflow Automation System</h3>
+              <p className="text-gray-300 mb-2">Built a tool to track workflows, project deadlines, and team actions.</p>
+              <p className="text-sm text-gray-500">Tech Stack: Excel, SharePoint, Power BI</p>
             </div>
-          ))}
+          </Link>
+          <Link href="/projects/project-2">
+            <div className="bg-[#2D2D2D] border border-gray-700 p-6 rounded-lg hover:shadow-lg cursor-pointer">
+              <h3 className="text-xl text-cyan-400 mb-2">EHR Migration Project</h3>
+              <p className="text-gray-300 mb-2">Led clinic EHR migration project with full data migration and training.</p>
+              <p className="text-sm text-gray-500">Tech Stack: EHR Software, JIRA, Confluence</p>
+            </div>
+          </Link>
         </div>
       </section>
 
