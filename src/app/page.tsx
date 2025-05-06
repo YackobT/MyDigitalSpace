@@ -31,13 +31,14 @@ export default function Home() {
       {showScroll && (
         <button
           className="fixed bottom-6 right-6 bg-cyan-500 text-black rounded-full p-3 shadow-md hover:scale-105 z-50"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           ↑
         </button>
       )}
 
       <section id="hero" className="pt-36 text-center relative z-10">
-        <h1 className="text-4xl md:text-6xl font-bold text-[#FF00FF] animate-pulse glitch">&gt; Hi, I'm Yackob</h1>
+        <h1 className="text-4xl md:text-6xl font-bold text-[#FF00FF] animate-pulse glitch">&gt; Hi, I&apos;m Yackob</h1>
         <p className="text-lg md:text-xl mt-4 text-gray-300">Certified Business Analyst & Scrum Master driving digital transformation</p>
         <div className="mt-6 flex justify-center gap-4">
           <a href="/YT.pdf" download><Button>View Resume</Button></a>
@@ -121,7 +122,7 @@ export default function Home() {
         <div className="mt-10 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="bg-[#252526] border border-[#F5F5DC] p-4 rounded-md shadow-md">
-              <p className="italic text-gray-300">"Yackob consistently delivers results and helps drive the team forward."</p>
+              <p className="italic text-gray-300">&quot;Yackob consistently delivers results and helps drive the team forward.&quot;</p>
               <span className="block text-right mt-2 text-sm text-[#F5F5DC]">— Colleague {i + 1}</span>
             </div>
           ))}
