@@ -39,7 +39,7 @@ export default function Home() {
 
       <section id="hero" className="pt-36 text-center relative z-10">
         <h1 className="text-4xl md:text-6xl font-bold text-[#FF00FF] animate-pulse glitch">&gt; Hi, I&apos;m Yackob</h1>
-        <p className="text-lg md:text-xl mt-4 text-gray-300">Certified Business Analyst & Scrum Master driving digital transformation</p>
+        <p className="text-lg md:text-xl mt-4 text-gray-300">Certified Business Analyst &amp; Scrum Master driving digital transformation</p>
         <div className="mt-6 flex justify-center gap-4">
           <a href="/YT.pdf" download><Button>View Resume</Button></a>
           <a href="#projects"><Button>Explore Projects</Button></a>
@@ -130,7 +130,7 @@ export default function Home() {
       </section>
 
       <footer id="contact" className="py-10 text-center text-sm text-gray-500 relative z-10">
-        <p>&copy; {new Date().getFullYear()} Yackob Tamire. Built with Next.js & Tailwind CSS.</p>
+        <p>&copy; {new Date().getFullYear()} Yackob Tamire. Built with Next.js &amp; Tailwind CSS.</p>
         <p>Contact: <a href="mailto:yackob@example.com" className="text-cyan-400 hover:underline">yackob@example.com</a></p>
       </footer>
     </main>
