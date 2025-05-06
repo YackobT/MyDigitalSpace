@@ -38,7 +38,8 @@ export default function Home() {
       )}
 
       <section id="hero" className="pt-36 text-center relative z-10">
-        <h1 className="text-4xl md:text-6xl font-bold text-[#FF00FF] animate-pulse glitch">&gt; Hi, I&apos;m Yackob</h1>
+        <h1 className="text-6xl md:text-8xl font-bold text-[#FF00FF] animate-pulse glitch">&gt; Hi, I&apos;m Yackob</h1>
+        <div className="w-32 h-32 rounded-full mx-auto mt-6 border-4 border-[#F5F5DC] bg-[#2a2a2a] flex items-center justify-center text-sm text-[#F5F5DC]">Profile Image</div>
         <p className="text-lg md:text-xl mt-4 text-gray-300">Certified Business Analyst &amp; Scrum Master driving digital transformation</p>
         <div className="mt-6 flex justify-center gap-4">
           <a href="/YT.pdf" download><Button>View Resume</Button></a>
@@ -47,7 +48,7 @@ export default function Home() {
       </section>
 
       <section id="experience" className="py-20 relative z-10">
-        <h2 className="text-3xl font-bold text-center text-cyan-400 glitch">&gt; Experience</h2>
+        <h2 className="text-3xl font-bold text-center text-cyan-400 glitch animate-glitch">&gt; Experience</h2>
         <div className="mt-10 max-w-4xl mx-auto space-y-16">
           {[{
             company: 'DS Technologies Inc',
@@ -93,7 +94,7 @@ export default function Home() {
       </section>
 
       <section id="projects" className="py-20 relative z-10">
-        <h2 className="text-3xl font-bold text-center text-cyan-400 glitch">&gt; Projects</h2>
+        <h2 className="text-3xl font-bold text-center text-cyan-400 glitch animate-glitch">&gt; Projects</h2>
         <div className="mt-12 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[1, 2, 3, 4, 5].map((id) => (
             <Link
@@ -118,7 +119,7 @@ export default function Home() {
       </section>
 
       <section id="testimonials" className="py-20 relative z-10">
-        <h2 className="text-3xl font-bold text-center text-[#F5F5DC] glitch">&gt; Testimonials</h2>
+        <h2 className="text-3xl font-bold text-center text-[#F5F5DC] glitch animate-glitch">&gt; Testimonials</h2>
         <div className="mt-10 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="bg-[#252526] border border-[#F5F5DC] p-4 rounded-md shadow-md">
