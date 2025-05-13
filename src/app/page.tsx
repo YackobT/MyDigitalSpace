@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main className="bg-[#1A1A1A] text-white font-mono min-h-screen px-6 md:px-24 py-16 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/images/bg.png')] bg-cover bg-center opacity-10 z-0 glitch-background"></div>
-      <nav className="fixed top-0 left-0 w-full bg-[#252526] px-6 py-4 z-50 flex justify-between items-center border-b border-gray-700">
+      <nav className="fixed top-0 left-0 w-full bg-transparent px-6 py-4 z-50 flex justify-between items-center border-b border-gray-700">
         <Link href="#hero" className="text-[#F5F5DC] hover:text-cyan-300 transition font-bold text-lg">&gt; YT</Link>
         <div className="flex gap-6 text-sm md:text-base">
           <a href="#hero" className="hover:text-cyan-400 transition">&gt; Home</a>
@@ -38,8 +38,8 @@ export default function Home() {
       )}
 
       <section id="hero" className="pt-36 text-center relative z-10">
-        <h1 className="text-6xl md:text-8xl font-bold text-[#FF00FF] animate-pulse glitch">&gt; Hi, I&apos;m Yackob</h1>
-        <div className="w-32 h-32 rounded-full mx-auto mt-6 border-4 border-[#F5F5DC] bg-[#2a2a2a] flex items-center justify-center text-sm text-[#F5F5DC]">Profile Image</div>
+        <h1 className="text-6xl md:text-8xl font-bold text-[#00FF00] animate-glitch matrix-title">&gt; Hi, I&apos;m Yackob</h1>
+        <div className="w-40 h-40 rounded-full mx-auto mt-6 border-4 border-[#F5F5DC] bg-[#2a2a2a] flex items-center justify-center text-sm text-[#F5F5DC]">Profile Image</div>
         <p className="text-lg md:text-xl mt-4 text-gray-300">Certified Business Analyst &amp; Scrum Master driving digital transformation</p>
         <div className="mt-6 flex justify-center gap-4">
           <a href="/YT.pdf" download><Button>View Resume</Button></a>
@@ -100,7 +100,7 @@ export default function Home() {
             <Link
               href={`/projects/${id}`}
               key={id}
-              className="bg-[#1E1E1E] border border-[#00FFFF] p-6 rounded-md shadow-md hover:scale-105 transition-transform duration-300"
+              className="bg-[#1E1E1E] border border-[#00FFFF] p-6 rounded-md shadow-md hover:scale-105 transition-transform duration-300 hover:shadow-cyan-500/50"
             >
               <Image
                 src={`/images/project${id}.png`}
