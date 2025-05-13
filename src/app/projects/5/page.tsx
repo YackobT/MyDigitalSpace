@@ -1,43 +1,55 @@
+'use client'
+
+import React from 'react'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+
 export default function Project5() {
   return (
-    <main className="bg-[#1E1E1E] text-white font-mono px-6 md:px-24 py-16 min-h-screen">
-      <h1 className="text-3xl font-bold text-cyan-400 mb-8">Leasing Operations Redesign</h1>
+    <main className="min-h-screen bg-white dark:bg-zinc-900 text-black dark:text-white py-20 px-6 md:px-20">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="relative w-full h-64 mb-10 rounded-xl overflow-hidden">
+          <Image
+            src="/images/leasing-operations.png"
+            alt="Leasing Operations Optimization"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
 
-      <div className="space-y-6">
-        <section>
-          <h2 className="text-xl font-semibold text-purple-400">Overview</h2>
-          <p>Revamped the leasing process for over 500+ properties, improving tenant experience and internal reporting accuracy.</p>
+        <h1 className="text-4xl font-bold mb-6">Project 5: Leasing Operations Optimization</h1>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold mb-2">Overview</h2>
+          <p>Streamlined leasing processes through automation, tenant data integration, and document tracking.</p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-purple-400">Tools and Technologies</h2>
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold mb-2">Tools and Technologies</h2>
           <ul className="list-disc ml-6">
-            <li>Salesforce</li>
-            <li>SharePoint</li>
-            <li>Excel</li>
+            <li>React</li>
+            <li>Supabase</li>
+            <li>Tailwind CSS</li>
           </ul>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-purple-400">Prerequisites</h2>
-          <p>Access to current lease workflows, user interviews with leasing agents and tenants, baseline tenant feedback scores.</p>
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold mb-2">Prerequisites</h2>
+          <p>Knowledge of property management workflows and lease lifecycle.</p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-purple-400">Step-by-Step Instructions</h2>
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold mb-2">Step-by-Step Instructions</h2>
           <ol className="list-decimal ml-6">
-            <li>Mapped end-to-end lease cycle from inquiry to occupancy.</li>
-            <li>Collected feedback from 30+ tenants and agents.</li>
-            <li>Designed new workflow integrating Salesforce dashboards.</li>
-            <li>Launched pilot in three regions with 95% satisfaction rate.</li>
+            <li>Built unified lease document dashboard.</li>
+            <li>Connected data from tenant CRM.</li>
+            <li>Added signature and expiration tracking.</li>
+            <li>Created summary views for property managers.</li>
           </ol>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-purple-400">Expected Outcomes</h2>
-          <p>Improved application-to-lease time by 35%, increased renewal rate, and decreased tenant complaints by 50%.</p>
-        </section>
-      </div>
-    </main>
-  );
-}
+        <sectio

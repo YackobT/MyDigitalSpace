@@ -1,25 +1,27 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
-import Button from '../components/button';
-import Link from 'next/link';
-import Image from 'next/image';
+import { useEffect, useState } from 'react'
+import Button from '../components/button'
+import Link from 'next/link'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 export default function Home() {
-  const [showScroll, setShowScroll] = useState(false);
+  const [showScroll, setShowScroll] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setShowScroll(window.scrollY > 300);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    const handleScroll = () => setShowScroll(window.scrollY > 300)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <main className="bg-[#1A1A1A] text-white font-mono min-h-screen px-6 md:px-24 py-16 relative overflow-hidden">
+    <main className="bg-[#1A1A1A] text-white font-mono min-h-screen px-6 md:px-24 pt-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/images/bg.png')] bg-cover bg-center opacity-10 z-0 glitch-background"></div>
-      <nav className="fixed top-0 left-0 w-full bg-transparent px-6 py-4 z-50 flex justify-between items-center border-b border-gray-700">
+
+      <nav className="fixed top-0 left-0 w-full bg-transparent px-6 py-4 z-50 flex justify-between items-center border-b border-gray-700 backdrop-blur-md">
         <Link href="#hero" className="text-[#F5F5DC] hover:text-cyan-300 transition font-bold text-lg">&gt; YT</Link>
-        <div className="flex gap-6 text-sm md:text-base">
+        <div className="hidden md:flex gap-6 text-sm md:text-base">
           <a href="#hero" className="hover:text-cyan-400 transition">&gt; Home</a>
           <a href="#experience" className="hover:text-purple-400 transition">&gt; Experience</a>
           <a href="#projects" className="hover:text-purple-400 transition">&gt; Projects</a>
@@ -37,17 +39,39 @@ export default function Home() {
         </button>
       )}
 
-      <section id="hero" className="pt-36 text-center relative z-10">
+      <motion.section
+        id="hero"
+        className="text-center relative z-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <h1 className="text-6xl md:text-8xl font-bold text-[#00FF00] animate-glitch matrix-title">&gt; Hi, I&apos;m Yackob</h1>
-        <div className="w-40 h-40 rounded-full mx-auto mt-6 border-4 border-[#F5F5DC] bg-[#2a2a2a] flex items-center justify-center text-sm text-[#F5F5DC]">Profile Image</div>
+        <div className="mt-6 mx-auto w-40 h-40 rounded-full overflow-hidden border-4 border-[#F5F5DC]">
+          <Image
+            src="/images/profile.jpg"
+            alt="Yackob Tamire"
+            width={160}
+            height={160}
+            className="object-cover w-full h-full"
+          />
+        </div>
         <p className="text-lg md:text-xl mt-4 text-gray-300">Certified Business Analyst &amp; Scrum Master driving digital transformation</p>
         <div className="mt-6 flex justify-center gap-4">
           <a href="/YT.pdf" download><Button>View Resume</Button></a>
           <a href="#projects"><Button>Explore Projects</Button></a>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="experience" className="py-20 relative z-10">
+      <motion.section
+        id="experience"
+        className="py-20 relative z-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <h2 className="text-3xl font-bold text-center text-cyan-400 glitch animate-glitch">&gt; Experience</h2>
         <div className="mt-10 max-w-4xl mx-auto space-y-16">
           {[{
@@ -91,9 +115,16 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section id="projects" className="py-20 relative z-10">
+      <motion.section
+        id="projects"
+        className="py-20 relative z-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <h2 className="text-3xl font-bold text-center text-cyan-400 glitch animate-glitch">&gt; Projects</h2>
         <div className="mt-12 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[1, 2, 3, 4, 5].map((id) => (
@@ -116,9 +147,16 @@ export default function Home() {
             </Link>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section id="testimonials" className="py-20 relative z-10">
+      <motion.section
+        id="testimonials"
+        className="py-20 relative z-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <h2 className="text-3xl font-bold text-center text-[#F5F5DC] glitch animate-glitch">&gt; Testimonials</h2>
         <div className="mt-10 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[...Array(6)].map((_, i) => (
@@ -128,12 +166,12 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       <footer id="contact" className="py-10 text-center text-sm text-gray-500 relative z-10">
         <p>&copy; {new Date().getFullYear()} Yackob Tamire. Built with Next.js &amp; Tailwind CSS.</p>
         <p>Contact: <a href="mailto:yackob@example.com" className="text-cyan-400 hover:underline">yackob@example.com</a></p>
       </footer>
     </main>
-  );
+  )
 }
