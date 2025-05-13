@@ -1,26 +1,16 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 export default function Project1() {
   return (
-    <main className="min-h-screen bg-white dark:bg-zinc-900 text-black dark:text-white py-20 px-6 md:px-20">
+    <main className="min-h-screen bg-white dark:bg-[#0f172a] text-black dark:text-white py-20 px-6 md:px-20">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="relative w-full h-64 mb-10 rounded-xl overflow-hidden">
-          <Image
-            src="/images/chart.png"
-            alt="Workflow Automation Platform"
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-
         <h1 className="text-4xl font-bold mb-6">Project 1: Workflow Automation Platform</h1>
 
         <section className="mb-10">
