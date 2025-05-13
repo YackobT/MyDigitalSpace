@@ -1,8 +1,10 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+
+
 export default function Project5() {
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-900 text-black dark:text-white py-20 px-6 md:px-20">
