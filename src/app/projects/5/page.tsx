@@ -4,7 +4,6 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-
 export default function Project5() {
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-900 text-black dark:text-white py-20 px-6 md:px-20">
@@ -53,4 +52,11 @@ export default function Project5() {
           </ol>
         </section>
 
-        <sectio
+        <section>
+          <h2 className="text-2xl font-semibold mb-2">Expected Outcomes</h2>
+          <p>Saved over 30 hours/month in lease processing time across all regional offices.</p>
+        </section>
+      </motion.div>
+    </main>
+  )
+}

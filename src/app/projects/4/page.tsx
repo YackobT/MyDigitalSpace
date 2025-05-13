@@ -4,7 +4,6 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-
 export default function Project4() {
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-900 text-black dark:text-white py-20 px-6 md:px-20">
@@ -47,4 +46,18 @@ export default function Project4() {
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-2">Step-by-Step Instructions</h2>
           <ol className="list-decimal ml-6">
-            <li>Created
+            <li>Created patient intake and appointment modules.</li>
+            <li>Secured patient data using JWT and encryption.</li>
+            <li>Linked system to insurance and billing APIs.</li>
+            <li>Built admin panel for clinical reporting.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-2">Expected Outcomes</h2>
+          <p>Reduced appointment no-shows and billing delays by integrating all services into a single tool.</p>
+        </section>
+      </motion.div>
+    </main>
+  )
+}
