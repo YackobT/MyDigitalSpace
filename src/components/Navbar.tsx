@@ -27,12 +27,12 @@ export default function Navbar() {
           <Link href="/#projects">Projects</Link>
           <Link href="/#contact">Contact</Link>
           <div className="hidden sm:block">
-            <DarkModeToggle />
+          <ThemeToggle />
           </div>
         </div>
       </div>
       <div className="block sm:hidden fixed top-4 right-4 z-50">
-        <DarkModeToggle />
+      <ThemeToggle />
       </div>
     </nav>
   )
