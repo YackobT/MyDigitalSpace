@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { DarkModeToggle } from './DarkModeToggle'
+import { ThemeToggle } from './ThemeToggle'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
