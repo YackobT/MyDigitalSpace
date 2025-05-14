@@ -2,15 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom base styles */
-body {
-  @apply bg-light text-dark font-sans;
+html {
+  scroll-behavior: smooth;
 }
 
-h1, h2, h3 {
-  @apply font-bold;
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+  color: white;
 }
 
 a {
-  @apply text-primary hover:underline;
+  transition: all 0.2s ease-in-out;
+}
+
+section {
+  scroll-margin-top: 6rem;
 }
