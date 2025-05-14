@@ -9,10 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-[#e9dfd0] text-[#1a1a1a] font-sans flex min-h-screen">
+      <body className="bg-[#f8f5f0] text-[#1a1a1a] font-sans flex min-h-screen">
         <Sidebar />
-        <main className="ml-48 w-full px-12 pt-16 pb-24 max-w-7xl mx-auto">
-          <div className="bg-[#fffdf6] shadow-2xl rounded-[2rem] px-16 py-20 border border-[#e6dccb]">
+        <main className="ml-64 w-full max-w-[1100px] px-12 pt-24 pb-32">
+          <div className="bg-white border border-[#e4dcd0] rounded-[3rem] px-20 py-24 shadow-[0_30px_100px_-20px_rgba(0,0,0,0.3)]">
             {children}
           </div>
         </main>
