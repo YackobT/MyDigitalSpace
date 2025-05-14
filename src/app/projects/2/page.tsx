@@ -5,12 +5,12 @@ import { motion } from 'framer-motion'
 
 export default function Project2() {
   return (
-    <main className="min-h-screen bg-white dark:bg-[#0f172a] text-black dark:text-white py-20 px-6 md:px-20">
+    <main className="min-h-screen bg-black text-white py-20 px-6 md:px-20">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-3xl mx-auto bg-white/90 dark:bg-zinc-800 p-8 rounded-2xl shadow-md backdrop-blur-md"
+        className="max-w-3xl mx-auto bg-zinc-800 p-8 rounded-2xl shadow-md"
       >
         <h1 className="text-4xl font-bold mb-6">Project 2: Agile Workflow Redesign</h1>
 

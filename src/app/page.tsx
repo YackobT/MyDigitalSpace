@@ -7,15 +7,20 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 export default function Home() {
-  useEffect(() => {
-    const handleScroll = () => {}
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
     <main className="bg-[#1A1A1A] text-white font-mono min-h-screen px-6 md:px-24 pt-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/images/bg.png')] bg-cover bg-center opacity-10 z-0 glitch-background"></div>
+
+      <nav className="fixed top-0 left-0 w-full bg-transparent px-6 py-4 z-50 flex justify-between items-center border-b border-gray-700 backdrop-blur-md">
+        <Link href="#hero" className="text-[#F5F5DC] hover:text-cyan-300 transition font-bold text-lg">&gt; YT</Link>
+        <div className="hidden md:flex gap-6 text-sm md:text-base">
+          <a href="#hero" className="hover:text-cyan-400 transition">&gt; Home</a>
+          <a href="#experience" className="hover:text-purple-400 transition">&gt; Experience</a>
+          <a href="#projects" className="hover:text-purple-400 transition">&gt; Projects</a>
+          <a href="#testimonials" className="hover:text-[#F5F5DC] transition">&gt; Testimonials</a>
+          <a href="#contact" className="hover:text-[#F5F5DC] transition">&gt; Contact</a>
+        </div>
+      </nav>
 
       <motion.section
         id="hero"
@@ -129,7 +134,7 @@ export default function Home() {
                 className="bg-[#1E1E1E] border border-[#00FFFF] p-6 rounded-md shadow-md hover:scale-105 transition-transform duration-300 hover:shadow-cyan-500/50"
               >
                 <Image
-                  src={`/images/project${id}.png`}
+                  src={`/images/project${id}.jpg`} // Update to .png if your images use png
                   alt={`Project ${id}`}
                   width={500}
                   height={300}
@@ -144,6 +149,30 @@ export default function Home() {
           })}
         </div>
       </motion.section>
+
+      <motion.section
+        id="testimonials"
+        className="py-20 relative z-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl font-bold text-center text-[#F5F5DC] glitch animate-glitch">&gt; Testimonials</h2>
+        <div className="mt-10 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="bg-[#252526] border border-[#F5F5DC] p-4 rounded-md shadow-md">
+              <p className="italic text-gray-300">&quot;Yackob consistently delivers results and helps drive the team forward.&quot;</p>
+              <span className="block text-right mt-2 text-sm text-[#F5F5DC]">— Colleague {i + 1}</span>
+            </div>
+          ))}
+        </div>
+      </motion.section>
+
+      <footer id="contact" className="py-10 text-center text-sm text-gray-500 relative z-10">
+        <p>&copy; {new Date().getFullYear()} Yackob Tamire. Built with Next.js &amp; Tailwind CSS.</p>
+        <p>Contact: <a href="mailto:yackob@example.com" className="text-cyan-400 hover:underline">yackob@example.com</a></p>
+      </footer>
     </main>
   )
 }
