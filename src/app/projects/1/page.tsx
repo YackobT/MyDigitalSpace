@@ -10,15 +10,16 @@ export default function Project1() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        className="max-w-3xl mx-auto bg-white/90 dark:bg-zinc-800 p-8 rounded-2xl shadow-md backdrop-blur-md"
       >
         <h1 className="text-4xl font-bold mb-6">Project 1: Workflow Automation Platform</h1>
 
-        <section className="mb-10">
+        <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Overview</h2>
           <p>This project involved designing and deploying an automated workflow tracking platform for real estate operations across multiple leasing offices.</p>
         </section>
 
-        <section className="mb-10">
+        <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Tools and Technologies</h2>
           <ul className="list-disc ml-6">
             <li>React & TypeScript</li>
@@ -28,12 +29,12 @@ export default function Project1() {
           </ul>
         </section>
 
-        <section className="mb-10">
+        <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Prerequisites</h2>
           <p>Working knowledge of Agile workflows, Jira API, and deployment to Vercel or internal servers.</p>
         </section>
 
-        <section className="mb-10">
+        <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step-by-Step Instructions</h2>
           <ol className="list-decimal ml-6">
             <li>Collected requirements from operations managers.</li>

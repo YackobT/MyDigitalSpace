@@ -10,15 +10,16 @@ export default function Project3() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        className="max-w-3xl mx-auto bg-white/90 dark:bg-zinc-800 p-8 rounded-2xl shadow-md backdrop-blur-md"
       >
         <h1 className="text-4xl font-bold mb-6">Project 3: Property Reporting Dashboard</h1>
 
-        <section className="mb-10">
+        <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Overview</h2>
           <p>Built reporting dashboard for real estate stakeholders with real-time lease data and regional metrics.</p>
         </section>
 
-        <section className="mb-10">
+        <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Tools and Technologies</h2>
           <ul className="list-disc ml-6">
             <li>Power BI</li>
@@ -27,12 +28,12 @@ export default function Project3() {
           </ul>
         </section>
 
-        <section className="mb-10">
+        <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Prerequisites</h2>
           <p>Experience working with SQL queries and dimensional modeling for property data.</p>
         </section>
 
-        <section className="mb-10">
+        <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step-by-Step Instructions</h2>
           <ol className="list-decimal ml-6">
             <li>Connected Snowflake to BI tools.</li>
