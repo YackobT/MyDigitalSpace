@@ -1,54 +1,60 @@
+// Example for `/projects/1/page.tsx`
+
 'use client'
 
-import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Project1() {
   return (
-    <main className="min-h-screen bg-black text-white py-20 px-6 md:px-20">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="max-w-3xl mx-auto bg-zinc-800 p-8 rounded-2xl shadow-md"
-      >
-        <h1 className="text-4xl font-bold mb-6">Project 1: Workflow Automation Platform</h1>
+    <main className="min-h-screen px-6 py-20 bg-[#f8f5f0] text-[#1a1a1a]">
+      <div className="max-w-4xl mx-auto bg-white border border-[#e4dcd0] rounded-3xl p-10 shadow-xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Image
+            src="/images/project1.png"
+            alt="Workflow Automation Platform"
+            width={1000}
+            height={600}
+            className="rounded-xl mb-6"
+          />
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Overview</h2>
-          <p>This project involved designing and deploying an automated workflow tracking platform for real estate operations across multiple leasing offices.</p>
-        </section>
+          <h1 className="text-3xl font-bold text-[#b48a5d] mb-4">Workflow Automation Platform</h1>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Tools and Technologies</h2>
-          <ul className="list-disc ml-6">
-            <li>React & TypeScript</li>
-            <li>Next.js</li>
-            <li>MongoDB</li>
-            <li>Jira, Confluence</li>
-          </ul>
-        </section>
+          <section className="mb-8">
+            <h2 className="text-xl font-semibold mb-2">Overview</h2>
+            <p className="text-gray-700">Designed and deployed an automated workflow tracking platform for real estate operations across multiple leasing offices.</p>
+          </section>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Prerequisites</h2>
-          <p>Working knowledge of Agile workflows, Jira API, and deployment to Vercel or internal servers.</p>
-        </section>
+          <section className="mb-8">
+            <h2 className="text-xl font-semibold mb-2">Tools & Technologies</h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>React & TypeScript</li>
+              <li>Next.js</li>
+              <li>MongoDB</li>
+              <li>Jira, Confluence</li>
+            </ul>
+          </section>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Step-by-Step Instructions</h2>
-          <ol className="list-decimal ml-6">
-            <li>Collected requirements from operations managers.</li>
-            <li>Designed front-end components using Figma and built them in React.</li>
-            <li>Integrated MongoDB for data persistence.</li>
-            <li>Enabled automated status tracking using webhook triggers from Jira.</li>
-          </ol>
-        </section>
+          <section className="mb-8">
+            <h2 className="text-xl font-semibold mb-2">Steps</h2>
+            <ol className="list-decimal list-inside text-gray-700">
+              <li>Collected requirements from operations managers</li>
+              <li>Designed front-end in Figma, built in React</li>
+              <li>Integrated MongoDB for persistence</li>
+              <li>Used webhooks to auto-track status via Jira</li>
+            </ol>
+          </section>
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">Expected Outcomes</h2>
-          <p>Reduced manual status update emails by 90% and improved SLA visibility across internal stakeholders.</p>
-        </section>
-      </motion.div>
+          <section>
+            <h2 className="text-xl font-semibold mb-2">Outcome</h2>
+            <p className="text-gray-700">Reduced manual emails by 90% and improved SLA visibility across teams.</p>
+          </section>
+        </motion.div>
+      </div>
     </main>
   )
 }

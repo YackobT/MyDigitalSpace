@@ -1,24 +1,52 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
+
+const sections = ['hero', 'experience', 'projects', 'testimonials', 'contact']
 
 export default function Sidebar() {
-  const pathname = usePathname()
+  const [active, setActive] = useState('hero')
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id)
+            break
+          }
+        }
+      },
+      { threshold: 0.6 }
+    )
+
+    sections.forEach(id => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <aside className="fixed top-0 left-0 h-screen w-48 bg-[#1A1A1A] text-white border-r border-zinc-800 p-6 flex flex-col justify-between z-50">
-      <div>
-        <h1 className="text-2xl font-bold text-[#F5F5DC] mb-10">&gt; YT</h1>
-        <nav className="flex flex-col gap-6 text-sm">
-          <a href="#hero" className="hover:text-cyan-400">&gt; Home</a>
-          <a href="#experience" className="hover:text-cyan-400">&gt; Experience</a>
-          <a href="#projects" className="hover:text-cyan-400">&gt; Projects</a>
-          <a href="#testimonials" className="hover:text-cyan-400">&gt; Testimonials</a>
-          <a href="#contact" className="hover:text-cyan-400">&gt; Contact</a>
-        </nav>
-      </div>
-      <div className="text-xs text-zinc-500 mt-10">&copy; {new Date().getFullYear()} Yackob Tamire</div>
+    <aside className="fixed top-0 left-0 h-full w-64 bg-[#e8e1d9] border-r border-[#d5c7b9] py-20 px-8 space-y-8">
+      <div className="text-2xl font-bold text-[#5c4632] mb-10">&gt; YT</div>
+      <nav className="flex flex-col gap-6">
+        {sections.map(id => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={`text-sm font-medium transition ${
+              active === id
+                ? 'text-[#b48a5d] font-semibold'
+                : 'text-gray-500 hover:text-[#b48a5d]'
+            }`}
+          >
+            &gt; {id.charAt(0).toUpperCase() + id.slice(1)}
+          </a>
+        ))}
+      </nav>
     </aside>
   )
 }
