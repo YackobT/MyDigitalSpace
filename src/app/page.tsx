@@ -27,7 +27,7 @@ export default function Home() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h1 className="text-6xl md:text-8xl font-bold text-[#00FF00] animate-glitch matrix-title">&gt; Hi, I'm Yackob</h1>
+        <h1 className="text-6xl md:text-8xl font-bold text-[#00FF00] animate-glitch matrix-title">&gt; Hi, I&apos;m Yackob</h1>
         <div className="mt-6 mx-auto w-40 h-40 rounded-full overflow-hidden border-4 border-[#F5F5DC]">
           <Image
             src="/images/profile.jpg"
