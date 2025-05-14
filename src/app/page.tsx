@@ -7,10 +7,8 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 export default function Home() {
-  const [showScroll, setShowScroll] = useState(false)
-
   useEffect(() => {
-    const handleScroll = () => setShowScroll(window.scrollY > 300)
+    const handleScroll = () => {}
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -41,6 +39,59 @@ export default function Home() {
         <div className="mt-6 flex justify-center gap-4">
           <a href="/YT.pdf" download><Button>View Resume</Button></a>
           <a href="#projects"><Button>Explore Projects</Button></a>
+        </div>
+      </motion.section>
+
+      <motion.section
+        id="experience"
+        className="py-20 relative z-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl font-bold text-center text-cyan-400 glitch animate-glitch">&gt; Experience</h2>
+        <div className="mt-10 max-w-4xl mx-auto space-y-16">
+          {[{
+            company: 'DS Technologies Inc',
+            role: 'Integration Business Analyst',
+            bullets: [
+              'Led EHR system integrations for multi-site clinics.',
+              'Created detailed user manuals that improved training efficiency by 40%.',
+              'Collaborated with clinical and compliance teams to ensure HIPAA alignment.'
+            ]
+          }, {
+            company: 'CACI',
+            role: 'Business Analyst',
+            bullets: [
+              'Reduced sprint rework by 30% by improving Agile backlog processes.',
+              'Facilitated refinement, planning, and review ceremonies.',
+              'Created business requirements and worked closely with dev teams.'
+            ]
+          }, {
+            company: 'Spectrum Financial',
+            role: 'Business Systems Analyst',
+            bullets: [
+              'Automated finance workflows to improve QA pass rates by 25%.',
+              'Maintained data integrity for loan origination tools.',
+              'Provided insight dashboards for portfolio performance.'
+            ]
+          }, {
+            company: 'CIM Group',
+            role: 'Business Systems Support Analyst',
+            bullets: [
+              'Supported lease operations for 500+ multi-unit properties.',
+              'Improved reporting tools like rent roll and renewal trackers.',
+              'Handled third-party system integrations and escalations.'
+            ]
+          }].map(({ company, role, bullets }, index) => (
+            <div key={index} className="bg-[#2D2D2D] p-6 rounded-lg shadow-md border-l-4 border-[#00FFFF]">
+              <h3 className="text-xl font-semibold text-purple-300">{company} – {role}</h3>
+              <ul className="list-disc list-inside text-gray-300 mt-2">
+                {bullets.map((b, i) => <li key={i}>{b}</li>)}
+              </ul>
+            </div>
+          ))}
         </div>
       </motion.section>
 
