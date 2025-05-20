@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-<body className="bg-[#f4eadd] text-[#2e1e0f] font-serif flex min-h-screen">
+<body className="bg-[#f5f1ea] text-[#2e1e0f] font-sans flex min-h-screen">
         <Sidebar />
         <main className="ml-[260px] w-full px-10 pt-24 pb-32 flex justify-center">
           <div className="w-full max-w-[1440px]">{children}</div>
