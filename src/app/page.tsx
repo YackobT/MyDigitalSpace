@@ -2,37 +2,38 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import ProjectCard from '@/components/ProjectCard'
-import TestimonialCard from '@/components/TestimonialCard'
 
 export default function Home() {
   return (
-    <main className="space-y-32 scroll-smooth">
-      {/* HERO */}
-      <section id="hero" className="text-left flex flex-col md:flex-row items-center gap-12">
+    <main className="scroll-smooth">
+      {/* HERO SECTION */}
+      <section
+        id="hero"
+        className="min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-10 py-24 gap-12"
+      >
         <motion.div
-          className="w-full md:w-1/2 space-y-6"
-          initial={{ opacity: 0, y: 30 }}
+          className="flex-1 space-y-6"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
         >
-          <h1 className="text-8xl md:text-9xl font-extrabold text-[#1a1a1a] leading-tight tracking-tight">
-            Hi, I’m Yackob
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight text-white">
+            Hello, I’m <span className="text-[#c084fc]">Yackob Tamire</span>
           </h1>
-          <p className="text-lg text-gray-600 font-medium">
-            Certified Scrum Master & Business Analyst empowering digital teams.
+          <p className="text-gray-400 text-lg max-w-xl">
+            Certified Scrum Master & Business Analyst with 5+ years of experience delivering efficient systems and agile solutions.
           </p>
-          <div className="flex gap-4 pt-2">
+          <div className="flex gap-4 pt-4">
             <a
               href="/YT.pdf"
               download
-              className="bg-[#b48a5d] text-white px-6 py-3 rounded-full font-medium hover:bg-[#a2794e] transition"
+              className="bg-[#c084fc] text-black px-6 py-3 rounded-md font-semibold hover:bg-[#a855f7] transition"
             >
               Download Resume
             </a>
             <a
               href="#projects"
-              className="border-2 border-[#b48a5d] text-[#b48a5d] px-6 py-3 rounded-full font-medium hover:bg-[#f1e9df] transition"
+              className="border-2 border-[#c084fc] text-[#c084fc] px-6 py-3 rounded-md font-semibold hover:bg-[#c084fc]/10 transition"
             >
               View Projects
             </a>
@@ -40,22 +41,25 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          className="relative w-full md:w-1/2"
+          className="flex-1 flex justify-center"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="relative w-full h-[300px] md:h-[400px] bg-[#ddd2c4] rounded-3xl overflow-hidden shadow-md border border-[#cab8a6]">
+          <div className="relative w-[300px] h-[400px] rounded-2xl overflow-hidden border border-[#2c2c30] shadow-lg">
             <Image
               src="/images/profile.jpg"
               alt="Yackob Tamire"
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#b48a5d]/30 mix-blend-multiply" />
           </div>
         </motion.div>
       </section>
+    </main>
+  )
+}
+
 
       {/* EXPERIENCE */}
       <section id="experience">
