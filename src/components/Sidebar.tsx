@@ -10,22 +10,22 @@ const sections = [
 
 export default function Sidebar() {
   return (
-    <aside className="fixed left-0 top-0 h-screen w-[260px] bg-[#fdfaf6] border-r border-[#e6e0d6] px-10 py-16 flex flex-col justify-between">
+    <aside className="fixed left-0 top-0 h-screen w-[220px] bg-[#0f0f11] border-r border-[#1f1f21] px-6 py-12 flex flex-col justify-between">
       <div>
-        <h1 className="text-2xl font-extrabold mb-12 text-[#6b4e2e]">&gt; YT</h1>
+        <h1 className="text-xl font-extrabold mb-12 text-[#c084fc] tracking-wide">&gt; YT</h1>
         <nav className="space-y-6">
           {sections.map(section => (
             <a
               key={section.id}
               href={`#${section.id}`}
-              className="block text-lg text-[#5f5244] hover:text-[#8b6b4f] font-medium transition"
+              className="block text-sm text-gray-400 hover:text-white font-medium tracking-wide transition"
             >
               {section.label}
             </a>
           ))}
         </nav>
       </div>
-      <div className="text-sm text-[#c4b6a6]">&copy; {new Date().getFullYear()}</div>
+      <div className="text-xs text-gray-600">&copy; {new Date().getFullYear()}</div>
     </aside>
   )
 }
