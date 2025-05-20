@@ -2,9 +2,33 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import Button from '@/components/button'
 import ProjectCard from '@/components/ProjectCard'
 import TestimonialCard from '@/components/TestimonialCard'
+
+const projects = [
+  {
+    id: 1,
+    title: 'Workflow Automation Platform',
+    description: 'A platform to automate real estate operations across multiple offices.'
+  },
+  {
+    id: 2,
+    title: 'EHR Integration Suite',
+    description: 'Integrated EHR workflows to streamline compliance and reporting.'
+  },
+  {
+    id: 3,
+    title: 'Agile Reporting Dashboard',
+    description: 'Created dashboards to visualize Agile sprint progress and backlog health.'
+  },
+  {
+    id: 4,
+    title: 'Portfolio Analytics Tool',
+    description: 'Designed a tool to analyze risk and performance across portfolios.'
+  }
+]
+
+const testimonials = [1, 2, 3, 4]
 
 export default function Home() {
   return (
@@ -72,8 +96,13 @@ export default function Home() {
       <section id="projects" className="px-10 py-20">
         <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#projects</h2>
         <div className="grid md:grid-cols-3 gap-8">
-          {[1, 2, 3, 4].map(id => (
-            <ProjectCard key={id} id={id} />
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              id={project.id}
+              title={project.title}
+              description={project.description}
+            />
           ))}
         </div>
       </section>
@@ -82,7 +111,7 @@ export default function Home() {
       <section id="testimonials" className="px-10 py-20 bg-[#1a1a1d]">
         <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#testimonials</h2>
         <div className="grid md:grid-cols-2 gap-8">
-          {[1, 2, 3, 4].map(id => (
+          {testimonials.map(id => (
             <TestimonialCard key={id} id={id} />
           ))}
         </div>
