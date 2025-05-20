@@ -1,7 +1,5 @@
 'use client'
 
-import Link from 'next/link'
-
 const sections = [
   { id: 'hero', label: 'Home' },
   { id: 'experience', label: 'Experience' },
