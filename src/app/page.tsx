@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import ProjectCard from '@/components/ProjectCard'
 import TestimonialCard from '@/components/TestimonialCard'
@@ -7,33 +8,21 @@ import TestimonialCard from '@/components/TestimonialCard'
 export default function Home() {
   return (
     <main className="space-y-32 scroll-smooth">
-      {/* Hero */}
-      <section id="hero" className="text-center space-y-6 max-w-2xl mx-auto">
+      {/* HERO */}
+      <section id="hero" className="text-left flex flex-col md:flex-row items-center gap-12">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          className="w-full md:w-1/2 space-y-6"
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.7 }}
         >
-          <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[#b48a5d] mx-auto">
-            <img
-              src="/images/profile.jpg"
-              alt="Yackob Tamire"
-              className="object-cover w-full h-full"
-            />
-          </div>
-          <h1 className="text-5xl font-extrabold text-[#1a1a1a] leading-snug tracking-tight">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
-            >
-              Hi, I’m Yackob
-            </motion.span>
+          <h1 className="text-5xl md:text-6xl font-extrabold text-[#1a1a1a] leading-tight tracking-tight">
+            Hi, I’m Yackob
           </h1>
           <p className="text-lg text-gray-600 font-medium">
-            Scrum Master & Business Analyst empowering digital teams
+            Certified Scrum Master & Business Analyst empowering digital teams.
           </p>
-          <div className="flex justify-center gap-4 pt-2">
+          <div className="flex gap-4 pt-2">
             <a
               href="/YT.pdf"
               download
@@ -49,11 +38,28 @@ export default function Home() {
             </a>
           </div>
         </motion.div>
+
+        <motion.div
+          className="relative w-full md:w-1/2"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          <div className="relative w-full h-[300px] md:h-[400px] bg-[#ddd2c4] rounded-3xl overflow-hidden shadow-md border border-[#cab8a6]">
+            <Image
+              src="/images/profile.jpg"
+              alt="Yackob Tamire"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#b48a5d]/30 mix-blend-multiply" />
+          </div>
+        </motion.div>
       </section>
 
-      {/* Experience */}
+      {/* EXPERIENCE */}
       <section id="experience">
-        <h2 className="text-3xl font-bold mb-12 text-[#b48a5d] text-center">&gt; Experience</h2>
+        <h2 className="text-3xl font-bold mb-12 text-[#b48a5d] text-center">Experience</h2>
         <div className="space-y-10">
           {[{
             company: 'DS Technologies Inc',
@@ -88,8 +94,8 @@ export default function Home() {
               'Handled third-party system integrations and escalations.'
             ]
           }].map(({ company, role, bullets }, index) => (
-            <div key={index} className="bg-[#fcf9f5] p-6 rounded-2xl border border-[#e8dfd4] shadow-sm">
-              <h3 className="text-xl font-bold text-[#1a1a1a]">{company} – {role}</h3>
+            <div key={index} className="bg-white border border-[#e8dfd4] p-6 rounded-2xl shadow-sm">
+              <h3 className="text-xl font-bold">{company} – {role}</h3>
               <ul className="mt-3 list-disc list-inside text-gray-700 space-y-1">
                 {bullets.map((b, i) => <li key={i}>{b}</li>)}
               </ul>
@@ -98,9 +104,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects */}
+      {/* PROJECTS */}
       <section id="projects">
-        <h2 className="text-3xl font-bold mb-12 text-[#b48a5d] text-center">&gt; Projects</h2>
+        <h2 className="text-3xl font-bold mb-12 text-[#b48a5d] text-center">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <ProjectCard id={1} title="Workflow Automation Platform" description="Automated workflows for internal leasing operations." />
           <ProjectCard id={2} title="Agile Workflow Redesign" description="Boosted team velocity with sprint optimizations." />
@@ -109,9 +115,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* TESTIMONIALS */}
       <section id="testimonials">
-        <h2 className="text-3xl font-bold mb-12 text-[#b48a5d] text-center">&gt; Testimonials</h2>
+        <h2 className="text-3xl font-bold mb-12 text-[#b48a5d] text-center">Testimonials</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <TestimonialCard quote="Yackob transformed how our teams communicate. Incredible leadership!" name="Product Owner, CACI" />
           <TestimonialCard quote="One of the most organized analysts I’ve worked with." name="Manager, DS Tech" />
@@ -120,7 +126,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact */}
+      {/* CONTACT */}
       <section id="contact" className="text-center pt-20">
         <h2 className="text-4xl font-bold text-[#1a1a1a] mb-6">Let’s Work Together</h2>
         <p className="text-gray-600 mb-6">Open to new opportunities, collaborations, and coffee chats.</p>
