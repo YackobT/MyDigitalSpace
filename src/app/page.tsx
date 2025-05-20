@@ -16,7 +16,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold text-[#1a1a1a] leading-tight tracking-tight">
+          <h1 className="text-8xl md:text-9xl font-extrabold text-[#1a1a1a] leading-tight tracking-tight">
             Hi, I’m Yackob
           </h1>
           <p className="text-lg text-gray-600 font-medium">
