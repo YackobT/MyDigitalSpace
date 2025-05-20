@@ -28,7 +28,24 @@ const projects = [
   }
 ]
 
-const testimonials = [1, 2, 3, 4]
+const testimonials = [
+  {
+    quote: 'Yackob was instrumental in transforming our reporting workflows. Highly recommend!',
+    name: 'Sarah M., Director of Ops'
+  },
+  {
+    quote: 'Incredibly thorough and detail-oriented BA. A joy to collaborate with.',
+    name: 'John K., Product Owner'
+  },
+  {
+    quote: 'Helped improve sprint velocity and backlog management. Real asset to the team.',
+    name: 'Amanda L., Scrum Lead'
+  },
+  {
+    quote: 'His insights on integration saved us weeks of dev time.',
+    name: 'Tom W., Tech Lead'
+  }
+]
 
 export default function Home() {
   return (
@@ -111,8 +128,12 @@ export default function Home() {
       <section id="testimonials" className="px-10 py-20 bg-[#1a1a1d]">
         <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#testimonials</h2>
         <div className="grid md:grid-cols-2 gap-8">
-          {testimonials.map(id => (
-            <TestimonialCard key={id} id={id} />
+          {testimonials.map((testimonial, idx) => (
+            <TestimonialCard
+              key={idx}
+              quote={testimonial.quote}
+              name={testimonial.name}
+            />
           ))}
         </div>
       </section>
