@@ -8,7 +8,7 @@ import TestimonialCard from '@/components/TestimonialCard'
 
 export default function Home() {
   return (
-    <main className="scroll-smooth">
+    <main className="scroll-smooth bg-[#141417] text-white">
       {/* HERO SECTION */}
       <section
         id="hero"
@@ -51,7 +51,7 @@ export default function Home() {
         >
           <div className="relative w-[300px] h-[400px] rounded-2xl overflow-hidden border border-[#2c2c30] shadow-lg">
             <Image
-              src="/images/profile.jpg"
+              src="/images/profile.png"
               alt="Yackob Tamire"
               fill
               className="object-cover"
@@ -60,8 +60,36 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* CONTACT SECTION FIXED */}
-      <section id="contact" className="text-center pt-20">
+      {/* QUOTE SECTION */}
+      <section className="text-center py-20 px-6">
+        <blockquote className="border-l-4 border-[#c084fc] pl-6 text-xl italic text-gray-300 max-w-3xl mx-auto">
+          “With great power comes great electricity bill”<br />
+          <span className="block text-right text-sm text-gray-500 mt-2">— Dr. Who</span>
+        </blockquote>
+      </section>
+
+      {/* PROJECTS SECTION */}
+      <section id="projects" className="px-10 py-20">
+        <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#projects</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[1, 2, 3, 4].map(id => (
+            <ProjectCard key={id} id={id} />
+          ))}
+        </div>
+      </section>
+
+      {/* TESTIMONIALS SECTION */}
+      <section id="testimonials" className="px-10 py-20 bg-[#1a1a1d]">
+        <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#testimonials</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {[1, 2, 3, 4].map(id => (
+            <TestimonialCard key={id} id={id} />
+          ))}
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section id="contact" className="text-center pt-20 pb-10">
         <h2 className="text-4xl font-bold text-[#c084fc] mb-6">Let’s Work Together</h2>
         <p className="text-gray-400 mb-6">Open to new opportunities, collaborations, and coffee chats.</p>
         <a
