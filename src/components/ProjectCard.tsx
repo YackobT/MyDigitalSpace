@@ -1,4 +1,3 @@
-
 type ProjectProps = {
   id: number
   title: string
