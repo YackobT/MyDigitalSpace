@@ -1,32 +1,42 @@
 'use client'
-
-import Image from 'next/image'
+import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
 
-type Props = {
+type ProjectCardProps = {
   id: number
   title: string
   description: string
 }
 
-export default function ProjectCard({ id, title, description }: Props) {
+const ProjectCard = ({ id, title, description }: ProjectCardProps) => {
   return (
-    <div className="border border-white/10 bg-[#1d1d1f] p-6 rounded-lg shadow-md hover:shadow-cyan-500/20 transition-shadow duration-300">
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      className="bg-[#1e1e1e] border border-[#333] rounded-xl overflow-hidden shadow-md relative"
+    >
       <Image
         src={`/images/project${id}.png`}
         alt={`Project ${id}`}
         width={600}
         height={300}
-        className="rounded-md mb-4 w-full"
+        className="w-full h-48 object-cover"
       />
-      <h3 className="text-xl font-bold text-white">{title}</h3>
-      <p className="text-gray-400 text-sm mt-2">{description}</p>
-      <Link
-        href={`/projects/${id}`}
-        className="inline-block mt-4 text-sm text-cyan-400 underline hover:text-cyan-300"
-      >
-        Details →
-      </Link>
-    </div>
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-[#f5f5dc]">{title}</h3>
+        <p className="text-gray-400 text-sm mt-2">{description}</p>
+        <div className="mt-4 flex justify-end">
+          <Link
+            href={`/projects/${id}`}
+            className="text-sm text-cyan-400 hover:underline"
+          >
+            Details →
+          </Link>
+        </div>
+      </div>
+    </motion.div>
   )
 }
+
+export default ProjectCard
