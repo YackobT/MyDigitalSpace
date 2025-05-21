@@ -1,138 +1,145 @@
+// src/app/page.tsx
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import ProjectCard from '@/components/ProjectCard'
-import TestimonialCard from '@/components/TestimonialCard'
-
-const projects = [
-  {
-    id: 1,
-    title: 'Workflow Automation Platform',
-    description: 'Automated real estate operations across multiple offices.'
-  },
-  {
-    id: 2,
-    title: 'EHR Integration Suite',
-    description: 'Streamlined compliance and reporting through integrated workflows.'
-  },
-  {
-    id: 3,
-    title: 'Agile Reporting Dashboard',
-    description: 'Visualized Agile sprint progress and backlog health.'
-  },
-  {
-    id: 4,
-    title: 'Portfolio Analytics Tool',
-    description: 'Analyzed risk and performance across financial portfolios.'
-  }
-]
-
-const testimonials = [
-  {
-    quote: 'Yackob transformed our reporting workflows. Highly recommend!',
-    name: 'Sarah M., Director of Ops'
-  },
-  {
-    quote: 'Incredibly thorough and detail-oriented BA. A joy to work with.',
-    name: 'John K., Product Owner'
-  },
-  {
-    quote: 'Improved sprint velocity and backlog management. Amazing asset.',
-    name: 'Amanda L., Scrum Lead'
-  },
-  {
-    quote: 'His integration expertise saved us weeks of dev time.',
-    name: 'Tom W., Tech Lead'
-  }
-]
+import ProjectCard from './components/ProjectCard'
+import TestimonialCard from './components/TestimonialCard'
 
 export default function Home() {
+  const projects = [
+    {
+      id: 1,
+      title: 'Workflow Automation Platform',
+      description: 'Built a dynamic dashboard for tracking enterprise automation requests.'
+    },
+    {
+      id: 2,
+      title: 'EHR Integration Suite',
+      description: 'Integrated EHR workflows to streamline compliance and reporting.'
+    },
+    {
+      id: 3,
+      title: 'Agile Reporting Dashboard',
+      description: 'Created a lightweight tool to visualize team velocity and delivery trends.'
+    },
+    {
+      id: 4,
+      title: 'Portfolio Analytics Tool',
+      description: 'Designed a Tableau-style analytics interface for property portfolios.'
+    },
+  ]
+
+  const testimonials = [
+    {
+      quote: 'Yackob brings clarity and drive to every meeting. We always left knowing the next step.',
+      name: 'Project Lead, SES'
+    },
+    {
+      quote: 'His ability to communicate technical workflows with non-technical stakeholders is unmatched.',
+      name: 'Director, Freddie Mac'
+    },
+    {
+      quote: 'Yackob improved our Jira setup in a week — sprint velocity actually increased.',
+      name: 'Scrum Master, CACI'
+    },
+    {
+      quote: 'Highly recommended for any team looking to improve delivery and communication.',
+      name: 'Manager, DS Tech'
+    },
+  ]
+
   return (
     <main className="scroll-smooth bg-[#141417] text-white relative bg-dots">
-      {/* HERO */}
+      {/* Hero Section */}
       <section className="min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-10 py-24 gap-12">
         <motion.div
-          className="flex-1 space-y-6"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="max-w-xl"
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-            Hello, I’m <span className="text-[#c084fc]">Yackob Tamire</span>
+          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">\            Hi, I'm <span className="text-cyan-400">Yackob</span>
           </h1>
-          <p className="text-gray-400 text-lg max-w-xl">
-            Certified Scrum Master & Business Analyst delivering agile solutions and efficient systems.
+          <p className="text-gray-400 mb-8">
+            Certified Business Analyst & Scrum Master helping teams ship meaningful work.
           </p>
-          <div className="flex gap-4 pt-4">
-            <a href="/YT.pdf" download className="bg-[#c084fc] text-black px-6 py-3 rounded-md font-semibold hover:bg-[#a855f7] transition">Download Resume</a>
-            <a href="#projects" className="border border-[#c084fc] text-[#c084fc] px-6 py-3 rounded-md font-semibold hover:bg-[#c084fc]/10 transition">View Projects</a>
-          </div>
+          <Link href="#projects" className="inline-block px-6 py-3 bg-cyan-500 text-black rounded-md font-semibold hover:bg-cyan-400 transition">
+            View Projects
+          </Link>
         </motion.div>
+
         <motion.div
-          className="flex-1 flex justify-center"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="relative w-72 h-72"
         >
-          <div className="relative w-[300px] h-[400px] rounded-2xl overflow-hidden">
-            <Image
-              src="/images/profile.png"
-              alt="Yackob Tamire"
-              fill
-              className="object-cover"
-            />
-          </div>
+          <Image
+            src="/images/profile.png"
+            alt="Yackob Tamire"
+            fill
+            className="object-cover rounded-xl shadow-lg"
+          />
         </motion.div>
       </section>
 
-      {/* SKILLS */}
-      <section id="skills" className="px-10 py-20">
-        <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#skills</h2>
-        <div className="grid md:grid-cols-3 gap-8 text-center">
-          {['Agile & Scrum', 'Process Mapping', 'Jira / Confluence', 'SQL / Data Analysis', 'Stakeholder Management', 'UAT / QA'].map(skill => (
-            <div key={skill} className="border border-[#2d2d2d] p-6 rounded-md bg-[#1a1a1d] text-gray-200 hover:border-[#c084fc] transition">
-              {skill}
-            </div>
+      {/* Skills Section */}
+      <section className="py-20 px-6 md:px-12">
+        <motion.h2 className="text-4xl font-bold text-center mb-10" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Skills</motion.h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-sm">
+          {['Agile', 'Scrum', 'Data Analysis', 'SQL', 'Jira', 'Confluence', 'UX Wireframes', 'Stakeholder Management'].map(skill => (
+            <div key={skill} className="border border-gray-700 py-3 rounded-md">{skill}</div>
           ))}
         </div>
       </section>
 
-      {/* PROJECTS */}
-      <section id="projects" className="px-10 py-20 bg-[#1a1a1d]">
-        <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#projects</h2>
-        <div className="grid md:grid-cols-2 gap-10">
-          {projects.map(project => (
-            <div key={project.id} className="border border-[#2d2d2d] p-6 rounded-lg shadow-lg bg-[#141417]">
-              <h3 className="text-2xl font-semibold mb-2 text-[#c084fc]">{project.title}</h3>
-              <p className="text-gray-400 mb-4">{project.description}</p>
-              <div className="flex gap-4">
-                <button className="bg-[#c084fc] text-black px-4 py-2 rounded hover:bg-[#a855f7] transition">View</button>
-                <button className="border border-[#c084fc] text-[#c084fc] px-4 py-2 rounded hover:bg-[#c084fc]/10 transition">Details</button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section id="testimonials" className="px-10 py-20">
-        <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#testimonials</h2>
+      {/* Projects Section */}
+      <section id="projects" className="py-24 px-6 md:px-12">
+        <motion.h2 className="text-4xl font-bold text-center mb-12" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Projects</motion.h2>
         <div className="grid md:grid-cols-2 gap-8">
-          {testimonials.map((t, i) => (
-            <TestimonialCard key={i} quote={t.quote} name={t.name} />
+          {projects.map(project => (
+            <ProjectCard key={project.id} id={project.id} title={project.title} description={project.description} />
           ))}
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="text-center pt-20 pb-10">
-        <h2 className="text-4xl font-bold text-[#c084fc] mb-6">Let’s Work Together</h2>
-        <p className="text-gray-400 mb-6">Open to new opportunities, collaborations, and coffee chats.</p>
-        <a href="mailto:yackob@example.com" className="inline-block px-6 py-3 border border-[#c084fc] text-[#c084fc] rounded-md hover:bg-[#c084fc]/10 transition">
-          Contact Me
+      {/* Testimonials */}
+      <section className="py-24 px-6 md:px-12 bg-[#1a1a1d]">
+        <motion.h2 className="text-4xl font-bold text-center mb-10" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Testimonials</motion.h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {testimonials.map((t, idx) => (
+            <TestimonialCard key={idx} quote={t.quote} name={t.name} />
+          ))}
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-24 px-6 md:px-12 text-center">
+        <motion.h2
+          className="text-4xl font-bold mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          Let’s Work Together
+        </motion.h2>
+        <p className="text-gray-400 max-w-xl mx-auto mb-6">
+          Open to new opportunities, collaborations, and solving problems that matter.
+        </p>
+        <a
+          href="mailto:yackob@example.com"
+          className="inline-block px-8 py-3 bg-cyan-500 text-black font-semibold rounded-lg shadow-md hover:bg-cyan-400 transition"
+        >
+          Say Hello
         </a>
       </section>
+
+      <footer className="py-10 text-center text-sm text-gray-600 bg-[#141417]">
+        &copy; {new Date().getFullYear()} Yackob Tamire — Built with Next.js & Tailwind CSS
+      </footer>
     </main>
   )
 }
