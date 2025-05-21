@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,5 +16,33 @@ body {
 
 ::selection {
   background-color: #9333ea;
+  color: white;
+}
+
+.bg-dots::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 10px 10px;
+  opacity: 0.1;
+  top: 5rem;
+  left: 2rem;
+  z-index: 0;
+  color: white;
+}
+
+.bg-dots::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 8px 8px;
+  opacity: 0.08;
+  bottom: 6rem;
+  right: 3rem;
+  z-index: 0;
   color: white;
 }

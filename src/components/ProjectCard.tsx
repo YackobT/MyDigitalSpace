@@ -1,22 +1,20 @@
-'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
+type ProjectProps = {
+  id: number
+  title: string
+  description: string
+}
 
-export default function ProjectCard({ id, title, description }: { id: number, title: string, description: string }) {
+export default function ProjectCard({ id, title, description }: ProjectProps) {
   return (
-    <Link href={`/projects/${id}`}>
-      <div className="bg-zinc-900 hover:bg-zinc-800 transition p-4 rounded-lg shadow-lg border border-zinc-700">
-        <Image
-          src={`/images/project${id}.png`}
-          alt={title}
-          width={500}
-          height={300}
-          className="rounded-md mb-4"
-        />
-        <h3 className="text-xl font-semibold text-white">{title}</h3>
-        <p className="text-sm text-gray-400 mt-2">{description}</p>
-      </div>
-    </Link>
+    <div className="bg-[#1f1f22] p-6 rounded-xl shadow-md border border-[#2c2c30] transition-transform hover:scale-105 duration-300">
+      <img
+        src={`/images/project${id}.png`}
+        alt={`Screenshot of ${title}`}
+        className="w-full h-48 object-cover rounded-md mb-4 border border-[#2c2c30]"
+      />
+      <h3 className="text-xl font-semibold text-[#c084fc] mb-2">{title}</h3>
+      <p className="text-gray-400 text-sm">{description}</p>
+    </div>
   )
 }

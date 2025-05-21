@@ -1,22 +1,25 @@
-import '../globals.css'
+
+import './globals.css'
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import Sidebar from '@/components/Sidebar'
 
-export const metadata = {
-  title: 'Yackob Tamire | Business Analyst & Scrum Master',
-  description: 'Portfolio of Yackob Tamire',
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  title: 'Yackob Tamire | Portfolio',
+  description: 'Scrum Master and Business Analyst Portfolio for Yackob Tamire',
   icons: {
-    icon: '/favicon.ico'
-  }
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-<body className="bg-[#141417] text-white font-mono flex min-h-screen">
+      <body className={`${inter.className} bg-[#141417] text-white`}>
         <Sidebar />
-        <main className="ml-[260px] w-full px-10 pt-24 pb-32 flex justify-center">
-          <div className="w-full max-w-[1440px]">{children}</div>
-        </main>
+        <div className="ml-20 relative z-10">{children}</div>
       </body>
     </html>
   )

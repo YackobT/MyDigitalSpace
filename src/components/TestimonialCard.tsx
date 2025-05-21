@@ -1,8 +1,14 @@
-export default function TestimonialCard({ quote, name }: { quote: string, name: string }) {
+
+type TestimonialProps = {
+  quote: string
+  name: string
+}
+
+export default function TestimonialCard({ quote, name }: TestimonialProps) {
   return (
-    <div className="bg-[#2D2D2D] p-6 rounded-xl shadow-md border border-[#F5F5DC]">
-      <p className="italic text-gray-300">&quot;{quote}&quot;</p>
-      <span className="block text-right mt-4 text-sm text-[#F5F5DC]">— {name}</span>
+    <div className="bg-[#1f1f22] p-6 rounded-lg shadow-md border border-[#2c2c30]">
+      <p className="italic text-gray-300">“{quote}”</p>
+      <span className="block text-right mt-4 text-sm text-gray-500">— {name}</span>
     </div>
   )
 }
