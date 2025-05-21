@@ -1,33 +1,30 @@
+'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Project3() {
   return (
-    <main className="min-h-screen bg-[#141417] text-white px-8 py-20">
-      <motion.div
+    <main className="min-h-screen bg-[#141417] text-white px-6 py-20">
+      <motion.section
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="max-w-4xl mx-auto"
       >
-        <h1 className="text-4xl font-bold mb-6 text-[#c084fc]">Agile Reporting Dashboard</h1>
-        <Image
-          src="/images/project3.png"
-          alt="Agile Reporting"
-          width={900}
-          height={500}
-          className="rounded-xl mb-6"
-        />
-        <p className="text-gray-300 mb-4">
-          Built dashboards that visually track sprint progress, highlight blockers, and improve Agile team transparency across large portfolios.
+        <h1 className="text-4xl font-bold text-[#c084fc] mb-6">Agile Reporting Dashboard</h1>
+        <p className="text-gray-300 mb-6">
+          Built real-time dashboards for Agile sprint tracking. Integrated JIRA APIs to auto-populate metrics and improve team visibility.
         </p>
-        <ul className="list-disc list-inside text-gray-400 space-y-2">
-          <li>Integrated with JIRA and Azure DevOps</li>
-          <li>Dynamic charts for burndown, velocity, and epic status</li>
-          <li>Daily auto-sync with live team boards</li>
+        <ul className="list-disc list-inside text-gray-400 mb-6 space-y-1">
+          <li>Used React + Chart.js for interactive graphs</li>
+          <li>Reduced status meeting time by 40%</li>
+          <li>Improved stakeholder transparency and backlog grooming</li>
         </ul>
-      </motion.div>
+        <Link href="/" className="text-[#c084fc] underline hover:text-purple-300">
+          ← Back to home
+        </Link>
+      </motion.section>
     </main>
   )
 }
