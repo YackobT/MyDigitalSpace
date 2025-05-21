@@ -4,8 +4,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import ProjectCard from './components/ProjectCard'
-import TestimonialCard from './components/TestimonialCard'
+import ProjectCard from '@/components/ProjectCard'
+import TestimonialCard from '@/components/TestimonialCard'
+
 
 export default function Home() {
   const projects = [
