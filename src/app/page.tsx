@@ -9,41 +9,41 @@ const projects = [
   {
     id: 1,
     title: 'Workflow Automation Platform',
-    description: 'A platform to automate real estate operations across multiple offices.',
+    description: 'A platform to automate real estate operations across multiple offices.'
   },
   {
     id: 2,
     title: 'EHR Integration Suite',
-    description: 'Integrated EHR workflows to streamline compliance and reporting.',
+    description: 'Integrated EHR workflows to streamline compliance and reporting.'
   },
   {
     id: 3,
     title: 'Agile Reporting Dashboard',
-    description: 'Created dashboards to visualize Agile sprint progress and backlog health.',
+    description: 'Created dashboards to visualize Agile sprint progress and backlog health.'
   },
   {
     id: 4,
     title: 'Portfolio Analytics Tool',
-    description: 'Designed a tool to analyze risk and performance across portfolios.',
+    description: 'Designed a tool to analyze risk and performance across portfolios.'
   }
 ]
 
 const testimonials = [
   {
     quote: 'Yackob was instrumental in transforming our reporting workflows. Highly recommend!',
-    name: 'Sarah M., Director of Ops',
+    name: 'Sarah M., Director of Ops'
   },
   {
     quote: 'Incredibly thorough and detail-oriented BA. A joy to collaborate with.',
-    name: 'John K., Product Owner',
+    name: 'John K., Product Owner'
   },
   {
     quote: 'Helped improve sprint velocity and backlog management. Real asset to the team.',
-    name: 'Amanda L., Scrum Lead',
+    name: 'Amanda L., Scrum Lead'
   },
   {
     quote: 'His insights on integration saved us weeks of dev time.',
-    name: 'Tom W., Tech Lead',
+    name: 'Tom W., Tech Lead'
   }
 ]
 
@@ -58,17 +58,24 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight text-white">
+          <h1 className="text-6xl md:text-7xl font-bold leading-tight text-white">
             Hello, I’m <span className="text-[#c084fc]">Yackob Tamire</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-xl">
             Certified Scrum Master & Business Analyst with 5+ years of experience delivering efficient systems and agile solutions.
           </p>
           <div className="flex gap-4 pt-4">
-            <a href="/YT.pdf" download className="bg-[#c084fc] text-black px-6 py-3 rounded-md font-semibold hover:bg-[#a855f7] transition">
+            <a
+              href="/YT.pdf"
+              download
+              className="bg-[#c084fc] text-black px-6 py-3 rounded-md font-semibold hover:bg-[#a855f7] transition"
+            >
               Download Resume
             </a>
-            <a href="#projects" className="border-2 border-[#c084fc] text-[#c084fc] px-6 py-3 rounded-md font-semibold hover:bg-[#c084fc]/10 transition">
+            <a
+              href="#projects"
+              className="border-2 border-[#c084fc] text-[#c084fc] px-6 py-3 rounded-md font-semibold hover:bg-[#c084fc]/10 transition"
+            >
               View Projects
             </a>
           </div>
@@ -80,7 +87,7 @@ export default function Home() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="relative w-[300px] h-[400px] rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative w-[300px] h-[400px] rounded-2xl overflow-hidden shadow-lg">
             <Image
               src="/images/profile.png"
               alt="Yackob Tamire"
@@ -91,19 +98,11 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* QUOTE */}
-      <section className="text-center py-20 px-6">
-        <blockquote className="border-l-4 border-[#c084fc] pl-6 text-xl italic text-gray-300 max-w-3xl mx-auto">
-          “With great power comes great electricity bill”<br />
-          <span className="block text-right text-sm text-gray-500 mt-2">— Dr. Who</span>
-        </blockquote>
-      </section>
-
       {/* PROJECTS */}
       <section id="projects" className="px-10 py-20">
         <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#projects</h2>
         <div className="grid md:grid-cols-3 gap-8">
-          {projects.map(project => (
+          {projects.map((project) => (
             <ProjectCard
               key={project.id}
               id={project.id}
@@ -119,7 +118,11 @@ export default function Home() {
         <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#testimonials</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, idx) => (
-            <TestimonialCard key={idx} quote={testimonial.quote} name={testimonial.name} />
+            <TestimonialCard
+              key={idx}
+              quote={testimonial.quote}
+              name={testimonial.name}
+            />
           ))}
         </div>
       </section>
@@ -133,3 +136,8 @@ export default function Home() {
           className="inline-block px-6 py-3 border border-[#c084fc] text-[#c084fc] rounded-md hover:bg-[#c084fc]/10 transition"
         >
           Contact Me
+        </a>
+      </section>
+    </main>
+  )
+}
