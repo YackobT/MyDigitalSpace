@@ -1,35 +1,49 @@
+'use client'
+
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import ProjectCard from '@/components/ProjectCard'
+import TestimonialCard from '@/components/TestimonialCard'
+
+const projects = [
+  {
+    id: 1,
+    title: 'Workflow Automation Platform',
+    description: 'A platform to automate real estate operations across multiple offices.',
+  },
+  {
     id: 2,
     title: 'EHR Integration Suite',
-    description: 'Integrated EHR workflows to streamline compliance and reporting.'
+    description: 'Integrated EHR workflows to streamline compliance and reporting.',
   },
   {
     id: 3,
     title: 'Agile Reporting Dashboard',
-    description: 'Created dashboards to visualize Agile sprint progress and backlog health.'
+    description: 'Created dashboards to visualize Agile sprint progress and backlog health.',
   },
   {
     id: 4,
     title: 'Portfolio Analytics Tool',
-    description: 'Designed a tool to analyze risk and performance across portfolios.'
+    description: 'Designed a tool to analyze risk and performance across portfolios.',
   }
 ]
 
 const testimonials = [
   {
     quote: 'Yackob was instrumental in transforming our reporting workflows. Highly recommend!',
-    name: 'Sarah M., Director of Ops'
+    name: 'Sarah M., Director of Ops',
   },
   {
     quote: 'Incredibly thorough and detail-oriented BA. A joy to collaborate with.',
-    name: 'John K., Product Owner'
+    name: 'John K., Product Owner',
   },
   {
     quote: 'Helped improve sprint velocity and backlog management. Real asset to the team.',
-    name: 'Amanda L., Scrum Lead'
+    name: 'Amanda L., Scrum Lead',
   },
   {
     quote: 'His insights on integration saved us weeks of dev time.',
-    name: 'Tom W., Tech Lead'
+    name: 'Tom W., Tech Lead',
   }
 ]
 
@@ -37,10 +51,7 @@ export default function Home() {
   return (
     <main className="scroll-smooth bg-[#141417] text-white relative bg-dots">
       {/* HERO */}
-      <section
-        id="hero"
-        className="min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-10 py-24 gap-12"
-      >
+      <section className="min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-10 py-24 gap-12">
         <motion.div
           className="flex-1 space-y-6"
           initial={{ opacity: 0, y: 20 }}
@@ -54,17 +65,10 @@ export default function Home() {
             Certified Scrum Master & Business Analyst with 5+ years of experience delivering efficient systems and agile solutions.
           </p>
           <div className="flex gap-4 pt-4">
-            <a
-              href="/YT.pdf"
-              download
-              className="bg-[#c084fc] text-black px-6 py-3 rounded-md font-semibold hover:bg-[#a855f7] transition"
-            >
+            <a href="/YT.pdf" download className="bg-[#c084fc] text-black px-6 py-3 rounded-md font-semibold hover:bg-[#a855f7] transition">
               Download Resume
             </a>
-            <a
-              href="#projects"
-              className="border-2 border-[#c084fc] text-[#c084fc] px-6 py-3 rounded-md font-semibold hover:bg-[#c084fc]/10 transition"
-            >
+            <a href="#projects" className="border-2 border-[#c084fc] text-[#c084fc] px-6 py-3 rounded-md font-semibold hover:bg-[#c084fc]/10 transition">
               View Projects
             </a>
           </div>
@@ -87,46 +91,19 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* EXPERIENCE */}
-      <section id="experience" className="px-10 py-20 bg-[#1a1a1d]">
-        <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#experience</h2>
-        <div className="max-w-4xl mx-auto space-y-6 text-gray-300">
-          <div>
-            <h3 className="text-xl font-semibold text-white">DS Technologies Inc – Integration Business Analyst</h3>
-            <ul className="list-disc list-inside pl-4">
-              <li>Led EHR system integrations for multi-site clinics.</li>
-              <li>Created detailed user manuals that improved training efficiency by 40%.</li>
-              <li>Collaborated with clinical and compliance teams to ensure HIPAA alignment.</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-white">CACI – Business Analyst</h3>
-            <ul className="list-disc list-inside pl-4">
-              <li>Reduced sprint rework by 30% by improving Agile backlog processes.</li>
-              <li>Facilitated refinement, planning, and review ceremonies.</li>
-              <li>Created business requirements and worked closely with dev teams.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* SKILLS */}
-      <section id="skills" className="px-10 py-20">
-        <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#skills</h2>
-        <div className="flex flex-wrap gap-4 justify-center text-sm text-white">
-          {['Agile', 'Scrum', 'Jira', 'Confluence', 'SQL', 'Figma', 'React', 'Data Analysis'].map(skill => (
-            <span key={skill} className="bg-[#27272a] px-4 py-2 rounded-full border border-[#c084fc]">
-              {skill}
-            </span>
-          ))}
-        </div>
+      {/* QUOTE */}
+      <section className="text-center py-20 px-6">
+        <blockquote className="border-l-4 border-[#c084fc] pl-6 text-xl italic text-gray-300 max-w-3xl mx-auto">
+          “With great power comes great electricity bill”<br />
+          <span className="block text-right text-sm text-gray-500 mt-2">— Dr. Who</span>
+        </blockquote>
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="px-10 py-20 bg-[#1a1a1d]">
+      <section id="projects" className="px-10 py-20">
         <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#projects</h2>
         <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {projects.map(project => (
             <ProjectCard
               key={project.id}
               id={project.id}
@@ -138,15 +115,11 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section id="testimonials" className="px-10 py-20">
+      <section id="testimonials" className="px-10 py-20 bg-[#1a1a1d]">
         <h2 className="text-3xl font-bold mb-12 text-center text-[#c084fc]">#testimonials</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, idx) => (
-            <TestimonialCard
-              key={idx}
-              quote={testimonial.quote}
-              name={testimonial.name}
-            />
+            <TestimonialCard key={idx} quote={testimonial.quote} name={testimonial.name} />
           ))}
         </div>
       </section>
@@ -160,8 +133,3 @@ export default function Home() {
           className="inline-block px-6 py-3 border border-[#c084fc] text-[#c084fc] rounded-md hover:bg-[#c084fc]/10 transition"
         >
           Contact Me
-        </a>
-      </section>
-    </main>
-  )
-}
