@@ -1,34 +1,28 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import Link from 'next/link'
 
-export default function Project2() {
+export default function EHRIntegrationSuite() {
   return (
-    <main className="min-h-screen bg-[#141417] text-white px-8 py-20">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+    <main className="min-h-screen bg-[#141417] text-white px-6 py-20 bg-dots relative">
+      <motion.section
+        initial={ opacity: 0, y: 30 }
+        animate={ opacity: 1, y: 0 }
+        transition={ duration: 0.6 }
         className="max-w-4xl mx-auto"
       >
-        <h1 className="text-4xl font-bold mb-6 text-[#c084fc]">EHR Integration Suite</h1>
-        <Image
-          src="/images/project2.png"
-          alt="EHR Integration"
-          width={900}
-          height={500}
-          className="rounded-xl mb-6"
-        />
-        <p className="text-gray-300 mb-4">
-          Led the successful integration of Electronic Health Records for multiple clinics. Ensured HIPAA compliance and seamless communication between systems.
+        <h1 className="text-4xl font-bold text-[#c084fc] mb-6">EHR Integration Suite</h1>
+        <p className="text-gray-300 mb-6">
+          Integrated EHR workflows to streamline compliance and reporting.
         </p>
-        <ul className="list-disc list-inside text-gray-400 space-y-2">
-          <li>Bi-directional data syncing with EHR platforms</li>
-          <li>Workflow automation for patient intake and discharge</li>
-          <li>Data compliance and audit reporting features</li>
+        <ul className="list-disc list-inside text-gray-400 mb-6 space-y-1">
+          <li>Synced with 3rd party EHR systems via HL7/FHIR</li><li>Improved patient record availability by 60%</li><li>Enabled cross-departmental compliance</li>
         </ul>
-      </motion.div>
+        <Link href="/" className="text-[#c084fc] underline hover:text-purple-300">
+          ← Back to home
+        </Link>
+      </motion.section>
     </main>
   )
 }
