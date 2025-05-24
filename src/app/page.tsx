@@ -61,8 +61,8 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="max-w-xl"
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">\            Hi, I'm <span className="text-cyan-400">Yackob</span>
-          </h1>
+          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">Hi, I&rsquo;m <span className="text-cyan-400">Yackob</span></h1>
+
           <p className="text-gray-400 mb-8">
             Certified Business Analyst & Scrum Master helping teams ship meaningful work.
           </p>
