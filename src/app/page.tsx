@@ -1,4 +1,3 @@
-// src/app/page.tsx
 'use client'
 
 import Image from 'next/image'
@@ -6,7 +5,6 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import ProjectCard from '@/components/ProjectCard'
 import TestimonialCard from '@/components/TestimonialCard'
-
 
 export default function Home() {
   const projects = [
@@ -51,18 +49,41 @@ export default function Home() {
     },
   ]
 
+  const experiences = [
+    {
+      company: 'Freddie Mac',
+      role: 'Technical Program Manager',
+      period: '2022–2024',
+      summary: 'Led development of an enterprise risk platform to monitor and report on regulatory model performance.'
+    },
+    {
+      company: 'SES',
+      role: 'Product Deployment Lead',
+      period: '2020–2022',
+      summary: 'Oversaw global deployment of connectivity products across Europe and Asia.'
+    }
+  ]
+
   return (
     <main className="scroll-smooth bg-[#141417] text-white relative bg-dots">
+      {/* Navigation */}
+      <header className="w-full py-6 px-8 flex justify-between items-center bg-transparent z-50 absolute top-0">
+        <h1 className="text-xl font-bold text-white">Yackob Tamire</h1>
+        <nav className="space-x-6 text-sm text-gray-400">
+          <Link href="#projects" className="hover:text-white">Projects</Link>
+          <Link href="#contact" className="hover:text-white">Contact</Link>
+        </nav>
+      </header>
+
       {/* Hero Section */}
-      <section className="min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-10 py-24 gap-12">
+      <section className="min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-10 py-32 gap-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="max-w-xl"
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">Hi, I&rsquo;m <span className="text-cyan-400">Yackob</span></h1>
-
+          <h1 className="text-6xl md:text-8xl font-extrabold leading-tight mb-6">Hi, I&rsquo;m <span className="text-cyan-400">Yackob</span></h1>
           <p className="text-gray-400 mb-8">
             Certified Business Analyst & Scrum Master helping teams ship meaningful work.
           </p>
@@ -84,6 +105,20 @@ export default function Home() {
             className="object-cover rounded-xl shadow-lg"
           />
         </motion.div>
+      </section>
+
+      {/* Experience Section */}
+      <section className="py-20 px-6 md:px-12 bg-[#1a1a1d]">
+        <motion.h2 className="text-4xl font-bold text-center mb-10" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Experience</motion.h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {experiences.map((exp, index) => (
+            <div key={index} className="border border-gray-700 rounded-lg p-6 bg-[#18181b]">
+              <h3 className="text-xl font-semibold">{exp.company}</h3>
+              <p className="text-cyan-400 text-sm">{exp.role} ({exp.period})</p>
+              <p className="text-gray-400 mt-2">{exp.summary}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Skills Section */}
