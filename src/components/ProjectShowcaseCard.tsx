@@ -7,6 +7,7 @@ import Link from 'next/link'
 interface ProjectShowcaseCardProps {
   project: Project;
   index: number; // Add index to props
+  onViewDetails: (project: Project) => void; // Add handler to props
 }
 
 const cardVariants = {
@@ -57,21 +58,20 @@ const ProjectShowcaseCard: React.FC<ProjectShowcaseCardProps> = ({ project, inde
         </div>
       </div>
 
-      {project.detailsUrl && (
-        <div className="mt-auto pt-4 border-t border-gray-700"> {/* Pushes link to bottom if content above is short */}
-          <Link href={project.detailsUrl} passHref>
-            <motion.a
-              className="text-accent hover:underline inline-flex items-center"
-              whileHover={{ x: 5 }}
-            >
-              View Details
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </motion.a>
-          </Link>
-        </div>
-      )}
+      {/* "View Details" button to open modal */}
+      <div className="mt-auto pt-4 border-t border-gray-700 text-right"> 
+        <motion.button
+          onClick={() => onViewDetails(project)}
+          className="text-accent hover:underline font-semibold text-sm inline-flex items-center"
+          whileHover={{ x: 2, transition: { duration: 0.2 } }} // Subtle move effect
+          whileTap={{ scale: 0.95 }}
+        >
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </motion.button>
+      </div>
     </motion.div>
   );
 };

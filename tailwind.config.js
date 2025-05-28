@@ -18,6 +18,8 @@ module.exports = {
         "text-primary": '#E5E5E5', // Off-white
         "text-secondary": '#A0A0A0', // Silver gray
         accent: '#00E5FF', // Neon cyan
+        'accent-purple': '#9f7aea', // Vibrant Purple
+        'accent-teal': '#38b2ac',   // Deep Teal
         primary: '#0077B6', // Existing - keeping for now, might remove later
         secondary: '#F1F5F9', // Existing - keeping for now, might remove later
         dark: '#03045E', // Existing - keeping for now, might remove later
