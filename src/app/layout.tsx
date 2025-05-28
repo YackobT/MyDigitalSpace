@@ -1,29 +1,24 @@
 // src/app/layout.tsx
-'use client' // Required for useState and useEffect
+// Removed 'use client' - Reverting to Server Component
 
-import { useState, useEffect } from 'react'
-import { AnimatePresence } from 'framer-motion'
+// Removed useState, useEffect, AnimatePresence, PageLoader imports
 import '../globals.css'
-// import type { Metadata } from 'next' // Removed unused Metadata import
+import type { Metadata } from 'next' // Reinstated Metadata import
 import { Inter } from 'next/font/google'
 import NavigationBar from '@/components/NavigationBar'
-import PageLoader from '@/components/PageLoader' // Import PageLoader
+import Footer from '@/components/Footer'; // Ensure Footer is imported
+// import PageLoader from '@/components/PageLoader' // PageLoader removed
 
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
 })
 
-// Note: 'export const metadata: Metadata' might need to be handled differently
-// if RootLayout is a client component. For Next.js 13+ App Router, 
-// metadata should ideally be exported from server components or page.tsx.
-// For simplicity in this step, we'll assume it's either okay or will be addressed.
-// If this were a real app, this would be a point of attention.
-// For now, we comment it out if it causes issues with 'use client'.
-// export const metadata: Metadata = { 
-// title: 'Yackob Tamire – Portfolio',
-// description: 'Certified Business Analyst & Scrum Master Portfolio',
-// };
+// Reinstated static metadata export
+export const metadata: Metadata = { 
+  title: 'Yackob Tamire – Portfolio',
+  description: 'Certified Business Analyst & Scrum Master Portfolio',
+};
 
 
 export default function RootLayout({
@@ -31,50 +26,26 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1800); // Loader visible for 1.8 seconds
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Static metadata for client component workaround
-  useEffect(() => {
-    document.title = 'Yackob Tamire – Portfolio';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Certified Business Analyst & Scrum Master Portfolio');
-    } else {
-      const newMeta = document.createElement('meta');
-      newMeta.name = 'description';
-      newMeta.content = 'Certified Business Analyst & Scrum Master Portfolio';
-      document.head.appendChild(newMeta);
-    }
-  }, []);
-
+  // Removed isLoading state and useEffect hooks
 
   return (
-    <html lang="en" className={`${inter.variable} font-sans`}>
-      <body className={`${inter.className} bg-background text-text-primary dot-grid`}>
-        <AnimatePresence>
-          {isLoading && <PageLoader />}
-        </AnimatePresence>
+    <html lang="en" className={`${inter.variable} font-sans scroll-smooth`}> {/* Added scroll-smooth */}
+      {/* Removed dot-grid class from body, it's handled (or removed) in globals.css */}
+      <body className={`${inter.className} bg-background text-text-primary`}>
+        {/* Removed AnimatePresence and PageLoader */}
         
         {/* Main site structure */}
-        {/* Added !isLoading condition to delay rendering of main content, or apply an opacity transition */}
-        <div className={`flex flex-col min-h-screen transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
-          <NavigationBar />
-          <header className="py-4 px-8 sr-only">
-            {/* Navigation can go here */}
+        {/* Removed opacity transition and isLoading conditional class */}
+        <div className="flex flex-col min-h-screen">
+          <header className="w-full"> {/* Removed sr-only and specific padding, as Nav will handle it */}
+            <NavigationBar /> {/* NavigationBar is now the content of the header */}
           </header>
           
-          <main className="flex-grow pt-16 md:pt-20">
+          <main className="flex-grow"> {/* Removed pt-16 md:pt-20 */}
             {children}
           </main>
 
-          <footer className="py-4 px-8 text-center text-text-secondary">
-            <p>© {new Date().getFullYear()} Yackob Tamire. All rights reserved.</p>
-          </footer>
+          <Footer /> {/* Replaced placeholder footer with Footer component */}
         </div>
       </body>
     </html>
