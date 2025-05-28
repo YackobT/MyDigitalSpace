@@ -2,10 +2,8 @@
 
 import React from 'react';
 
-interface CircuitLineProps extends React.SVGProps<SVGSVGElement> {
-  // className is already part of React.SVGProps.
-  // If there were other specific custom props, they would go here.
-}
+// Changed from interface to type alias
+type CircuitLineProps = React.SVGProps<SVGSVGElement>;
 
 const CircuitLine: React.FC<CircuitLineProps> = (props) => {
   return (

@@ -2,10 +2,8 @@
 
 import React from 'react';
 
-interface AbstractDotsProps extends React.SVGProps<SVGSVGElement> {
-  // className is already part of React.SVGProps.
-  // If there were other specific custom props, they would go here.
-}
+// Changed from interface to type alias
+type AbstractDotsProps = React.SVGProps<SVGSVGElement>;
 
 const AbstractDots: React.FC<AbstractDotsProps> = (props) => {
   return (
