@@ -11,10 +11,10 @@ const titleVariants = {
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-16 px-4 sm:px-6 md:px-8 relative z-10">
+    <section id="skills" className="py-16 px-4 sm:px-6 md:px-8 relative z-10"> {/* Changed id to "skills" */}
       <div className="max-w-7xl mx-auto">
         <motion.h2 
-          className="text-3xl md:text-4xl font-mono mb-10 md:mb-12 text-text-primary text-left"
+          className="text-3xl md:text-4xl font-mono font-bold mb-10 md:mb-12 text-text-primary text-left" // Added font-bold
           variants={titleVariants}
           initial="initial"
           whileInView="animate"

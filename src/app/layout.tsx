@@ -2,6 +2,7 @@
 import '../globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import NavigationBar from '@/components/NavigationBar' // Import NavigationBar
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -23,13 +24,14 @@ export default function RootLayout({
       <body className={`${inter.className} bg-background text-text-primary dot-grid`}>
         {/* Optional: Add a wrapper for flex column layout if header/footer are direct children of body */}
         <div className="flex flex-col min-h-screen">
+          <NavigationBar /> {/* Add NavigationBar here */}
           {/* Header Placeholder - You can build this out later */}
-          <header className="py-4 px-8">
+          <header className="py-4 px-8 sr-only"> {/* Added sr-only to hide placeholder if Nav is primary */}
             {/* Navigation can go here */}
           </header>
           
           {/* Main site content */}
-          <main className="flex-grow">
+          <main className="flex-grow pt-16 md:pt-20"> {/* Added padding-top to avoid overlap with fixed nav */}
             {children}
           </main>
 

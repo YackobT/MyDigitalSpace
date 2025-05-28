@@ -21,7 +21,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-16 px-4 sm:px-6 md:px-8 text-center relative z-10">
       <motion.h2 
-        className="text-3xl md:text-4xl font-mono mb-8 text-text-primary"
+        className="text-3xl md:text-4xl font-mono font-bold mb-8 text-text-primary" // Added font-bold
         variants={titleVariants}
         initial="initial"
         whileInView="animate"

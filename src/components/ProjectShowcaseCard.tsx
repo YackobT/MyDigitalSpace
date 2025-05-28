@@ -40,7 +40,7 @@ const ProjectShowcaseCard: React.FC<ProjectShowcaseCardProps> = ({ project, inde
       viewport={{ once: true, amount: 0.25 }}
       whileHover="hover"
     >
-      <h3 className="text-2xl font-semibold text-accent mb-2">{project.title}</h3>
+      <h3 className="text-2xl font-bold text-accent mb-2">{project.title}</h3> {/* Changed font-semibold to font-bold */}
       <p className="text-sm text-text-secondary mb-3">
         <span className="font-semibold">Context:</span> {project.context}
       </p>
