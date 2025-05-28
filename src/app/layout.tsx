@@ -3,7 +3,10 @@ import '../globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter', // Add this line
+})
 
 export const metadata: Metadata = {
   title: 'Yackob Tamire – Portfolio',
@@ -16,18 +19,24 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-[#141417] text-white`}>
-        <div className="relative z-0">
-          {/* Decorative Dot Overlays */}
-          <div className="absolute w-32 h-32 top-20 left-10 opacity-10 bg-[radial-gradient(white_1px,transparent_1px)] bg-[length:10px_10px] z-0"></div>
-          <div className="absolute w-24 h-24 bottom-20 right-12 opacity-10 bg-[radial-gradient(white_1px,transparent_1px)] bg-[length:8px_8px] z-0"></div>
-
-          {/* Background image overlay */}
-          <div className="absolute inset-0 bg-[url('/images/bg.png')] bg-cover bg-center opacity-5 -z-10"></div>
-
+    <html lang="en" className={`${inter.variable} font-sans`}> {/* Apply Inter variable and font-sans */}
+      <body className={`${inter.className} bg-background text-text-primary dot-grid`}>
+        {/* Optional: Add a wrapper for flex column layout if header/footer are direct children of body */}
+        <div className="flex flex-col min-h-screen">
+          {/* Header Placeholder - You can build this out later */}
+          <header className="py-4 px-8">
+            {/* Navigation can go here */}
+          </header>
+          
           {/* Main site content */}
-          {children}
+          <main className="flex-grow">
+            {children}
+          </main>
+
+          {/* Footer Placeholder - You can build this out later */}
+          <footer className="py-4 px-8 text-center text-text-secondary">
+            <p>© {new Date().getFullYear()} Yackob Tamire. All rights reserved.</p>
+          </footer>
         </div>
       </body>
     </html>
