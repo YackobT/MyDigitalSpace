@@ -8,7 +8,7 @@ body {
 
 /* Selection highlight */
 ::selection {
-  @apply bg-accent-subtle text-text-primary; /* Light grey background, black text */
+  @apply bg-accent-primary text-white; /* Vibrant purple background, white text */
 }
 
 /* Subtle animations - keeping for now, might be useful later */

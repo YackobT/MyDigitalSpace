@@ -8,51 +8,45 @@ const Footer = () => {
   const email = "Yackobt@yahoo.com";
   const linkedInUrl = "https://linkedin.com/in/yackob-tamire";
 
-  const iconHoverVariant = {
-    hover: { scale: 1.15, color: '#000000' }, // text-text-primary
-    initial: { color: '#555555' } // text-text-secondary
-  };
+  // Removed iconHoverVariant as hover color will be handled by Tailwind classes
 
   return (
-    <footer className="bg-background text-text-secondary py-10 md:py-12 px-4 md:px-8 border-t border-accent-subtle">
+    <footer className="bg-background text-text-secondary py-10 md:py-12 px-4 md:px-8 border-t border-text-secondary/20"> {/* Changed border color */}
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
         
-        {/* Social Links / Contact Info - this div gets the ID for navigation */}
         <motion.div 
-          id="contact" // ID for navigation link from Header/Hero
+          id="contacts" // ID for navigation
           className="flex items-center space-x-6 mb-6"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Link href={linkedInUrl} target="_blank" rel="noopener noreferrer" passHref>
-            <motion.span // Using span for motion on icon + text
-              className="flex items-center text-sm cursor-pointer group"
-              variants={iconHoverVariant}
-              initial="initial"
-              whileHover="hover"
+            <motion.div
+              className="flex items-center text-sm font-medium text-text-secondary hover:text-accent-primary cursor-pointer transition-colors duration-300"
+              whileHover={{ scale: 1.05 }} // Subtle scale on hover
+              whileTap={{ scale: 0.95 }}
             >
-              <Linkedin size={20} className="mr-1.5 transition-colors duration-300 group-hover:text-text-primary" /> 
+              <Linkedin size={20} className="mr-1.5" /> 
               LinkedIn
-            </motion.span>
+            </motion.div>
           </Link>
           
           <Link href={`mailto:${email}`} passHref>
-            <motion.span // Using span for motion on icon + text
-              className="flex items-center text-sm cursor-pointer group"
-              variants={iconHoverVariant}
-              initial="initial"
-              whileHover="hover"
+            <motion.div
+              className="flex items-center text-sm font-medium text-text-secondary hover:text-accent-primary cursor-pointer transition-colors duration-300"
+              whileHover={{ scale: 1.05 }} // Subtle scale on hover
+              whileTap={{ scale: 0.95 }}
             >
-              <Mail size={20} className="mr-1.5 transition-colors duration-300 group-hover:text-text-primary" />
+              <Mail size={20} className="mr-1.5" />
               Email
-            </motion.span>
+            </motion.div>
           </Link>
         </motion.div>
 
         {/* Copyright Notice */}
         <motion.p 
-          className="text-xs"
+          className="text-xs text-text-secondary opacity-75" // Added opacity-75
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}

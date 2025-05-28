@@ -4,8 +4,9 @@ export interface Project {
   outcome: string;
   skillsUsed: string[];
   roadmap: string[]; 
-  category?: string; // Added category field
+  category?: string; 
   detailsUrl?: string; 
+  themeAccent?: 'green' | 'deepPurple' | 'primaryAccent'; // Added themeAccent field
 }
 
 export const projects: Project[] = [
@@ -13,6 +14,7 @@ export const projects: Project[] = [
     title: "Yardi Integration & Workflow Automation",
     context: "CIM Group",
     category: "Workflow Automation",
+    themeAccent: "primaryAccent", // Default accent
     outcome: "Reduced time spent on manual reporting by 40%. Increased lease renewal follow-through rate by 25%.",
     skillsUsed: ["Yardi/Voyager", "Requirements Gathering", "Workflow Optimization", "Stakeholder Management", "Testing"],
     roadmap: [
@@ -27,6 +29,7 @@ export const projects: Project[] = [
     title: "EHR System Integration for Healthcare Clients",
     context: "DS Technologies",
     category: "EHR Integration",
+    // No themeAccent, will use default in card
     outcome: "Successful integration across 3 departments. User adoption reached 95% within the first month.",
     skillsUsed: ["JIRA", "Confluence", "Agile/Scrum", "Documentation", "UAT", "SME Collaboration"],
     roadmap: [
@@ -38,9 +41,10 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Sprint Optimization & Agile Coaching",
+    title: "Sprint Optimization & Agile Coaching", // "PROTECTX" equivalent
     context: "CACI",
     category: "Agile Coaching",
+    themeAccent: "green", // Specific accent for this project
     outcome: "15% increase in sprint velocity. 30% decrease in project rework. Boosted team satisfaction and stakeholder trust.",
     skillsUsed: ["Scrum Mastery", "Agile Coaching", "JIRA", "Sprint Planning", "Metrics Analysis", "Team Training"],
     roadmap: [
@@ -52,9 +56,10 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Property Operations Dashboard for Executive Decision-Making",
+    title: "Property Operations Dashboard for Executive Decision-Making", // "Kahoot Answers" equivalent
     context: "Spectrum Financial Services",
     category: "Dashboard Design",
+    themeAccent: "deepPurple", // Specific accent for this project
     outcome: "Enabled real-time decision-making for rent delinquency and occupancy trends. Executive satisfaction increased significantly post-launch.",
     skillsUsed: ["Visio", "Stakeholder Management", "Data Analysis", "Yardi Integration", "QA Testing", "Dashboard Design"],
     roadmap: [
@@ -69,6 +74,7 @@ export const projects: Project[] = [
     title: "Pandemic Relief Funding Acquisition System",
     context: "CIM Group",
     category: "Process Improvement",
+    themeAccent: "primaryAccent", // Default accent
     outcome: "Secured $2M in relief funding with 100% compliance. Reduced application processing time by 50%. Doubled application volume through community outreach.",
     skillsUsed: ["Business Process Improvement", "Stakeholder Collaboration", "Requirements Gathering", "Workflow Automation", "Reporting"],
     roadmap: [
@@ -83,6 +89,7 @@ export const projects: Project[] = [
     title: "End-to-End Leasing Cycle Digitization",
     context: "Bell Partners",
     category: "CRM Optimization",
+    // No themeAccent, will use default in card
     outcome: "Reduced leasing cycle time by 35%. Increased occupancy rate to over 95%. Improved tenant satisfaction scores in the first 3 months.",
     skillsUsed: ["Yardi CRM", "Business Process Mapping", "SOP Development", "Stakeholder Training", "CRM Optimization"],
     roadmap: [

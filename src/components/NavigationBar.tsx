@@ -6,11 +6,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const navItems = [
-  // Note: "Experience" section ID is "skills"
   { name: 'Experience', href: '#skills' }, 
   { name: 'Projects', href: '#projects' },
   { name: 'Testimonials', href: '#testimonials' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Contact', href: '#contacts' }, // Updated ID for Contact section
 ];
 
 const NavigationBar = () => {
@@ -27,13 +26,15 @@ const NavigationBar = () => {
   };
 
   return (
-    <nav className="w-full bg-background text-text-primary px-4 md:px-8 py-5 border-b border-accent-subtle relative">
+    // Removed border-b, bg-background is now dark
+    <nav className="w-full bg-background text-text-primary px-4 md:px-8 py-5 relative">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo/Name */}
         <Link href="/" passHref>
           <motion.span
-            className="text-xl font-bold tracking-wide cursor-pointer"
-            whileHover={{ color: '#555555' }} // text-text-secondary on hover
+            className="text-xl font-bold tracking-wide cursor-pointer text-text-primary" // Ensure text-primary for white
+            // Removed explicit hover color change, keeps it primary or could use accent-secondary
+            whileHover={{ opacity: 0.85 }} // Subtle opacity change on hover
           >
             Yackob Tamire
           </motion.span>
@@ -45,7 +46,7 @@ const NavigationBar = () => {
             <li key={item.name}>
               <Link href={item.href} passHref>
                 <motion.span
-                  className="text-text-secondary hover:text-text-primary transition-colors duration-300 cursor-pointer text-sm"
+                  className="text-text-secondary hover:text-accent-primary font-medium text-sm transition-colors duration-300 cursor-pointer"
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
                 >
@@ -61,7 +62,7 @@ const NavigationBar = () => {
           <motion.button
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
-            className="text-text-primary p-2"
+            className="text-text-primary p-2" // Ensure text-primary for white icon
             whileTap={{ scale: 0.9 }}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -73,7 +74,8 @@ const NavigationBar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden absolute top-full left-0 right-0 bg-background shadow-lg border-t border-accent-subtle z-40"
+            // Removed border-t, bg-background is dark, shadow-lg for depth
+            className="md:hidden absolute top-full left-0 right-0 bg-background shadow-lg z-40" 
             variants={mobileMenuVariants}
             initial="hidden"
             animate="visible"
@@ -83,9 +85,10 @@ const NavigationBar = () => {
               {navItems.map((item) => (
                 <li key={item.name} className="w-full text-center">
                   <Link href={item.href} passHref>
-                    <span // Using span because Link passHref handles the <a>
-                      onClick={() => setIsMobileMenuOpen(false)} // Close menu on click
-                      className="block py-3 text-text-secondary hover:text-text-primary hover:bg-accent-subtle w-full transition-colors duration-200 cursor-pointer"
+                    <span 
+                      onClick={() => setIsMobileMenuOpen(false)} 
+                      className="block py-3 text-text-secondary hover:text-accent-primary hover:bg-background/80 w-full transition-colors duration-200 cursor-pointer"
+                      // Using background/80 for a slightly lighter shade of dark background on hover
                     >
                       {item.name}
                     </span>

@@ -4,15 +4,18 @@
 // Removed useState, useEffect, AnimatePresence, PageLoader imports
 import '../globals.css'
 import type { Metadata } from 'next' // Reinstated Metadata import
-import { Inter } from 'next/font/google'
+import { Poppins } from 'next/font/google' // Import Poppins
 import NavigationBar from '@/components/NavigationBar'
 import Footer from '@/components/Footer'; // Ensure Footer is imported
 // import PageLoader from '@/components/PageLoader' // PageLoader removed
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
+// Initialize Poppins font
+const poppins = Poppins({ 
+  subsets: ['latin'], 
+  weight: ['400', '500', '700'], 
+  variable: '--font-poppins', 
+  display: 'swap' 
+});
 
 // Reinstated static metadata export
 export const metadata: Metadata = { 
@@ -29,9 +32,10 @@ export default function RootLayout({
   // Removed isLoading state and useEffect hooks
 
   return (
-    <html lang="en" className={`${inter.variable} font-sans scroll-smooth`}> {/* Added scroll-smooth */}
+    <html lang="en" className={`${poppins.variable} font-sans scroll-smooth`}> {/* Use poppins variable and font-sans */}
       {/* Removed dot-grid class from body, it's handled (or removed) in globals.css */}
-      <body className={`${inter.className} bg-background text-text-primary`}>
+      {/* Removed inter.className, using font-sans from html tag now */}
+      <body className={`bg-background text-text-primary`}> 
         {/* Removed AnimatePresence and PageLoader */}
         
         {/* Main site structure */}

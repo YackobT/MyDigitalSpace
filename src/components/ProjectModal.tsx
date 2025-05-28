@@ -36,19 +36,19 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
       onClick={onClose} // Close on backdrop click
     >
       <motion.div
-        className="bg-background border border-gray-700 p-6 md:p-8 rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
+        className="bg-background border border-text-secondary/20 p-6 md:p-8 rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative" // Updated border
         variants={modalVariants}
         onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal content
       >
         <button 
           onClick={onClose}
-          className="absolute top-3 right-3 md:top-4 md:right-4 text-text-secondary hover:text-accent transition-colors z-10"
+          className="absolute top-3 right-3 md:top-4 md:right-4 text-text-secondary hover:text-accent-primary transition-colors z-10" // Updated hover color
           aria-label="Close project details modal"
         >
           <X size={28} />
         </button>
 
-        <h2 className="text-3xl font-bold text-accent mb-4 pr-10">{project.title}</h2> {/* Added pr-10 for space for close button */}
+        <h2 className="text-3xl font-bold text-accent-primary mb-4 pr-10">{project.title}</h2> {/* Updated title color to accent-primary */}
         
         <div className="text-md text-text-secondary mb-6">
           <span className="font-semibold text-text-primary">Context:</span> {project.context}
@@ -74,7 +74,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             {project.skillsUsed.map((skill, index) => (
               <span 
                 key={index} 
-                className="bg-gray-600 text-text-primary text-xs font-medium px-3 py-1.5 rounded-md"
+                className="bg-accent-primary/20 text-accent-secondary text-xs font-medium px-3 py-1.5 rounded-full" // Updated badge styling
               >
                 {skill}
               </span>
