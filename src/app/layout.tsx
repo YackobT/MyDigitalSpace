@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import '../globals.css'
-import type { Metadata } from 'next' // Keep if using static metadata, otherwise remove if metadata is dynamic
+// import type { Metadata } from 'next' // Removed unused Metadata import
 import { Inter } from 'next/font/google'
 import NavigationBar from '@/components/NavigationBar'
 import PageLoader from '@/components/PageLoader' // Import PageLoader

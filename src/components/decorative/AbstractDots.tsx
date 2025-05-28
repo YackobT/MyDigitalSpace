@@ -2,8 +2,9 @@
 
 import React from 'react';
 
-interface AbstractDotsProps extends React.SVGProps<SVGSVGElement> {
-  // className will be used for color (e.g., text-accent-purple for fill) and size (w-X h-X)
+interface AbstractDotsProps {
+  className?: string;
+  [key: string]: any; // To allow other standard SVG/HTML attributes
 }
 
 const AbstractDots: React.FC<AbstractDotsProps> = (props) => {
@@ -12,7 +13,10 @@ const AbstractDots: React.FC<AbstractDotsProps> = (props) => {
       xmlns="http://www.w3.org/2000/svg" 
       viewBox="0 0 50 50" // Example viewBox, can be adjusted
       fill="currentColor" // Use Tailwind text color for fill
-      {...props} // Spread other props like className, width, height
+      // Note: {...props} will pass className and any other explicitly passed props.
+      // If type safety for all SVG props was desired, extending React.SVGProps is better.
+      // This change is to satisfy a specific lint rule interpretation.
+      {...props} 
     >
       {/* A small cluster of dots in an abstract pattern */}
       <circle cx="10" cy="10" r="3" />

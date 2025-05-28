@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion' // Removed AnimatePresence
 import { X } from 'lucide-react'
 import { Project } from '@/data/projects' // Ensure this path is correct
 

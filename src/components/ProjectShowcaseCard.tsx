@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Project } from '@/data/projects' // Ensure this path is correct
-import Link from 'next/link'
+// import Link from 'next/link' // Removed unused import
 
 interface ProjectShowcaseCardProps {
   project: Project;
