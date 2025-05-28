@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-interface CircuitLineProps {
-  className?: string;
-  [key: string]: any; // To allow other standard SVG/HTML attributes
+interface CircuitLineProps extends React.SVGProps<SVGSVGElement> {
+  // className is already part of React.SVGProps.
+  // If there were other specific custom props, they would go here.
 }
 
 const CircuitLine: React.FC<CircuitLineProps> = (props) => {
@@ -14,10 +14,7 @@ const CircuitLine: React.FC<CircuitLineProps> = (props) => {
       fill="none" 
       viewBox="0 0 64 64" // Example viewBox, can be adjusted
       stroke="currentColor" // Use Tailwind text color for stroke
-      // Note: {...props} will pass className and any other explicitly passed props.
-      // If type safety for all SVG props was desired, extending React.SVGProps is better.
-      // This change is to satisfy a specific lint rule interpretation.
-      {...props}
+      {...props} // Spread all valid SVG props
     >
       {/* A more abstract and flowing circuit line example */}
       <path 
