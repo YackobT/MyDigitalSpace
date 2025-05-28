@@ -2,53 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-  background-color: #141417;
-  font-family: 'Inter', sans-serif;
+body {
+  @apply bg-background text-text-primary;
 }
 
-body {
-  margin: 0;
-  color: #f5f5f5;
+/* Dot Grid Background */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px; /* Adjust size of the grid */
 }
 
 /* Selection highlight */
 ::selection {
-  background-color: #9333ea;
-  color: white;
+  @apply bg-accent text-white;
 }
 
-/* Custom radial background dots */
-.bg-dots::before {
-  content: '';
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background-image: radial-gradient(currentColor 1px, transparent 1px);
-  background-size: 10px 10px;
-  opacity: 0.1;
-  top: 5rem;
-  left: 2rem;
-  z-index: 0;
-  color: white;
-}
-
-.bg-dots::after {
-  content: '';
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-image: radial-gradient(currentColor 1px, transparent 1px);
-  background-size: 8px 8px;
-  opacity: 0.08;
-  bottom: 6rem;
-  right: 3rem;
-  z-index: 0;
-  color: white;
-}
-
-/* Subtle animations */
+/* Subtle animations - keeping for now, might be useful later */
 .fade-in {
   animation: fadeIn 1s ease-in-out forwards;
 }
