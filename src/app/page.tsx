@@ -2,6 +2,7 @@
 'use client' // Required for Framer Motion components
 
 import HeroSection from '@/components/HeroSection'
+import WorksSection from '@/components/WorksSection'; // Import WorksSection
 import ExperienceSection from '@/components/ExperienceSection'
 import ProjectsSection from '@/components/ProjectsSection'
 import TestimonialsSection from '@/components/TestimonialsSection'
@@ -20,6 +21,7 @@ export default function Home() {
     // The main element in layout.tsx already has flex-grow to take available space.
     <main className="scroll-smooth relative">
       <HeroSection />
+      <WorksSection /> {/* Add WorksSection here */}
       <ExperienceSection />
       <ProjectsSection />
       <TestimonialsSection />

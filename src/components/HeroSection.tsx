@@ -1,93 +1,61 @@
-'use client'
+// src/components/HeroSection.tsx
+'use client'; // For Framer Motion and potential future client-side hooks
 
-import { motion } from 'framer-motion'
-import Link from 'next/link'
+import React from 'react';
+import { motion } from 'framer-motion'; // For animations
 
-const HeroSection = () => {
-  const headlineText = "Yackob Tamire — Business Analyst. Scrum Master. Systems Thinker."
-  const subheadlineText = "Bridging operations, analysis, and execution — from lease administration to enterprise EHR integration."
-
-  // Animation variants for the headline (word by word)
-  const sentence = {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delay: 0.5,
-        staggerChildren: 0.08, // Adjust speed of word appearance
-      },
-    },
-  }
-
-  const letter = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  }
-
+const HeroSection: React.FC = () => {
   return (
-    <section className="min-h-[90vh] flex flex-col items-center justify-center text-center px-4 md:px-8 relative z-10">
+    <section 
+      id="hero" 
+      className="min-h-screen flex flex-col items-center justify-center text-center bg-background text-text_primary relative px-4 sm:px-6 md:px-8"
+      // Using min-h-screen to fill the viewport height
+    >
+      {/* Main Headline */}
       <motion.h1
-        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6"
-        variants={sentence}
-        initial="hidden"
-        animate="visible"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold custom-cursor-hover-target"
+        style={{ fontFamily: 'var(--font-poppins)' }} // Ensures Poppins Bold
       >
-        {headlineText.split(" ").map((word, index) => (
-          <motion.span key={word + "-" + index} variants={letter} className="inline-block">
-            {word}&nbsp;
-          </motion.span>
-        ))}
+        Analyst
       </motion.h1>
+
+      {/* Optional: Sub-headline or brief description */}
+      {/* 
       <motion.p 
-        className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto mb-8"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: headlineText.split(" ").length * 0.08 + 0.5, duration: 0.5 }} // Delay until headline is done
+        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+        className="text-lg md:text-xl text-text_secondary mt-4 max-w-md sm:max-w-lg md:max-w-xl custom-cursor-hover-target"
+        style={{ fontFamily: 'var(--font-poppins)' }}
       >
-        {subheadlineText}
-      </motion.p>
-      <motion.div 
-        className="flex flex-wrap justify-center space-x-0 sm:space-x-4 space-y-4 sm:space-y-0"
-        initial={{ opacity: 0, y: 20 }}
+        Crafting elegant solutions for complex business challenges. Passionate about data, agile methodologies, and driving impactful change.
+      </motion.p> 
+      */}
+      
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }} // Changed initial y for consistency
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: headlineText.split(" ").length * 0.08 + 1, duration: 0.5 }} // Delay further
+        transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }} // Adjusted timing
+        className="absolute bottom-8 sm:bottom-12 md:bottom-16 left-1/2 transform -translate-x-1/2"
       >
-        <Link href="#projects" passHref>
-          <motion.button 
-            className="w-full sm:w-auto bg-accent text-background font-semibold px-8 py-3 rounded-md hover:bg-opacity-80 transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View Projects
-          </motion.button>
-        </Link>
-        <Link href="/resume.pdf" passHref legacyBehavior>
-          <motion.a 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="w-full sm:w-auto bg-accent text-background font-semibold px-8 py-3 rounded-md hover:bg-opacity-80 transition-colors duration-300 inline-block" // Added inline-block for <a>
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            download="Yackob_Tamire_Resume.pdf" // Added download attribute
-          >
-            Download Resume
-          </motion.a>
-        </Link>
-        <Link href="#contact" passHref>
-          <motion.button 
-            className="w-full sm:w-auto bg-accent text-background font-semibold px-8 py-3 rounded-md hover:bg-opacity-80 transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Contact Me
-          </motion.button>
-        </Link>
+        <a 
+          href="#works" 
+          aria-label="Scroll to works section" 
+          className="custom-cursor-hover-target p-2 rounded-full hover:bg-accent_primary/10 focus:outline-none focus:ring-2 focus:ring-accent_primary/50 focus:ring-offset-2 focus:ring-offset-background transition-colors duration-300" // Added padding, hover/focus effect for better UX
+        >
+          <div className="animate-bounce w-8 h-8 md:w-10 md:h-10 text-text_primary">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-full h-full">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+            </svg>
+          </div>
+        </a>
       </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
