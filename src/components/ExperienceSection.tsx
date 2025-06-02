@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { experiences, Experience } from '@/data/experience' // Ensure this path is correct
+import { experiences } from '@/data/experience' // Ensure this path is correct
 import ExperienceCard from './ExperienceCard' // Ensure this path is correct
 
 const titleVariants = {

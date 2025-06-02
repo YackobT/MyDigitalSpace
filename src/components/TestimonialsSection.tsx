@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { testimonials, Testimonial } from '@/data/testimonials' // Ensure this path is correct
+import { testimonials } from '@/data/testimonials' // Ensure this path is correct
 import TestimonialItem from './TestimonialItem' // Ensure this path is correct
 
 const titleVariants = {

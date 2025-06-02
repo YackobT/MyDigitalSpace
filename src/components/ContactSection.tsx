@@ -37,7 +37,7 @@ const ContactSection = () => {
         whileInView="animate"
         viewport={{ once: true, amount: 0.2 }}
       >
-        Let's connect. I'm open to new opportunities and collaborations.
+        Let&apos;s connect. I&apos;m open to new opportunities and collaborations.
       </motion.p>
       
       <motion.div 

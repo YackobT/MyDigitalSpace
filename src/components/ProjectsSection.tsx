@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { projects, Project } from '@/data/projects' // Ensure this path is correct
+import { projects } from '@/data/projects' // Ensure this path is correct
 import ProjectShowcaseCard from './ProjectShowcaseCard' // Ensure this path is correct
 
 const titleVariants = {
