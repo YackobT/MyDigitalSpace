@@ -1,3 +1,5 @@
+'use client'; // Add 'use client' directive
+
 // src/components/Footer.tsx
 import React from 'react';
 import { motion } from 'framer-motion'; // Import motion
