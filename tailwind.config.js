@@ -11,17 +11,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", ...fontFamily.sans],
+        sans: ["var(--font-poppins)", ...fontFamily.sans],
       },
       colors: {
-        background: '#0A0F1F', // Deep navy
-        "text-primary": '#E5E5E5', // Off-white
-        "text-secondary": '#A0A0A0', // Silver gray
-        accent: '#00E5FF', // Neon cyan
-        primary: '#0077B6', // Existing - keeping for now, might remove later
-        secondary: '#F1F5F9', // Existing - keeping for now, might remove later
-        dark: '#03045E', // Existing - keeping for now, might remove later
-        light: '#F8FAFC' // Existing - keeping for now, might remove later
+        background: '#1C2526',
+        "text-primary": '#FFFFFF',
+        "text-secondary": '#B0B0B0',
+        "accent_primary": '#A855F7', // Purple
+        "accent_secondary": '#C084FC', // Lighter Purple
+        "accent_green": '#34C759',
+        "accent_deep_purple": '#6B21A8',
+        // Existing colors are removed as per the new palette
       },
     },
   },

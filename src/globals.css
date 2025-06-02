@@ -12,9 +12,29 @@ body {
   background-size: 20px 20px; /* Adjust size of the grid */
 }
 
+/* Base Typographic Styles */
+h1, h2, h3, h4, h5, h6 {
+  @apply text-text-primary; /* Uses new text_primary from Tailwind config */
+  /* Font weights will be applied via utility classes like font-bold, font-medium */
+}
+
+p {
+  @apply text-text-primary; /* Default paragraph color */
+  /* Consider adding line-height or other paragraph-specific styles if needed */
+}
+
+a {
+  @apply text-accent_primary; /* Uses new accent_primary */
+  text-decoration: none;
+}
+
+a:hover {
+  @apply text-accent_secondary; /* Uses new accent_secondary */
+}
+
 /* Selection highlight */
 ::selection {
-  @apply bg-accent text-white;
+  @apply bg-accent_primary text-white; /* Updated to use new accent_primary */
 }
 
 /* Subtle animations - keeping for now, might be useful later */

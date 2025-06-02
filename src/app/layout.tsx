@@ -7,6 +7,7 @@ import type { Metadata } from 'next' // Reinstated Metadata import
 import { Poppins } from 'next/font/google' // Import Poppins
 import NavigationBar from '@/components/NavigationBar'
 import Footer from '@/components/Footer'; // Ensure Footer is imported
+import CustomCursor from '@/components/CustomCursor'; // Import CustomCursor
 // import PageLoader from '@/components/PageLoader' // PageLoader removed
 
 // Initialize Poppins font
@@ -35,7 +36,8 @@ export default function RootLayout({
     <html lang="en" className={`${poppins.variable} font-sans scroll-smooth`}> {/* Use poppins variable and font-sans */}
       {/* Removed dot-grid class from body, it's handled (or removed) in globals.css */}
       {/* Removed inter.className, using font-sans from html tag now */}
-      <body className={`bg-background text-text-primary`}> 
+      <body className="bg-background text-text-primary"> 
+        <CustomCursor /> {/* Add the custom cursor component */}
         {/* Removed AnimatePresence and PageLoader */}
         
         {/* Main site structure */}
@@ -49,7 +51,9 @@ export default function RootLayout({
             {children}
           </main>
 
-          <Footer /> {/* Replaced placeholder footer with Footer component */}
+          <footer className="w-full"> {/* Added semantic footer tag */}
+            <Footer /> {/* Replaced placeholder footer with Footer component */}
+          </footer>
         </div>
       </body>
     </html>
