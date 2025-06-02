@@ -1,42 +1,55 @@
 // src/app/layout.tsx
+// Removed 'use client' - Reverting to Server Component
+
+// Removed useState, useEffect, AnimatePresence, PageLoader imports
 import '../globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata } from 'next' // Reinstated Metadata import
+import { Poppins } from 'next/font/google' // Import Poppins
+import NavigationBar from '@/components/NavigationBar'
+import Footer from '@/components/Footer'; // Ensure Footer is imported
+// import PageLoader from '@/components/PageLoader' // PageLoader removed
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter', // Add this line
-})
+// Initialize Poppins font
+const poppins = Poppins({ 
+  subsets: ['latin'], 
+  weight: ['400', '500', '700'], 
+  variable: '--font-poppins', 
+  display: 'swap' 
+});
 
-export const metadata: Metadata = {
+// Reinstated static metadata export
+export const metadata: Metadata = { 
   title: 'Yackob Tamire – Portfolio',
   description: 'Certified Business Analyst & Scrum Master Portfolio',
-}
+};
+
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  // Removed isLoading state and useEffect hooks
+
   return (
-    <html lang="en" className={`${inter.variable} font-sans`}> {/* Apply Inter variable and font-sans */}
-      <body className={`${inter.className} bg-background text-text-primary dot-grid`}>
-        {/* Optional: Add a wrapper for flex column layout if header/footer are direct children of body */}
+    <html lang="en" className={`${poppins.variable} font-sans scroll-smooth`}> {/* Use poppins variable and font-sans */}
+      {/* Removed dot-grid class from body, it's handled (or removed) in globals.css */}
+      {/* Removed inter.className, using font-sans from html tag now */}
+      <body className={`bg-background text-text-primary`}> 
+        {/* Removed AnimatePresence and PageLoader */}
+        
+        {/* Main site structure */}
+        {/* Removed opacity transition and isLoading conditional class */}
         <div className="flex flex-col min-h-screen">
-          {/* Header Placeholder - You can build this out later */}
-          <header className="py-4 px-8">
-            {/* Navigation can go here */}
+          <header className="w-full"> {/* Removed sr-only and specific padding, as Nav will handle it */}
+            <NavigationBar /> {/* NavigationBar is now the content of the header */}
           </header>
           
-          {/* Main site content */}
-          <main className="flex-grow">
+          <main className="flex-grow"> {/* Removed pt-16 md:pt-20 */}
             {children}
           </main>
 
-          {/* Footer Placeholder - You can build this out later */}
-          <footer className="py-4 px-8 text-center text-text-secondary">
-            <p>© {new Date().getFullYear()} Yackob Tamire. All rights reserved.</p>
-          </footer>
+          <Footer /> {/* Replaced placeholder footer with Footer component */}
         </div>
       </body>
     </html>
