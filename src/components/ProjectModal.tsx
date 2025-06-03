@@ -46,14 +46,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
   };
 
   return (
-    <div 
-      role="dialog" 
-      aria-modal="true" 
+    <div
+      role="dialog"
+      aria-modal="true"
       aria-labelledby="project-modal-title"
       // Using custom-cursor-hover-target on the overlay might be too much if the cursor changes significantly.
       // Consider if only the modal content and close button should be targets.
       // For now, following prompt.
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 sm:p-6 md:p-8 custom-cursor-hover-target" 
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 sm:p-6 md:p-8 custom-cursor-hover-target"
       onClick={handleOverlayClick}
     >
       <motion.div
@@ -65,9 +65,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
           bg-[#2A3030] text-text_primary rounded-xl p-6 md:p-8 shadow-2xl  /* Enhanced shadow */
           w-full max-w-lg md:max-w-xl lg:max-w-2xl /* Adjusted max-widths based on common screen sizes */
           max-h-[90vh] /* Increased max-height */
-          overflow-y-auto 
+          overflow-y-auto
           relative flex flex-col
-          custom-cursor-hover-target 
+          custom-cursor-hover-target
         "
         style={{ fontFamily: 'var(--font-poppins)' }} // Apply Poppins to the whole modal
         onClick={(e) => e.stopPropagation()} // Prevent clicks inside modal from closing it via overlay
@@ -77,9 +77,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
           onClick={onClose}
           aria-label="Close project details modal"
           className="
-            absolute top-3 right-3 md:top-4 md:right-4 text-gray-400 hover:text-white 
+            absolute top-3 right-3 md:top-4 md:right-4 text-gray-400 hover:text-white
             text-4xl leading-none
-            transition-colors duration-200 ease-in-out 
+            transition-colors duration-200 ease-in-out
             custom-cursor-hover-target z-10
             focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent_primary focus:ring-offset-[#2A3030]" // Added focus classes
         >
@@ -87,8 +87,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
         </button>
 
         {/* Modal Content */}
-        <h2 
-          id="project-modal-title" 
+        <h2
+          id="project-modal-title"
           className="text-xl sm:text-2xl md:text-3xl font-bold text-accent_primary mb-4 md:mb-6 pr-10 md:pr-12" // Responsive title. Mobile: 18px or 20px -> text-xl is 20px.
         >
           {project.title}
@@ -98,7 +98,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
           <div>
             <p className="italic text-gray-400 mb-1">Context / Company:</p>
             {/* Company name can be slightly larger or same as body text */}
-            <p className="sm:text-sm md:text-base">{project.contextCompany}</p> 
+            <p className="sm:text-sm md:text-base">{project.contextCompany}</p>
           </div>
 
           <div>
@@ -119,8 +119,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
             <h3 className="font-semibold text-sm sm:text-base md:text-lg text-white mt-3 md:mt-4 mb-2">Skills Utilized</h3> {/* Responsive heading */}
             <div className="flex flex-wrap gap-2">
               {project.skillsUtilized.map((skill, index) => (
-                <span 
-                  key={index} 
+                <span
+                  key={index}
                   className="bg-accent_primary/80 hover:bg-accent_primary text-white text-[10px] sm:text-xs font-medium py-1 sm:py-1.5 px-2 sm:px-3 rounded-full custom-cursor-hover-target transition-colors duration-200" // Responsive tags. Mobile: 10px
                 >
                   {skill}

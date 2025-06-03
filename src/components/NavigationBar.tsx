@@ -15,7 +15,9 @@ const NavigationBar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks: NavLink[] = [ // Apply the interface
-    { href: '#projects', label: 'Projects' },
+    { href: '#experience', label: 'Experience' },
+    { href: '#works', label: 'Projects' }, // Updated label
+    { href: '#testimonials', label: 'Testimonials' },
     { href: '#contact', label: 'Contact' },
     // Example: { href: '/resume.pdf', label: 'Resume', target: '_blank' },
   ];
@@ -38,13 +40,13 @@ const NavigationBar: React.FC = () => {
           aria-label="Toggle menu"
           className="text-text_primary focus:outline-none custom-cursor-hover-target p-2 -mr-2"
         >
-          <svg 
-            className="w-6 h-6" 
-            fill="none" 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth="2" 
-            viewBox="0 0 24 24" 
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
             stroke="currentColor"
           >
             {isMobileMenuOpen ? (
@@ -59,7 +61,7 @@ const NavigationBar: React.FC = () => {
       <div className="hidden md:flex items-center space-x-6">
         {navLinks.map((link) => (
           <Link key={link.label} href={link.href} legacyBehavior passHref>
-            <a 
+            <a
               className="hover:text-accent_primary transition-colors duration-300 custom-cursor-hover-target"
               target={link.target} // This will now be type-safe
               rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
@@ -74,7 +76,7 @@ const NavigationBar: React.FC = () => {
         <div className="w-full md:hidden mt-4 py-2 bg-background/95 backdrop-blur-md rounded-lg shadow-xl">
           {navLinks.map((link) => (
             <Link key={link.label} href={link.href} legacyBehavior passHref>
-              <a 
+              <a
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block px-5 py-3 text-base hover:text-accent_primary transition-colors duration-300 custom-cursor-hover-target"
                 target={link.target} // This will now be type-safe
