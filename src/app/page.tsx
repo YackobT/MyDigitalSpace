@@ -22,7 +22,6 @@ export default function Home() {
       <HeroSection />
       <WorksSection /> {/* Add WorksSection here */}
       <ExperienceSection />
-      <ProjectsSection />
       <TestimonialsSection />
       <ContactSection /> {/* Add the ContactSection here */}
       {/* Other sections will be added here later */}
