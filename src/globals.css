@@ -2,46 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-background text-text-primary;
+@layer base {
+  body {
+    @apply font-sans; /* This applies your default sans-serif font (Poppins) */
+    /* The bg-background and text-text_primary are applied via className in layout.tsx */
+    
+    /* Subtle dot pattern */
+    background-image: radial-gradient(rgba(209, 213, 219, 0.03) 1px, transparent 1px); /* Using text_secondary (#D1D5DB) at 3% opacity for dots */
+    background-size: 16px 16px;
+  }
+
+  /* You can keep other base layer customizations here if you have them */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-text_primary; /* Ensure headings also use primary text color by default */
+  }
+
+  a {
+    @apply text-accent_primary; /* Default link color */
+  }
+  a:hover {
+    @apply hover:text-accent_secondary; /* Default link hover color */
+  }
 }
 
-/* Dot Grid Background */
-.dot-grid {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px; /* Adjust size of the grid */
-}
+/* Ensure custom cursor hover target class is defined if not solely handled by JS/React component styles */
+/* .custom-cursor-hover-target { */
+  /* cursor: none; */ /* Or specific custom cursor if defined here */
+/* } */
 
-/* Base Typographic Styles */
-h1, h2, h3, h4, h5, h6 {
-  @apply text-text-primary; /* Uses new text_primary from Tailwind config */
-  /* Font weights will be applied via utility classes like font-bold, font-medium */
-}
-
-p {
-  @apply text-text-primary; /* Default paragraph color */
-  /* Consider adding line-height or other paragraph-specific styles if needed */
-}
-
-a {
-  @apply text-accent_primary; /* Uses new accent_primary */
-  text-decoration: none;
-}
-
-a:hover {
-  @apply text-accent_secondary; /* Uses new accent_secondary */
-}
-
-/* Selection highlight */
-::selection {
-  @apply bg-accent_primary text-white; /* Updated to use new accent_primary */
-}
-
-/* Subtle animations - keeping for now, might be useful later */
-.fade-in {
-  animation: fadeIn 1s ease-in-out forwards;
-}
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
+/* Example of how text_primary and background were defined in tailwind.config.js (for reference only)
+   theme: {
+     extend: {
+       colors: {
+         'background': '#1C2526',
+         'text_primary': '#FFFFFF',
+         'text_secondary': '#B0B0B0', // Or #D1D5DB as used in dot pattern
+         'accent_primary': '#A855F7',
+         'accent_secondary': '#C084FC',
+         // ... other colors
+       },
+       fontFamily: {
+        sans: ['var(--font-poppins)', ...defaultTheme.fontFamily.sans],
+       },
+     },
+   },
+*/
