@@ -23,12 +23,12 @@ const TestimonialsSection = () => {
           &gt; TESTIMONIALS
         </motion.h2>
         
-        {/* Centering the testimonial item(s). If more are added, this layout might need to change to a grid or slider. */}
-        <div className="flex flex-col items-center">
+        {/* Responsive grid for testimonials. Adjust gap and columns as needed. */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 xl:gap-12">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="w-full max-w-2xl lg:max-w-3xl"> {/* Max width for readability */}
-              <TestimonialItem testimonial={testimonial} />
-            </div>
+            // Assuming TestimonialItem is designed to be a direct grid child.
+            // If TestimonialItem needs a specific width, that should be handled within TestimonialItem itself or by grid column span settings.
+            <TestimonialItem key={testimonial.name || index} testimonial={testimonial} />
           ))}
         </div>
       </div>

@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
     // The parent <footer className="w-full"> is in layout.tsx
     // This component provides the content for that semantic footer.
     // The div here acts as the direct child of the semantic footer in layout.tsx.
-    <motion.div 
+    <motion.div
       className="bg-background text-text_secondary py-8 sm:py-10 px-6 md:px-8 text-center border-t border-text_secondary/10" // Softer border
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
         <p className="text-xs sm:text-sm" style={{ fontFamily: 'var(--font-poppins)' }}> {/* Responsive text size */}
           &copy; {currentYear} Yackob Tamire. All rights reserved.
         </p>
-        
+
         {/* Optional: Small credit or built with message - uncomment if desired */}
         {/*
         <p className="text-xs text-text_secondary/70 mt-3">
