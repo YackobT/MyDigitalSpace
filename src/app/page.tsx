@@ -4,7 +4,6 @@
 import HeroSection from '@/components/HeroSection'
 import WorksSection from '@/components/WorksSection'; // Import WorksSection
 import ExperienceSection from '@/components/ExperienceSection'
-import ProjectsSection from '@/components/ProjectsSection'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import ContactSection from '@/components/ContactSection' // Import the new Contact section
 
