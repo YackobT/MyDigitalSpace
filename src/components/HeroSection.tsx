@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
         className="w-full max-w-xs sm:max-w-sm md:max-w-md mb-6 md:mb-8 custom-cursor-hover-target" 
       >
         <video 
-          src="/images/profile.mp4" 
+          src="/images/profile.mp4" // This path should now work after you add/commit/push the video
           autoPlay 
           loop 
           muted 
@@ -32,7 +32,8 @@ const HeroSection: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-        className="text-5xl sm:text-6xl md:text-7xl font-bold custom-cursor-hover-target" 
+        // Increased font sizes here:
+        className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold custom-cursor-hover-target" 
         style={{ fontFamily: 'var(--font-poppins)' }}
       >
         Yackob Tamire
@@ -68,4 +69,4 @@ const HeroSection: React.FC = () => {
   );
 };
 
-export default HeroSection; // <-- Ensu
+export default HeroSection;
