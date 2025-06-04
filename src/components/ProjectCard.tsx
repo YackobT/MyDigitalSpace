@@ -1,11 +1,11 @@
 // src/components/ProjectCard.tsx
 import React from 'react';
+import Image from 'next/image'; // Import next/image
 
 export interface ProjectCardProps {
   title: string;
   categoryTag: string;
   description: string;
-  imagePlaceholderClass?: string; // Kept as optional, though not directly used for image color
   imageUrl: string;
   onViewDetails: () => void;
 }
@@ -21,12 +21,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <article 
       className="bg-card_background rounded-xl p-6 flex flex-col h-[400px] shadow-lg hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ease-in-out custom-cursor-hover-target"
     >
-      <img 
-        src={imageUrl}
-        alt={`Project image for ${title}`}
-        className="w-full h-[120px] object-cover rounded-lg mb-4 custom-cursor-hover-target"
-        loading="lazy"
-      />
+      {/* Container for Next/Image - must have position relative and defined dimensions */}
+      <div className="relative w-full h-[120px] mb-4 custom-cursor-hover-target rounded-lg overflow-hidden"> 
+        <Image 
+          src={imageUrl}
+          alt={`Project image for ${title}`}
+          layout="fill" 
+          objectFit="cover" 
+          className="rounded-lg" 
+          loading="lazy"
+        />
+      </div>
 
       <h3 
          className="text-lg sm:text-xl font-bold text-text_primary mb-2 leading-snug custom-cursor-hover-target"
