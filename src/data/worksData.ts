@@ -1,11 +1,12 @@
 // src/data/worksData.ts
-import type { ProjectDetails } from '@/components/ProjectModal'; // Adjust path if ProjectDetails is elsewhere
+import type { ProjectDetails } from '@/components/ProjectModal';
 
 export interface WorkProjectData extends ProjectDetails {
   id: string;
   categoryTag: string;
-  description: string; // This is often a shorter version for the card
-  imagePlaceholderClass: string; // Tailwind class for card image placeholder bg
+  description: string;
+  imagePlaceholderClass?: string; // Kept for now, though ProjectCard doesn't use its color
+  imageUrl: string;
 }
 
 export const worksData: WorkProjectData[] = [
@@ -14,7 +15,8 @@ export const worksData: WorkProjectData[] = [
     title: "Yardi Integration & Workflow Automation",
     categoryTag: "WORKFLOW AUTOMATION",
     description: "Reduced time spent on manual reporting by 40%. Increased lease renewal follow-through rate by 25%.",
-    imagePlaceholderClass: "bg-purple-500", // Using Tailwind named color for example, matches #8B5CF6
+    imagePlaceholderClass: "bg-accent_primary", 
+    imageUrl: "/images/project1.png",
     contextCompany: "CIM Group",
     roadmapPhases: [
       "Phase 1: Requirements Gathering from Property Managers and Leasing Team.",
@@ -31,7 +33,8 @@ export const worksData: WorkProjectData[] = [
     title: "EHR System Integration for Healthcare Clients",
     categoryTag: "EHR INTEGRATION",
     description: "Successful integration across 3 departments. User adoption reached 95% within the first month.",
-    imagePlaceholderClass: "bg-gray-700", // Darker gray, similar to #2A3030 but more distinct
+    imagePlaceholderClass: "bg-background", // Using a theme color name
+    imageUrl: "/images/project2.png",
     contextCompany: "DS Technologies",
     roadmapPhases: [
       "Phase 1: Analyze existing EHR infrastructure and client needs.",
@@ -48,7 +51,8 @@ export const worksData: WorkProjectData[] = [
     title: "Sprint Optimization & Agile Coaching",
     categoryTag: "AGILE COACHING",
     description: "15% increase in sprint velocity, 30% decrease in project rework. Boosted team satisfaction and stakeholder trust.",
-    imagePlaceholderClass: "bg-green-500", // Green, similar to #34D399
+    imagePlaceholderClass: "bg-accent_green", // Using a theme color name
+    imageUrl: "/images/project3.png",
     contextCompany: "CACI",
     roadmapPhases: [
      "Phase 1: Observe current Agile ceremonies and team dynamics.",
@@ -65,7 +69,8 @@ export const worksData: WorkProjectData[] = [
     title: "Property Operations Dashboard for Executive Decision-Making",
     categoryTag: "DASHBOARD DESIGN",
     description: "Enabled real-time decision-making for rent delinquency and occupancy trends. Executive satisfaction increased significantly post-launch.",
-    imagePlaceholderClass: "bg-purple-500", // Purple
+    imagePlaceholderClass: "bg-accent_primary",
+    imageUrl: "/images/project4.png",
     contextCompany: "Spectrum Financial Services",
     roadmapPhases: [
      "Phase 1: Elicit reporting requirements from executive stakeholders.",
@@ -82,7 +87,8 @@ export const worksData: WorkProjectData[] = [
     title: "Pandemic Relief Funding Acquisition System",
     categoryTag: "PROCESS IMPROVEMENT",
     description: "Secured $2M in relief funding with 100% compliance. Reduced application processing time by 50%.",
-    imagePlaceholderClass: "bg-purple-500", // Purple
+    imagePlaceholderClass: "bg-accent_primary",
+    imageUrl: "/images/project5.png",
     contextCompany: "CIM Group",
     roadmapPhases: [
      "Phase 1: Analyze relief program guidelines and application criteria.",
@@ -99,7 +105,8 @@ export const worksData: WorkProjectData[] = [
     title: "End-to-End Leasing Cycle Digitization",
     categoryTag: "CRM OPTIMIZATION",
     description: "Reduced leasing cycle time by 35%. Increased occupancy rate to over 95%. Improved tenant satisfaction scores.",
-    imagePlaceholderClass: "bg-gray-700", // Darker Gray
+    imagePlaceholderClass: "bg-background", 
+    imageUrl: "/images/project6.png",
     contextCompany: "Bell Partners",
     roadmapPhases: [
      "Phase 1: Map existing leasing cycle from prospect to move-in.",

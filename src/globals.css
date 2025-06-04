@@ -4,49 +4,53 @@
 
 @layer base {
   body {
-    @apply font-sans; /* This applies your default sans-serif font (Poppins) */
-    /* Note: The main background color (bg-background) and primary text color (text-text_primary)
-       are applied directly to the <body> tag via its className in src/app/layout.tsx.
-       We don't need to @apply them here again. */
-
+    @apply font-sans; /* Applies your default sans-serif font (Poppins) */
+    /* Note: The main background color (bg-background) and primary text color (text-text_primary) 
+       are applied directly to the <body> tag via its className in src/app/layout.tsx. */
+    
     /* Subtle dot pattern */
     background-image: radial-gradient(rgba(209, 213, 219, 0.03) 1px, transparent 1px);
     background-size: 16px 16px;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    /* This assumes 'text_primary' is a color defined in your tailwind.config.js */
-    color: theme('colors.text_primary');
+    /* Assumes 'text_primary' is a color in your tailwind.config.js */
+    color: theme('colors.text_primary'); 
   }
 
   p {
-    /* This assumes 'text_primary' is a color defined in your tailwind.config.js */
+    /* Assumes 'text_primary' is a color in your tailwind.config.js */
     color: theme('colors.text_primary');
   }
 
   a {
-    /* This assumes 'accent_primary' is a color defined in your tailwind.config.js */
+    /* Assumes 'accent_primary' is a color in your tailwind.config.js */
     color: theme('colors.accent_primary');
-    text-decoration: none; /* Kept from your version */
-  }
+    text-decoration: none;
+  } 
 
-  a:hover {
-    /* This assumes 'accent_secondary' is a color defined in your tailwind.config.js */
+  a:hover { 
+    /* Assumes 'accent_secondary' is a color in your tailwind.config.js */
     color: theme('colors.accent_secondary');
-  }
+  } 
 }
 
-/* Selection highlight - this can be outside @layer base */
+/* Selection highlight */
 ::selection {
-  /* This assumes 'accent_primary' and 'white' are defined in your tailwind.config.js or are standard Tailwind colors */
+  /* Assumes 'accent_primary' and 'white' are in your tailwind.config.js or are standard Tailwind colors */
   background-color: theme('colors.accent_primary');
   color: theme('colors.white'); /* Or simply 'white' if using Tailwind's white */
 }
 
-/* Any custom animations like .fade-in and @keyframes fadeIn should be defined
-   here, outside the @layer base, if you still need them.
-   For example: */
-/*
+/* CSS Line Clamp Utility */
+.css-line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+/* Subtle animations (from your previous version) */
 .fade-in {
   animation: fadeIn 1s ease-in-out forwards;
 }
@@ -54,4 +58,3 @@
   0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-*/
