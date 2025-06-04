@@ -13,27 +13,27 @@ export const testimonials: Testimonial[] = [
     // backgroundImageUrl: "/images/testimonial-bg-1.jpg" // Example placeholder
   },
   {
-    quote: "The agile coaching Yackob provided transformed our sprint efficiency and team morale significantly. His insights into our workflow were invaluable.",
-    name: "Michael Chen",
-    company: "Innovate Solutions Ltd."
+    quote: "I am thrilled to highlight Yackob's outstanding performance as a dedicated and skilled employee, notably achieving a 95% lease renewal rate through exceptional property management efforts.",
+    name: "Senior Property Manager",
+    company: "Bell Partners"
     // backgroundImageUrl: "/images/testimonial-bg-2.jpg"
   },
   {
     quote: "Thanks to Yackob's analytical skills, our new operations dashboard provides critical, real-time insights that have revolutionized our decision-making process.",
     name: "Sarah Miller",
-    company: "DataDriven Logistics"
+    company: "DS Technologies"
     // backgroundImageUrl: "/images/testimonial-bg-3.jpg"
   },
   {
     quote: "Yackob was instrumental in optimizing our Yardi CRM, leading to a 30% boost in sales productivity and better client relationship management.",
     name: "David Rodriguez",
-    company: "GreenLeaf Properties"
+    company: "CIM Group"
     // backgroundImageUrl: "/images/testimonial-bg-4.jpg"
   },
   {
     quote: "The process improvement initiative led by Yackob streamlined our core operations beyond expectations, reducing waste and improving turnaround times.",
-    name: "Aisha Khan",
-    company: "Optima Manufacturing Co."
+    name: "PM",
+    company: "CACI"
     // backgroundImageUrl: "/images/testimonial-bg-5.jpg"
   }
 ];
