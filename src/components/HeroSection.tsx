@@ -1,4 +1,3 @@
-// src/components/HeroSection.tsx
 'use client';
 
 import React from 'react';
@@ -6,9 +5,9 @@ import { motion } from 'framer-motion';
 
 const HeroSection: React.FC = () => {
   return (
-    <section 
-      id="hero" 
-      className="flex flex-col items-center justify-center text-center bg-background text-text_primary relative px-4 py-16 sm:py-20 md:py-24 lg:py-28"
+    <section
+      id="hero"
+      className="flex flex-col items-center justify-center text-center bg-background text-text_primary relative px-4 py-16 sm:py-20 md:py-24 lg:py-28 min-h-screen"
     >
       {/* Text Block Above Video */}
       <div className="mb-8 md:mb-10">
@@ -30,9 +29,11 @@ const HeroSection: React.FC = () => {
           style={{ fontFamily: 'var(--font-poppins)' }}
         >
           YACKOB
+          {/* Subtle noise/texture overlay for "YACKOB" */}
           <span
             aria-hidden="true"
             className="absolute inset-0 bg-repeat bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2050%2050%22%20preserveAspectRatio%3D%22none%22%3E%3Cfilter%20id%3D%22noise%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.8%22%20numOctaves%3D%224%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23noise)%22%20opacity%3D%220.07%22%2F%3E%3C%2Fsvg%3E')] opacity-40 mix-blend-overlay"
+            // Adjust opacity (on the rect or the span) or mix-blend-mode for desired subtlety.
           ></span>
         </motion.h1>
 
@@ -50,18 +51,19 @@ const HeroSection: React.FC = () => {
         </motion.div>
       </div>
 
+      {/* Video Player - Centered below the main text block */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
         className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mb-4 md:mb-6 custom-cursor-hover-target"
       >
-        <div style={{paddingBottom: "56.25%", position: "relative", height: 0}}> 
-          <video 
-            src="/images/profile.mp4" 
-            autoPlay 
-            loop 
-            muted 
+        <div style={{paddingBottom: "56.25%", position: "relative", height: 0}}> {/* 16:9 Aspect Ratio Container */}
+          <video
+            src="/images/profile.mp4"
+            autoPlay
+            loop
+            muted
             playsInline
             className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl object-cover"
           >
@@ -70,6 +72,7 @@ const HeroSection: React.FC = () => {
         </div>
       </motion.div>
 
+      {/* Texts Below Video */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

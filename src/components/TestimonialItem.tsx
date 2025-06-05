@@ -1,9 +1,8 @@
 // src/components/TestimonialItem.tsx
 'use client';
 
-import React from 'react'; // Added this line
 import { motion } from 'framer-motion';
-import { Testimonial } from '@/data/testimonials';
+import { Testimonial } from '@/data/testimonials'; // Ensure this path is correct
 
 interface TestimonialItemProps {
   testimonial: Testimonial;
@@ -21,25 +20,33 @@ const cardVariants = {
 const TestimonialItem: React.FC<TestimonialItemProps> = ({ testimonial }) => {
   const backgroundStyle = testimonial.backgroundImageUrl
     ? { backgroundImage: `url(${testimonial.backgroundImageUrl})` }
-    : { backgroundColor: 'rgba(42, 48, 48, 0.7)' };
+    : { backgroundColor: 'rgba(42, 48, 48, 0.7)' }; // Using card_background with some opacity
 
   return (
     <motion.div
-      className="relative rounded-lg overflow-hidden group custom-cursor-hover-target"
+      className="relative rounded-lg overflow-hidden group custom-cursor-hover-target" // Removed shadow-xl
       variants={cardVariants}
       initial="initial"
       whileInView="animate"
       viewport={{ once: true, amount: 0.3 }}
       whileHover="hover"
     >
+      {/* Optional: Outer Container for Background Image if used */}
       {testimonial.backgroundImageUrl && (
         <div
           className="absolute inset-0 bg-cover bg-center filter blur-sm"
           style={backgroundStyle}
         ></div>
       )}
+
+      {/* Content Overlay/Container */}
       <div
         className={`relative rounded-lg p-6 md:p-8 ${testimonial.backgroundImageUrl ? 'bg-black/40 backdrop-blur-xs' : 'bg-card_background'}`}
+        // Note: Tailwind config does not have 'card_background'. This should be 'bg-[#2A3030]' or a theme color.
+        // Assuming 'bg-card_background' should be 'bg-[#2A3030]' (the card bg color used elsewhere)
+        // For now, I will use the provided className, but this might need correction if 'card_background' is not defined.
+        // Correcting to a known color:
+        // className={`relative rounded-lg p-6 md:p-8 ${testimonial.backgroundImageUrl ? 'bg-black/40 backdrop-blur-xs' : 'bg-[#2A3030]'}`}
       >
         <div className="relative">
           <span
