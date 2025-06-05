@@ -20,7 +20,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <article
       className="bg-[#2A3030] rounded-xl p-6 flex flex-col h-[400px] shadow-lg hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ease-in-out custom-cursor-hover-target"
-      // Note: Reverted to explicit hex color #2A3030 as 'bg-card_background' might not be in user's Tailwind config.
     >
       {/* Container for Next/Image - must have position relative and defined dimensions */}
       <div className="relative w-full h-[120px] mb-4 custom-cursor-hover-target rounded-lg overflow-hidden">
@@ -59,7 +58,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           onClick={onViewDetails}
           aria-label={`View details for ${title}`}
           className="group inline-flex items-center text-accent_primary text-xs font-bold uppercase custom-cursor-hover-target focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent_primary focus:ring-offset-[#2A3030]"
-          // Note: Reverted to explicit hex color #2A3030 for focus ring offset.
         >
           VIEW DETAILS
           <span className="ml-1 transition-transform duration-300 ease-in-out group-focus:underline group-hover:underline">

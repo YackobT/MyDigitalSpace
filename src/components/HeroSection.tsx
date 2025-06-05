@@ -1,7 +1,7 @@
 // src/components/HeroSection.tsx
 'use client';
 
-import React from 'react'; // Ensured React import
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const HeroSection: React.FC = () => {
