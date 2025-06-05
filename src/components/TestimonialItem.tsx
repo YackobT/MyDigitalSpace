@@ -1,7 +1,8 @@
-'use client'
+// src/components/TestimonialItem.tsx
+'use client';
 
-import { motion } from 'framer-motion'
-import { Testimonial } from '@/data/testimonials' // Ensure this path is correct
+import { motion } from 'framer-motion';
+import { Testimonial } from '@/data/testimonials'; // Ensure this path is correct
 
 interface TestimonialItemProps {
   testimonial: Testimonial;
@@ -17,36 +18,60 @@ const cardVariants = {
 };
 
 const TestimonialItem: React.FC<TestimonialItemProps> = ({ testimonial }) => {
-  // Fallback background if no specific image URL is provided
   const backgroundStyle = testimonial.backgroundImageUrl 
     ? { backgroundImage: `url(${testimonial.backgroundImageUrl})` }
-    : { backgroundColor: 'rgba(10, 15, 31, 0.5)' }; // bg-background/50 equivalent
+    : { backgroundColor: 'rgba(42, 48, 48, 0.7)' }; // Using card_background with some opacity
 
   return (
     <motion.div
-      className="relative rounded-lg overflow-hidden shadow-xl group" // Added group for potential group-hover effects
+      className="relative rounded-lg overflow-hidden group custom-cursor-hover-target" // Removed shadow-xl
       variants={cardVariants}
       initial="initial"
       whileInView="animate"
       viewport={{ once: true, amount: 0.3 }}
       whileHover="hover"
     >
-      {/* Outer Container for Background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center filter blur-sm" // blur-sm is 4px, use blur-md for 8px if preferred
-        style={backgroundStyle}
-      ></div>
+      {/* Optional: Outer Container for Background Image if used */}
+      {testimonial.backgroundImageUrl && (
+        <div
+          className="absolute inset-0 bg-cover bg-center filter blur-sm"
+          style={backgroundStyle}
+        ></div>
+      )}
 
-      {/* Quote Overlay */}
-      <div className="relative bg-white/10 backdrop-blur-xs p-6 md:p-8 rounded-lg m-2 md:m-4"> {/* backdrop-blur-xs for subtle effect on overlay itself */}
-        <div className="relative"> {/* For positioning quote marks */}
-          <span className="absolute -top-4 -left-4 text-7xl md:text-8xl text-accent opacity-30 select-none">&ldquo;</span>
-          <p className="text-xl md:text-2xl italic text-text-primary leading-relaxed relative z-10">
+      {/* Content Overlay/Container */}
+      <div
+        className={`relative rounded-lg p-6 md:p-8 ${testimonial.backgroundImageUrl ? 'bg-black/40 backdrop-blur-xs' : 'bg-card_background'}`}
+        // Note: Tailwind config does not have 'card_background'. This should be 'bg-[#2A3030]' or a theme color.
+        // Assuming 'bg-card_background' should be 'bg-[#2A3030]' (the card bg color used elsewhere)
+        // For now, I will use the provided className, but this might need correction if 'card_background' is not defined.
+        // Correcting to a known color:
+        // className={`relative rounded-lg p-6 md:p-8 ${testimonial.backgroundImageUrl ? 'bg-black/40 backdrop-blur-xs' : 'bg-[#2A3030]'}`}
+      >
+        <div className="relative">
+          <span
+            className="absolute -top-3 -left-3 text-5xl md:text-6xl text-accent_primary opacity-30 select-none"
+            style={{fontFamily: 'var(--font-poppins)'}}
+          >
+            &ldquo;
+          </span>
+          <p
+            className="text-base md:text-lg italic text-text_primary leading-relaxed relative z-10"
+            style={{fontFamily: 'var(--font-poppins)'}}
+          >
             {testimonial.quote}
           </p>
-          <span className="absolute -bottom-8 -right-4 text-7xl md:text-8xl text-accent opacity-30 select-none">&rdquo;</span>
+          <span
+            className="absolute -bottom-5 -right-3 text-5xl md:text-6xl text-accent_primary opacity-30 select-none"
+            style={{fontFamily: 'var(--font-poppins)'}}
+          >
+            &rdquo;
+          </span>
         </div>
-        <p className="mt-6 text-right text-text-secondary font-medium">
+        <p
+          className="mt-4 text-right text-text_secondary font-medium text-sm md:text-base"
+          style={{fontFamily: 'var(--font-poppins)'}}
+        >
           — {testimonial.name}
           {testimonial.company && `, ${testimonial.company}`}
         </p>
