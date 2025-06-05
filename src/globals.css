@@ -4,49 +4,34 @@
 
 @layer base {
   body {
-    @apply font-sans; /* This applies your default sans-serif font (Poppins) */
-    /* Note: The main background color (bg-background) and primary text color (text-text_primary) 
-       are applied directly to the <body> tag via its className in src/app/layout.tsx. 
-       We do NOT @apply them here again. */
-    
-    /* Subtle dot pattern */
+    @apply font-sans;
     background-image: radial-gradient(rgba(209, 213, 219, 0.03) 1px, transparent 1px);
     background-size: 16px 16px;
   }
-
   h1, h2, h3, h4, h5, h6 {
-    color: theme('colors.text_primary'); 
+    color: theme('colors.text_primary');
   }
-
   p {
     color: theme('colors.text_primary');
   }
-
   a {
     color: theme('colors.accent_primary');
     text-decoration: none;
-  } 
-
-  a:hover { 
+  }
+  a:hover {
     color: theme('colors.accent_secondary');
-  } 
+  }
 }
-
-/* Selection highlight */
 ::selection {
   background-color: theme('colors.accent_primary');
   color: theme('colors.white');
 }
-
-/* CSS Line Clamp Utility */
 .css-line-clamp-3 {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
-
-/* Subtle animations (if you had these before and want to keep them) */
 .fade-in {
   animation: fadeIn 1s ease-in-out forwards;
 }

@@ -16,7 +16,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setIsDark(!isDark)}
-      className="px-3 py-2 rounded border text-sm font-medium border-gray-200 bg-white dark:bg-gray-500 dark:border-gray-500 dark:text-gray-10 shadow"
+      className="px-3 py-2 rounded border text-sm font-medium border-gray-300 bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100 shadow"
     >
       {isDark ? '☀ Light' : '🌙 Dark'}
     </button>

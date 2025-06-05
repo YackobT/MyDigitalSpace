@@ -1,12 +1,12 @@
 // src/data/worksData.ts
-import type { ProjectDetails } from '@/components/ProjectModal';
+import type { ProjectDetails } from '@/components/ProjectModal'; // Adjust path if ProjectDetails is elsewhere
 
 export interface WorkProjectData extends ProjectDetails {
   id: string;
   categoryTag: string;
   description: string;
-  imagePlaceholderClass?: string; // Kept for now, though ProjectCard doesn't use its color
-  imageUrl: string;
+  imagePlaceholderClass: string; // This will become unused by ProjectCard but keep for now unless explicitly told to remove
+  imageUrl: string; // New field
 }
 
 export const worksData: WorkProjectData[] = [
@@ -15,7 +15,7 @@ export const worksData: WorkProjectData[] = [
     title: "Yardi Integration & Workflow Automation",
     categoryTag: "WORKFLOW AUTOMATION",
     description: "Reduced time spent on manual reporting by 40%. Increased lease renewal follow-through rate by 25%.",
-    imagePlaceholderClass: "bg-accent_primary", 
+    imagePlaceholderClass: "bg-purple-500", // Using Tailwind named color for example
     imageUrl: "/images/project1.png",
     contextCompany: "CIM Group",
     roadmapPhases: [
@@ -33,7 +33,7 @@ export const worksData: WorkProjectData[] = [
     title: "EHR System Integration for Healthcare Clients",
     categoryTag: "EHR INTEGRATION",
     description: "Successful integration across 3 departments. User adoption reached 95% within the first month.",
-    imagePlaceholderClass: "bg-background", // Using a theme color name
+    imagePlaceholderClass: "bg-gray-700",
     imageUrl: "/images/project2.png",
     contextCompany: "DS Technologies",
     roadmapPhases: [
@@ -51,7 +51,7 @@ export const worksData: WorkProjectData[] = [
     title: "Sprint Optimization & Agile Coaching",
     categoryTag: "AGILE COACHING",
     description: "15% increase in sprint velocity, 30% decrease in project rework. Boosted team satisfaction and stakeholder trust.",
-    imagePlaceholderClass: "bg-accent_green", // Using a theme color name
+    imagePlaceholderClass: "bg-green-500",
     imageUrl: "/images/project3.png",
     contextCompany: "CACI",
     roadmapPhases: [
@@ -69,7 +69,7 @@ export const worksData: WorkProjectData[] = [
     title: "Property Operations Dashboard for Executive Decision-Making",
     categoryTag: "DASHBOARD DESIGN",
     description: "Enabled real-time decision-making for rent delinquency and occupancy trends. Executive satisfaction increased significantly post-launch.",
-    imagePlaceholderClass: "bg-accent_primary",
+    imagePlaceholderClass: "bg-purple-500",
     imageUrl: "/images/project4.png",
     contextCompany: "Spectrum Financial Services",
     roadmapPhases: [
@@ -87,7 +87,7 @@ export const worksData: WorkProjectData[] = [
     title: "Pandemic Relief Funding Acquisition System",
     categoryTag: "PROCESS IMPROVEMENT",
     description: "Secured $2M in relief funding with 100% compliance. Reduced application processing time by 50%.",
-    imagePlaceholderClass: "bg-accent_primary",
+    imagePlaceholderClass: "bg-purple-500",
     imageUrl: "/images/project5.png",
     contextCompany: "CIM Group",
     roadmapPhases: [
@@ -105,7 +105,7 @@ export const worksData: WorkProjectData[] = [
     title: "End-to-End Leasing Cycle Digitization",
     categoryTag: "CRM OPTIMIZATION",
     description: "Reduced leasing cycle time by 35%. Increased occupancy rate to over 95%. Improved tenant satisfaction scores.",
-    imagePlaceholderClass: "bg-background", 
+    imagePlaceholderClass: "bg-gray-700",
     imageUrl: "/images/project6.png",
     contextCompany: "Bell Partners",
     roadmapPhases: [
