@@ -1,11 +1,11 @@
 // src/components/WorksSection.tsx
-'use client'; // Needed for useState
-
+'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion'; // Import AnimatePresence
-import ProjectCard from './ProjectCard'; // ProjectCardProps will be implicitly imported if defined in ProjectCard.tsx
-import ProjectModal from './ProjectModal'; // ProjectDetails will be implicitly imported
-import { worksData, WorkProjectData } from '@/data/worksData'; // Adjust path as needed
+// ProjectCardProps might not be needed here if WorksSection doesn't directly use its detailed type structure for other logic
+import ProjectCard /*, { ProjectCardProps } */ from './ProjectCard';
+import ProjectModal, { ProjectDetails } from './ProjectModal';
+import { worksData, WorkProjectData } from '@/data/worksData';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const WorksSection: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,52 +18,47 @@ const WorksSection: React.FC = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    // Optional: Delay setting project to null for smoother exit animation if modal has one
-    // Consider matching this duration to any CSS animation duration on the modal
     setTimeout(() => setSelectedProject(null), 300);
   };
 
   return (
     <motion.section
       id="works"
-      className="bg-[#1F2525] py-16 md:py-24" // Section background and padding
+      className="bg-[#1F2525] py-16 md:py-24"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }} // Trigger animation when 10% of section is in view
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
     >
-      <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 md:px-8"> {/* Adjusted padding */}
-        <h2
-          className="text-3xl md:text-4xl font-bold text-text_primary mb-12 md:mb-16 text-center custom-cursor-hover-target"
-          style={{fontFamily: 'var(--font-poppins)'}}
+      <div className="container mx-auto max-w-[1200px] px-8"> {/* Using px-8 as per this subtask's full code */}
+        {/* H2 styling from Subtask 33 (right-aligned, font-mono) */}
+        <motion.h2
+          className="text-3xl md:text-4xl font-mono mb-10 md:mb-12 text-text_primary text-right custom-cursor-hover-target"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          Projects
-        </h2>
-
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-6">
+          &gt; Projects
+        </motion.h2>
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 sm:gap-3">
+        {/* Using grid classes as per this subtask's full code */}
           {worksData.map((project) => (
             <ProjectCard
               key={project.id}
               title={project.title}
               categoryTag={project.categoryTag}
-              description={project.description} // Card-specific short description
-              imagePlaceholderClass={project.imagePlaceholderClass}
+              description={project.description}
+              imageUrl={project.imageUrl} // *** THIS LINE IS CRUCIAL ***
               onViewDetails={() => handleOpenModal(project)}
             />
           ))}
         </div>
       </div>
-
-      {/* Render the Modal */}
-      {/*
-        The ProjectModal component expects 'project' prop of type ProjectDetails | null.
-        Our 'selectedProject' is of type WorkProjectData | null.
-        Since WorkProjectData extends ProjectDetails, this is compatible.
-      */}
       <AnimatePresence>
         {isModalOpen && selectedProject && (
           <ProjectModal
-            isOpen={isModalOpen} // Technically AnimatePresence handles visibility, but good for clarity
+            isOpen={isModalOpen}
             onClose={handleCloseModal}
             project={selectedProject}
           />
@@ -72,5 +67,4 @@ const WorksSection: React.FC = () => {
     </motion.section>
   );
 };
-
 export default WorksSection;

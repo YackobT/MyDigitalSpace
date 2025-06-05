@@ -5,37 +5,42 @@
 @layer base {
   body {
     @apply font-sans; /* Applies your default sans-serif font (Poppins) */
-    /* Note: The main background color (bg-background) and primary text color (text-text_primary) 
-       are applied directly to the <body> tag via its className in src/app/layout.tsx. 
+    /* Note: The main background color (bg-background) and primary text color (text-text_primary)
+       are applied directly to the <body> tag via its className in src/app/layout.tsx.
        We do NOT @apply them here again. */
-    
+
     /* Subtle dot pattern */
     background-image: radial-gradient(rgba(209, 213, 219, 0.03) 1px, transparent 1px);
     background-size: 16px 16px;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: theme('colors.text_primary'); 
+    /* Assumes 'text_primary' is a color in your tailwind.config.js */
+    color: theme('colors.text_primary');
   }
 
   p {
+    /* Assumes 'text_primary' is a color in your tailwind.config.js */
     color: theme('colors.text_primary');
   }
 
   a {
+    /* Assumes 'accent_primary' is a color in your tailwind.config.js */
     color: theme('colors.accent_primary');
     text-decoration: none;
-  } 
+  }
 
-  a:hover { 
+  a:hover {
+    /* Assumes 'accent_secondary' is a color in your tailwind.config.js */
     color: theme('colors.accent_secondary');
-  } 
+  }
 }
 
 /* Selection highlight */
 ::selection {
+  /* Assumes 'accent_primary' and 'white' are in your tailwind.config.js or are standard Tailwind colors */
   background-color: theme('colors.accent_primary');
-  color: theme('colors.white');
+  color: theme('colors.white'); /* Or simply 'white' if using Tailwind's white */
 }
 
 /* CSS Line Clamp Utility */

@@ -8,32 +8,27 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote: "Yackob’s requirements work eliminated confusion across teams. We shipped cleaner and faster.",
-    name: "SME", // Using a more generic name as per original data
+    name: "SME",
     company: "DS Technologies",
-    // backgroundImageUrl: "/images/testimonial-bg-1.jpg" // Example placeholder
+    // backgroundImageUrl: "/images/testimonial-bg-1.jpg"
   },
   {
     quote: "The agile coaching Yackob provided transformed our sprint efficiency and team morale significantly. His insights into our workflow were invaluable.",
-    name: "Michael Chen",
-    company: "Innovate Solutions Ltd."
+    name: "SPM",
+    company: "CIM Group"
     // backgroundImageUrl: "/images/testimonial-bg-2.jpg"
   },
   {
     quote: "Thanks to Yackob's analytical skills, our new operations dashboard provides critical, real-time insights that have revolutionized our decision-making process.",
-    name: "Sarah Miller",
-    company: "DataDriven Logistics"
+    name: "PM",
+    company: "CACI"
     // backgroundImageUrl: "/images/testimonial-bg-3.jpg"
   },
   {
     quote: "Yackob was instrumental in optimizing our Yardi CRM, leading to a 30% boost in sales productivity and better client relationship management.",
-    name: "David Rodriguez",
-    company: "GreenLeaf Properties"
+    name: "SBA",
+    company: "Spectrum Financial"
     // backgroundImageUrl: "/images/testimonial-bg-4.jpg"
-  },
-  {
-    quote: "The process improvement initiative led by Yackob streamlined our core operations beyond expectations, reducing waste and improving turnaround times.",
-    name: "Aisha Khan",
-    company: "Optima Manufacturing Co."
-    // backgroundImageUrl: "/images/testimonial-bg-5.jpg"
   }
+  // Removed the 5th testimonial (SBA, CACI - process improvement)
 ];

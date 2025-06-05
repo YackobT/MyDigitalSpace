@@ -1,13 +1,14 @@
+// src/components/HeroSection.tsx
 'use client';
 
-import React from 'react';
+import React from 'react'; // Ensured React import
 import { motion } from 'framer-motion';
 
 const HeroSection: React.FC = () => {
   return (
     <section
       id="hero"
-      className="flex flex-col items-center justify-center text-center bg-background text-text_primary relative px-4 py-16 sm:py-20 md:py-24 lg:py-28 min-h-screen"
+      className="flex flex-col items-center justify-center text-center bg-background text-text_primary relative px-4 py-16 sm:py-20 md:py-24 lg:py-28"
     >
       {/* Text Block Above Video */}
       <div className="mb-8 md:mb-10">
@@ -33,7 +34,6 @@ const HeroSection: React.FC = () => {
           <span
             aria-hidden="true"
             className="absolute inset-0 bg-repeat bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2050%2050%22%20preserveAspectRatio%3D%22none%22%3E%3Cfilter%20id%3D%22noise%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.8%22%20numOctaves%3D%224%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23noise)%22%20opacity%3D%220.07%22%2F%3E%3C%2Fsvg%3E')] opacity-40 mix-blend-overlay"
-            // Adjust opacity (on the rect or the span) or mix-blend-mode for desired subtlety.
           ></span>
         </motion.h1>
 
@@ -82,6 +82,7 @@ const HeroSection: React.FC = () => {
         <p className="custom-cursor-hover-target" style={{ fontFamily: 'var(--font-poppins)'}}>ARLINGTON, VA</p>
         <p className="text-right custom-cursor-hover-target" style={{ fontFamily: 'var(--font-poppins)'}}>BRIDGING OPERATIONS, ANALYSIS, AND EXECUTION</p>
       </motion.div>
+
     </section>
   );
 };
