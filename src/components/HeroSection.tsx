@@ -59,16 +59,12 @@ const HeroSection: React.FC = () => {
         className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mb-4 md:mb-6 custom-cursor-hover-target"
       >
         <div style={{paddingBottom: "56.25%", position: "relative", height: 0}}> {/* 16:9 Aspect Ratio Container */}
-          <video
-            src="/images/profile.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
+          <img
+            src="/images/profile.png"
+            alt="Profile image of Yackob Tamire" // More descriptive alt text
             className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl object-cover"
-          >
-            Your browser does not support the video tag.
-          </video>
+            // Consider adding loading="lazy" if not critical for LCP
+          />
         </div>
       </motion.div>
 
