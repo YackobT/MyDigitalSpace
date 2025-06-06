@@ -10,7 +10,7 @@ export const experiences: Experience[] = [
   {
     role: "Business Analyst",
     company: "CACI",
-    dateRange: "2023 – 2024",
+    dateRange: "2023 – 2025",
     impact: [
       "Led Agile ceremonies (sprint planning, daily scrums, sprint reviews, retrospectives) for a cross-functional team of 8, ensuring alignment with project goals and user stories.",
       "Authored and maintained comprehensive Business Requirements Documents (BRDs), user stories, and process flows, translating complex business needs into actionable development tasks.",
