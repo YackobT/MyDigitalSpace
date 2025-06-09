@@ -10,20 +10,20 @@ export const experiences: Experience[] = [
   {
     role: "Business Analyst",
     company: "CACI",
-    dateRange: "2023 – 2025",
-    impact: [
-      "Led Agile ceremonies (sprint planning, daily scrums, sprint reviews, retrospectives) for a cross-functional team of 8, ensuring alignment with project goals and user stories.",
-      "Authored and maintained comprehensive Business Requirements Documents (BRDs), user stories, and process flows, translating complex business needs into actionable development tasks.",
-      "Facilitated JAD sessions with stakeholders to gather requirements, define scope, and resolve conflicts, leading to a 15% improvement in development velocity.",
-      "Reduced rework by 30% through meticulous requirements validation and clear communication between business and technical teams.",
-      "Achieved a 95% stakeholder satisfaction rate through proactive communication, expectation management, and timely delivery of solutions."
+    dateRange: "2023 – 2024",
+    impact: [ // New impact points for CACI
+      "Led requirements gathering sessions with cross-functional stakeholders across federal agencies, translating business needs into over 150 actionable user stories and acceptance criteria.",
+      "Acted as Scrum Master proxy, facilitating daily stand-ups, sprint planning, and retrospectives to support Agile delivery across 4+ concurrent sprints.",
+      "Designed process workflows and low-fidelity wireframes to support system modernization efforts, reducing manual entry time by 35%.",
+      "Partnered with QA and development teams to execute UAT and triage defects, ensuring successful delivery of three high-impact software releases.",
+      "Created and maintained product backlogs using Jira and Confluence, enabling transparency and alignment across business, technical, and compliance teams."
     ],
     tags: ["Agile", "JIRA", "Confluence", "Scrum", "Stakeholder Management", "BRD", "User Stories"]
   },
   {
-    role: "EHR Implementation Specialist", // Placeholder Role
+    role: "EHR Implementation Specialist",
     company: "DS Technologies",
-    dateRange: "2021 – 2023", // Placeholder Dates
+    dateRange: "2021 – 2023",
     impact: [
       "Successfully deployed and configured clinical workflows within various EHR systems for multiple healthcare clients.",
       "Developed comprehensive training manuals and user guides, facilitating smooth adoption of new EHR functionalities by clinical staff.",
@@ -33,9 +33,9 @@ export const experiences: Experience[] = [
     tags: ["EHR", "UAT", "Training", "Validation Scripting", "Healthcare IT", "Workflow Design"]
   },
   {
-    role: "Technical Writer & QA Analyst", // Placeholder Role
+    role: "Technical Writer & QA Analyst",
     company: "Spectrum Financial",
-    dateRange: "2020 – 2021", // Placeholder Dates
+    dateRange: "2020 – 2021",
     impact: [
       "Produced clear, concise, and accurate technical documentation for proprietary financial software, including user manuals, API guides, and release notes.",
       "Executed rigorous QA testing cycles (functional, regression, usability) to identify software defects and ensure product quality.",
@@ -45,9 +45,9 @@ export const experiences: Experience[] = [
     tags: ["QA", "Technical Writing", "Software Documentation", "Testing", "Financial Software"]
   },
   {
-    role: "Property Operations Analyst", // Placeholder Role
+    role: "Property Operations Analyst",
     company: "CIM Group",
-    dateRange: "2018 – 2020", // Placeholder Dates
+    dateRange: "2018 – 2020",
     impact: [
       "Supported property operations for a diverse real estate portfolio, focusing on process optimization and data analysis.",
       "Provided Yardi system support and training to property management teams, enhancing operational efficiency.",
@@ -57,9 +57,9 @@ export const experiences: Experience[] = [
     tags: ["Yardi", "Real Estate", "Business Operations", "Property Management", "Data Analysis"]
   },
   {
-    role: "Leasing Strategist", // Placeholder Role
+    role: "Leasing Strategist",
     company: "Bell Partners",
-    dateRange: "2017 – 2018", // Placeholder Dates
+    dateRange: "2017 – 2018",
     impact: [
       "Developed and executed innovative leasing strategies for a 400+ unit residential property, consistently exceeding occupancy targets.",
       "Conducted market research and competitor analysis to inform pricing and promotional activities.",

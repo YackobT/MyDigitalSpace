@@ -56,8 +56,8 @@ const CustomCursor: React.FC = () => {
     position: 'fixed',
     left: `${position.x}px`,
     top: `${position.y}px`,
-    width: isHoveringInteractive ? '30px' : '20px', // Change size on hover
-    height: isHoveringInteractive ? '30px' : '20px', // Change size on hover
+    width: isHoveringInteractive ? '40px' : '30px', // Change size on hover
+    height: isHoveringInteractive ? '40px' : '30px', // Change size on hover
     backgroundColor: isHoveringInteractive
       ? 'rgba(168, 85, 247, 0.8)' // More solid accent_primary (Purple) on hover
       : 'rgba(168, 85, 247, 0.5)', // Default: Semi-transparent accent_primary (Purple)

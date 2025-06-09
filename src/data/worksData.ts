@@ -5,8 +5,8 @@ export interface WorkProjectData extends ProjectDetails {
   id: string;
   categoryTag: string;
   description: string;
-  imagePlaceholderClass: string; // This will become unused by ProjectCard but keep for now unless explicitly told to remove
-  imageUrl: string; // New field
+  imagePlaceholderClass: string;
+  imageUrl: string;
 }
 
 export const worksData: WorkProjectData[] = [
@@ -15,7 +15,7 @@ export const worksData: WorkProjectData[] = [
     title: "Yardi Integration & Workflow Automation",
     categoryTag: "WORKFLOW AUTOMATION",
     description: "Reduced time spent on manual reporting by 40%. Increased lease renewal follow-through rate by 25%.",
-    imagePlaceholderClass: "bg-purple-500", // Using Tailwind named color for example
+    imagePlaceholderClass: "bg-purple-500",
     imageUrl: "/images/project1.png",
     contextCompany: "CIM Group",
     roadmapPhases: [
@@ -48,21 +48,20 @@ export const worksData: WorkProjectData[] = [
   },
   {
     id: '3',
-    title: "Sprint Optimization & Agile Coaching",
-    categoryTag: "AGILE COACHING",
-    description: "15% increase in sprint velocity, 30% decrease in project rework. Boosted team satisfaction and stakeholder trust.",
+    title: "Case Management System Modernization for a Civilian Agency", // UPDATED
+    categoryTag: "AGILE COACHING", // Kept existing as not specified to change
+    description: "Modernize an outdated, manual case tracking system to improve workflow efficiency, reporting accuracy, and user satisfaction.", // UPDATED
     imagePlaceholderClass: "bg-green-500",
     imageUrl: "/images/project3.png",
-    contextCompany: "CACI",
-    roadmapPhases: [
-     "Phase 1: Observe current Agile ceremonies and team dynamics.",
-     "Phase 2: Identify bottlenecks in sprint planning and execution.",
-     "Phase 3: Implement tailored coaching sessions and JIRA workflow enhancements.",
-     "Phase 4: Introduce improved metrics tracking and reporting for transparency.",
-     "Phase 5: Facilitate retrospective workshops to embed continuous improvement."
+    contextCompany: "CACI", // UPDATED (was already CACI, confirmed)
+    roadmapPhases: [ // UPDATED
+      "**Objectives:** Modernize an outdated, manual case tracking system to improve workflow efficiency, reporting accuracy, and user satisfaction.",
+      "**Scope:** • Gather and document requirements from 5+ stakeholder groups • Support Agile development of a web-based application • Conduct UAT and support system rollout",
+      "**Deliverables:** • Requirements traceability matrix • 150+ user stories with acceptance criteria • Workflow diagrams and wireframes • UAT test scripts and issue logs • Sprint demo slide decks",
+      "**Project Plan (8 months):** 1. Discovery & Requirements – 2 months 2. Agile Development (4 Sprints) – 4 months 3. UAT & Feedback Loop – 1 month 4. Go-Live Support & Documentation – 1 month"
     ],
-    outcomeText: "15% increase in sprint velocity. 30% decrease in project rework. Boosted team satisfaction and stakeholder trust.",
-    skillsUtilized: ["Scrum Mastery", "Agile"]
+    outcomeText: "**Success Metrics:**\n• Reduced manual data entry time by 35%\n• 95% of users reported improved usability\n• Met 100% of sprint goals across all 4 sprints\n\n**Challenges & Solutions:**\n• Challenge: Conflicting stakeholder priorities\nSolution: Facilitated weekly prioritization workshops to align needs\n• Challenge: Ambiguity in legacy system workflows\nSolution: Conducted shadowing sessions and used process mapping to clarify current-state", // UPDATED
+    skillsUtilized: ["Jira", "Confluence", "Lucidchart", "Excel", "MS Teams"] // UPDATED
   },
   {
     id: '4',
