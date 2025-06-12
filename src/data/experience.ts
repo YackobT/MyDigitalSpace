@@ -7,7 +7,20 @@ export interface Experience {
 }
 
 export const experiences: Experience[] = [
+
   {
+    role: "EHR Implementation Specialist",
+    company: "DS Technologies",
+    dateRange: "2024 – 2025",
+    impact: [
+      "Successfully deployed and configured clinical workflows within various EHR systems for multiple healthcare clients.",
+      "Developed comprehensive training manuals and user guides, facilitating smooth adoption of new EHR functionalities by clinical staff.",
+      "Designed and executed User Acceptance Testing (UAT) plans and test cases, ensuring system stability and compliance with clinical requirements.",
+      "Authored validation scripts for EHR system updates and customizations, maintaining data integrity and regulatory compliance."
+    ],
+    tags: ["EHR", "UAT", "Training", "Validation Scripting", "Healthcare IT", "Workflow Design"]
+  },
+    {
     role: "Business Analyst",
     company: "CACI",
     dateRange: "2023 – 2024",
@@ -21,21 +34,9 @@ export const experiences: Experience[] = [
     tags: ["Agile", "JIRA", "Confluence", "Scrum", "Stakeholder Management", "BRD", "User Stories"]
   },
   {
-    role: "EHR Implementation Specialist",
-    company: "DS Technologies",
-    dateRange: "2021 – 2023",
-    impact: [
-      "Successfully deployed and configured clinical workflows within various EHR systems for multiple healthcare clients.",
-      "Developed comprehensive training manuals and user guides, facilitating smooth adoption of new EHR functionalities by clinical staff.",
-      "Designed and executed User Acceptance Testing (UAT) plans and test cases, ensuring system stability and compliance with clinical requirements.",
-      "Authored validation scripts for EHR system updates and customizations, maintaining data integrity and regulatory compliance."
-    ],
-    tags: ["EHR", "UAT", "Training", "Validation Scripting", "Healthcare IT", "Workflow Design"]
-  },
-  {
     role: "Technical Writer & QA Analyst",
     company: "Spectrum Financial",
-    dateRange: "2020 – 2021",
+    dateRange: "2022 – 2023",
     impact: [
       "Produced clear, concise, and accurate technical documentation for proprietary financial software, including user manuals, API guides, and release notes.",
       "Executed rigorous QA testing cycles (functional, regression, usability) to identify software defects and ensure product quality.",
@@ -47,7 +48,7 @@ export const experiences: Experience[] = [
   {
     role: "Property Manager",
     company: "CIM Group",
-    dateRange: "2018 – 2020",
+    dateRange: "2020 – 2022",
     impact: [
       "Oversaw daily operations for a 520-unit CIM Group residential asset, ensuring 98 % occupancy while meeting NOI targets through strategic leasing, rent-collection discipline, and expense control.",
       "Directed on-site maintenance and capital-improvement projects (>$750k annually), coordinating vendors, negotiating contracts, and delivering projects on time and under budget.",
@@ -60,7 +61,7 @@ export const experiences: Experience[] = [
   {
     role: "Senior Leasing Consultant",
     company: "Bell Partners",
-    dateRange: "2017 – 2018",
+    dateRange: "2018 – 2020",
     impact: [
       "Developed and executed innovative leasing strategies for a 1000+ unit residential property, consistently exceeding occupancy targets.",
       "Conducted market research and competitor analysis to inform pricing and promotional activities.",
