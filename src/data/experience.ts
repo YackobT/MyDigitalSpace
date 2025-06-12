@@ -53,7 +53,7 @@ export const experiences: Experience[] = [
       "Directed on-site maintenance and capital-improvement projects (>$750k annually), coordinating vendors, negotiating contracts, and delivering projects on time and under budget.",
       "Led a five-person leasing & resident-services team; implemented customer-service standards that lifted resident satisfaction scores 15 % year-over-year and reduced turnover costs.",
       "Prepared monthly financial reports and variance analyses for asset-management executives; identified revenue-growth opportunities that boosted ancillary income by 10 %."
-      "Ensured strict compliance with fair-housing laws, safety regulations, and CIM Group policies; passed all internal audits with zero findings and instituted preventive risk-management protocols."
+      "Ensured strict compliance with fair-housing laws, safety regulations, and CIM Group policies; passed all internal audits with zero findings and instituted preventive risk-management protocols.",
     ],
     tags: ["Yardi", "Real Estate", "Business Operations", "Property Management", "Data Analysis"]
   },
