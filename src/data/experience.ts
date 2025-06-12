@@ -45,23 +45,24 @@ export const experiences: Experience[] = [
     tags: ["QA", "Technical Writing", "Software Documentation", "Testing", "Financial Software"]
   },
   {
-    role: "Property Operations Analyst",
+    role: "Property Manager",
     company: "CIM Group",
     dateRange: "2018 – 2020",
     impact: [
-      "Supported property operations for a diverse real estate portfolio, focusing on process optimization and data analysis.",
-      "Provided Yardi system support and training to property management teams, enhancing operational efficiency.",
-      "Developed and implemented a streamlined workflow for processing pandemic relief applications for commercial tenants.",
-      "Analyzed property performance data to identify trends and recommend operational improvements."
+      "Oversaw daily operations for a 520-unit CIM Group residential asset, ensuring 98 % occupancy while meeting NOI targets through strategic leasing, rent-collection discipline, and expense control.",
+      "Directed on-site maintenance and capital-improvement projects (>$750k annually), coordinating vendors, negotiating contracts, and delivering projects on time and under budget.",
+      "Led a five-person leasing & resident-services team; implemented customer-service standards that lifted resident satisfaction scores 15 % year-over-year and reduced turnover costs.",
+      "Prepared monthly financial reports and variance analyses for asset-management executives; identified revenue-growth opportunities that boosted ancillary income by 10 %."
+      "Ensured strict compliance with fair-housing laws, safety regulations, and CIM Group policies; passed all internal audits with zero findings and instituted preventive risk-management protocols."
     ],
     tags: ["Yardi", "Real Estate", "Business Operations", "Property Management", "Data Analysis"]
   },
   {
-    role: "Leasing Strategist",
+    role: "Senior Leasing Consultant",
     company: "Bell Partners",
     dateRange: "2017 – 2018",
     impact: [
-      "Developed and executed innovative leasing strategies for a 400+ unit residential property, consistently exceeding occupancy targets.",
+      "Developed and executed innovative leasing strategies for a 1000+ unit residential property, consistently exceeding occupancy targets.",
       "Conducted market research and competitor analysis to inform pricing and promotional activities.",
       "Managed online listings and marketing campaigns to attract prospective tenants.",
       "Built strong relationships with residents to foster a positive community environment and encourage renewals."
