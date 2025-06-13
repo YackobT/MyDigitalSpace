@@ -31,6 +31,29 @@ const Footer: React.FC = () => {
     { href: "https://linkedin.com/in/yackob-tamire", label: "LinkedIn", ariaLabel: "View Yackob's LinkedIn profile" },
   ];
 
+  const footerContent = (
+    <div className="container mx-auto max-w-[1200px]">
+      <div className="flex justify-center items-center space-x-6 mb-6">
+        {socialLinks.map(link => (
+          <SocialLink key={link.label} {...link} />
+        ))}
+        <a
+          href={`${basePath}/ytresume.pdf`}
+          download="YackobTamire_Resume.pdf"
+          aria-label="Download Yackob Tamire's Resume"
+          className="text-text_secondary hover:text-accent_primary transition-colors duration-300 custom-cursor-hover-target focus:outline-none focus:ring-2 focus:ring-accent_primary/50 focus:ring-offset-2 focus:ring-offset-background"
+          style={{ fontFamily: 'var(--font-poppins)' }}
+        >
+          Resume
+        </a>
+      </div>
+
+      <p className="text-xs sm:text-sm" style={{ fontFamily: 'var(--font-poppins)' }}>
+        &copy; {currentYear} Yackob Tamire. All rights reserved.
+      </p>
+    </div>
+  );
+
   return (
     <motion.div
       className="bg-background text-text_secondary py-8 sm:py-10 px-6 md:px-8 text-center border-t border-text_secondary/10"
@@ -39,13 +62,9 @@ const Footer: React.FC = () => {
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
     >
-      <div className="container mx-auto max-w-[1200px]">
-        <div className="flex justify-center items-center space-x-6 mb-6">
-          {socialLinks.map(link => (
-            <SocialLink key={link.label} {...link} />
-          ))}
-          <a
-            href={`${basePath}/ytresume.pdf`}
-            download="YackobTamire_Resume.pdf"
-            aria-label="Download Yackob Tamire's Resume"
-            c
+      {footerContent}
+    </motion.div>
+  );
+};
+
+export default Footer;
