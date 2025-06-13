@@ -7,7 +7,7 @@ export interface ProjectCardProps {
   title: string;
   categoryTag: string;
   description: string;
-  imageUrl: string; // e.g., "/images/project1.png"
+  imageUrl: string;
   onViewDetails: () => void;
 }
 
@@ -21,17 +21,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   onViewDetails,
 }) => {
   return (
-    <article
+    <div
       className="bg-[#2A3030] rounded-xl p-6 flex flex-col h-[400px] shadow-lg hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ease-in-out custom-cursor-hover-target"
     >
       <div className="relative w-full h-[120px] mb-4 custom-cursor-hover-target rounded-lg overflow-hidden">
         <Image
           src={`${basePath}${imageUrl}`}
           alt={`Project image for ${title}`}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg"
+          fill
+          className="rounded-lg object-cover"
           loading="lazy"
+          unoptimized // Required for static export (next export)
         />
       </div>
 
@@ -56,4 +56,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="group inline-flex items-center text-accent_primary text-xs font-bold uppercase custom-cursor-hover-target focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent_primary focus:ring-offset-[#2A3030]"
         >
           VIEW DETAILS
-          <span className="ml-1 transition-transform duration-300 ease-in-
+          <span className="ml-1 transition-transform duration-300 ease-in-out group-focus:underline group-hover:underline">
+            →
+          </span>
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectCard;
