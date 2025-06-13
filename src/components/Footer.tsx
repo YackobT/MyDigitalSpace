@@ -1,8 +1,9 @@
 'use client';
 
 // src/components/Footer.tsx
-import React from 'react';
+import * as React from 'react';
 import { motion } from 'framer-motion';
+
 
 interface SocialLinkProps {
   href: string;
