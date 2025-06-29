@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
         ))}
         <a
           href={`${basePath}/ytresume.pdf`}
-          download="YackobTamire_Resume.pdf"
+          download="ytresume.pdf"
           aria-label="Download Yackob Tamire's Resume"
           className="text-text_secondary hover:text-accent_primary transition-colors duration-300 custom-cursor-hover-target focus:outline-none focus:ring-2 focus:ring-accent_primary/50 focus:ring-offset-2 focus:ring-offset-background"
           style={{ fontFamily: 'var(--font-poppins)' }}
